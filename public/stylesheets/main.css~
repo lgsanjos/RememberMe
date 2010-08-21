@@ -1,0 +1,81 @@
+body{
+	margin:0px;
+	padding:0px;
+        overflow:hidden;
+}
+
+
+#page{
+  margin:0px;
+  padding:0px;
+  position:absolute;
+  height:100%;
+  width:100%;
+  overflow:hidden;
+  z-index:1;
+}
+
+#odTableTop{
+  background: url("../images/bg.jpg");
+  height:100%;
+  width:100%;
+}
+
+#header{
+  z-index:999;
+  position:absolute;
+}
+
+#right_menu{
+  z-index:999;
+  background-color:white;
+  opacity:0.8;
+  position:absolute;
+  float:right;
+  right:5px;
+  height:380px;
+  top:150px;
+}
+
+.note{
+  background-color: yellow;
+  width:150px;
+  height:160px;
+  display: block;
+  float: none;
+  position:absolute;
+  letter-spacing:1px;
+  z-index:2;
+  overflow:hidden;
+}
+
+.note .noteHeader {
+  background-color: gold;
+  font-weight: bold;
+  font-size:115%;
+  
+
+}
+
+.note .noteBody{
+  width:100%;
+  height:100%;
+  
+}
+
+.statusbar{
+  z-index:999;
+  background-color:white;
+  opacity:0.7;
+  font-weight:bold;
+  font-size:120%;
+  position:absolute;
+  width:auto;
+  line-height:120%;
+  left:0;
+  bottom:0px;
+  letter-spacing:1.5px;
+  padding: 0px 20px;
+  text-align:center;
+}
+

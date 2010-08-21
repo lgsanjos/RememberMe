@@ -1,0 +1,33 @@
+      <script type="text/javascript">
+
+        $().ready(function(){
+           initialization();
+
+
+           function loadObjects(){
+           <% @note.each do |n| %>
+             <%="NewNote( #{n.posX}, #{n.posY}, \"#{n.conteudo.gsub("\n", "<br />")}\", #{n.width}, #{n.height}, false, true, \"#{n.UUID}\" );"%>
+           <% end %>
+           }
+
+         window.setTimeout(loadObjects(),4000);
+           
+         });
+
+	</script>
+
+	<div id="odTableTop">
+	
+		<div id="header">
+			LOGO
+		</div>
+		
+		
+		<div id="right_menu">
+			<input type="button" value="Nota" id="btCriador"/><br/>
+			<input type="button" value="Agenda" id="btCriador"/><br/>
+			<input type="button" value="Recado" id="btCriador"/><br/>
+			<input type="button" value="Trash" id="btCriador"/><br/>
+		</div>
+	
+	</div>

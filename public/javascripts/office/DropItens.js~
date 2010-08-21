@@ -1,0 +1,41 @@
+  // -------------------
+  // Instancia uma nova anotacao
+
+  function NewNote(posX,posY, aTitle, aContent, aWidth, aHeight, shared, visible){
+    try{
+      // CheckParams
+      if (aTitle === undefined) aTitle = '<input type="text" name="titulo" style="width:100%"/>';
+      if (aContent === undefined) aContent = 'Lembrete...';
+      if (posX === undefined) posX = Math.floor(Math.random()* 310);
+      if (posY === undefined) posX = Math.floor(Math.random()* 310);
+      if (aWidth === undefined) aWidth = 150;
+      if (aHeight === undefined) aHeight = 160;
+      shared = false;
+      visible = true;
+
+     var nota = '';
+         nota += '<div class="note draggable resizable">';
+ 	 nota += '<div class="noteHeader">';
+         nota += '</div>';
+         nota += '<div class="noteBody">';
+         nota += '</div>';
+         nota += '</div>';
+
+         $('#page').append(nota);
+         $('.note:last').css("left",posX);
+         $('.note:last').css("top",posY);
+         $('.note:last').css("width",aWidth);
+         $('.note:last').css("height",aHeight);
+         $('.noteHeader:last').html(aTitle);
+         $('.noteBody:last').html(aContent);
+
+      // Adiciona na lista de itens a serem salvos
+      ChangedItens.setItem(,"teste");
+    }catch(E){
+      alert(E);
+    }finally{
+       setDraggables();
+       setResizable();
+    }
+  }
+

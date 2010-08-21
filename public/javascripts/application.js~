@@ -1,0 +1,74 @@
+function initialization(){
+  try{
+    statusBar('Inicializando...');
+    setContextMenu();
+    ChangedItens = new Hash();
+    startChangedMonitor(ChangedItens);
+
+  }catch(E){
+    alert(E);
+  }finally{
+    statusBar('');
+  }
+
+}
+
+
+// --------------
+
+function startChangedMonitor(aChangedList){
+
+  function checkList(){
+    if (aChangedList.items.length >= 1){
+      for (var item in aChangedList.items){
+        try{
+          //Todo: disparar ajax para salvar o conteudo do item
+          statusBar('Salvando...');
+          $.post('/note/save/',
+                  {"conteudo" : "Testando corpo da mensagem",
+                   "titulo" : "titulo da nota",
+                   "posX" : "150",
+                   "posY" :"100",
+                   "width" :"100",
+                   "height" :"100",
+                   "state" :"1",
+                  },
+                  function (data){
+                    if (data == "ok")
+                      aChangedList.removeItem(item);
+                    else{
+                      alert(data);
+                    } 
+                  }
+          );
+        }catch(E){
+          alert(E);
+        }finally{
+          statusBar('');
+       }
+      }
+    }
+  }
+
+  _int = window.setInterval(function(){checkList();}, 10000);
+}
+
+// --------------
+
+function setContextMenu(){
+		try{ 
+			var menu1 = [
+			{'Novo lembrete': function(menuItem,menuObject) {
+						var pos = $(menuObject.menu).position();
+						NewNote(pos.left,pos.top);
+						} }
+			];
+			
+			$('#page').contextMenu(menu1,{theme:'vista'});
+			
+		}catch(E){
+			alert(E);
+		}finally{
+                 ;
+		}
+}

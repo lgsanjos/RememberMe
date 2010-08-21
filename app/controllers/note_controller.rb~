@@ -1,0 +1,18 @@
+class NoteController < ApplicationController
+
+# POST /note
+def save
+  logger.info ' ---- Salvando'
+   
+    @note = Note.new(params[:note])
+
+    if @note.save
+      render :inline => "ok"
+    else
+      render :inline => "failed"
+    end
+  
+  logger.info ' ---- Fim do processo'
+end
+
+end
