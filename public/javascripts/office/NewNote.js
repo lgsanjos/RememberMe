@@ -84,7 +84,29 @@ var Note = DroppedItem.extend({
     },
 
     Remove: function(){
-       alert('Remove');
+        //Send Ajax
+        $.ajax({
+               type: 'POST',
+               url: '/note/trash',
+               async: false,
+               data: ({
+                 'note':{
+                          'UUID': this.UUID
+                        }
+               }),
+               success: function(data){
+                    returned = data;
+               },
+
+               error: function(XMLHttpRequest, textStatus, errorThrow){
+                    returned = 'Ocorreu o seguinte erro ao mover a nota para a lixeira : ' + errorThrow;
+
+               }
+
+              });
+
+          $('#' + this.UUID).fadeOut('fast');
+
     },
 
     Append: function(container){
@@ -111,6 +133,7 @@ var Note = DroppedItem.extend({
 
 
          $(container).append(nota);
+         
          $('.note:last').attr("id",this.UUID);
          $('.note:last').css("left",this.posX);
          $('.note:last').css("top",this.posY);
@@ -118,7 +141,7 @@ var Note = DroppedItem.extend({
          $('.note:last').css("height",this.height);
          // $('.noteBody:last > .TextArea').val(this.content);
          $('#' + this.UUID + '> .noteBody > .textArea').val(this.content.replace('<br />', "\n"));
-
+         $('.note:last').fadeIn('fast');
 
          // Define eventos que serão interpretados futuramente,
          // logo todos os dados dentro dos eventos devem ser variados e analisados
@@ -134,14 +157,20 @@ var Note = DroppedItem.extend({
          }
 
          // Define todas as responsabilidades das alteracoes
-         $('.noteBody:last > .textArea').keypress(function() {
+         $('.noteBody:last > .textArea').keypress(function () {
             DoOnChange(_self);
          });
 
          
-         $('.note:last').bind("dragstop", function() {
+         $('.note:last').bind("dragstop", function () {
             DoOnChange(_self);
          });
+
+
+         $('.note:last > .noteHeader > .noteFechar').click(function () {
+            _self.Remove();
+         });
+
 
        //Finaliza adicionando comportamento
 

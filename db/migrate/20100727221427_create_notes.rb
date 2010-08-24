@@ -9,8 +9,9 @@ class CreateNotes < ActiveRecord::Migration
       t.string :width, :size=>4
       t.string :height, :size=>4
       t.string :state, :size=>1
+      t.boolean :trashed, :default => false
+      t.boolean :shared, :default => false
       t.integer :user_id
-      t.bool :shared
       t.timestamps
     end
   end

@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(:version => 20100727221427) do
     t.string   "width"
     t.string   "height"
     t.string   "state"
+    t.boolean  "trashed",    :default => false
+    t.boolean  "shared",     :default => false
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
