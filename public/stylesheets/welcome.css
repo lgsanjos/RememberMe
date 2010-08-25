@@ -1,0 +1,186 @@
+/* 
+    Document   : welcome
+    Created on : Aug 24, 2010, 7:06:59 PM
+    Author     : sanjos
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+div#cabecalho{
+  height:270px;
+  overflow: hidden;
+  
+}
+
+  div#cabecalho div#logo{
+    position: absolute;
+    z-index:999;
+
+    width:250px;
+    height:230px;
+
+    left: 20px;
+    top: 5px;
+
+    cursor: pointer;
+   
+    background: url(../images/welcome/logo.png) no-repeat transparent;
+  }
+
+  div#cabecalho div#login{
+    display: none;
+    
+    position:absolute;
+    z-index: 999;
+    
+    width:314px;
+    height:144px;
+
+    right: 140px;
+    top: 25px;
+    
+    background: url(../images/welcome/login.jpg) no-repeat transparent;
+  }
+
+    div#cabecalho div#login div#content{
+      padding : 10px 25px;
+    }
+
+      div#cabecalho div#login div#content p{
+        padding : 0px;
+      }
+
+      div#cabecalho div#login div#content .input{
+        font-size:120%;
+        width:195px;
+      }
+
+      div#cabecalho div#login div#content label{
+        display: block;
+        float:left;
+
+        letter-spacing: 1px;
+        font-size:100%;
+        width:50px;
+
+        padding-top:5px;
+      }
+
+  div#cabecalho div#left{
+    float:left;
+    width:120px;
+
+    position:absolute;
+    height: inherit;    
+    left:0px;
+
+    background: white url(../images/welcome/cabecalho_left.jpg) no-repeat;
+  }
+
+  div#cabecalho div#mid{
+    float:left;
+    width:100%;
+
+    min-width: 560px;
+
+    position:absolute;
+    height: inherit;   
+    left: 120px;
+    
+    background: white url(../images/welcome/cabecalho_mid.jpg) repeat-x;
+  }
+
+  div#cabecalho div#right{
+    float:left;
+    width:120px;
+
+    position:absolute;
+    right:0px;
+    height: inherit;
+    
+    background: white url(../images/welcome/cabecalho_right.jpg) no-repeat
+  }
+
+
+div#corpo{
+  height: 200px;
+}
+
+  div#corpo div#left{
+    float:left;
+    width:120px;
+
+    position:absolute;
+    height: inherit;
+    left:0px;
+
+    background: white url(../images/welcome/corpo_left.jpg) repeat-y;
+  }
+
+  div#corpo div#mid{
+    float:left;
+    width:100%;
+    min-width: 560px;
+
+    position:absolute;
+    height: inherit;
+    left: 120px;
+
+    background: white;
+  }
+
+  div#corpo div#right{
+    float:left;
+    width:120px;
+
+    position:absolute;
+    right:0px;
+    height: inherit;
+
+    background: white url(../images/welcome/corpo_right.jpg) repeat-y;
+  }
+
+
+div#rodape{
+  height:100px;
+
+}
+
+  div#rodape div#left{
+    float:left;
+    width:120px;
+
+    position:absolute;
+    height: inherit;
+    left:0px;
+
+    background: white url(../images/welcome/rodape_left.jpg) no-repeat;
+  }
+
+  div#rodape div#mid{
+    float:left;
+    width:100%;
+    min-width: 560px;
+
+    position:absolute;
+    height: inherit;
+    left: 120px;
+
+    background: white url(../images/welcome/rodape_mid.jpg) repeat-x;
+  }
+
+  div#rodape div#right{
+    float:left;
+    width:120px;
+
+    position:absolute;
+    right:0px;
+    height: inherit;
+
+    background: white url(../images/welcome/rodape_right.jpg) no-repeat;
+  }

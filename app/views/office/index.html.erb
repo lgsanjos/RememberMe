@@ -1,20 +1,27 @@
-      <script type="text/javascript">
+<% content_for :head do%>
 
-        $().ready(function(){
-           initialization();
+  <%= javascript_include_tag :all, :recursive => true %>
+  <%= stylesheet_link_tag 'contextMenu/jquery.contextmenu' %>
 
+<% end %>
 
-           function loadObjects(){
-           <% @note.each do |n| %>
-             <%="NewNote( #{n.posX}, #{n.posY}, \"#{n.conteudo.gsub("\n", "<br />")}\", #{n.width}, #{n.height}, false, true, \"#{n.UUID}\" );"%>
-           <% end %>
-           }
+<script type="text/javascript">
 
-         window.setTimeout(loadObjects(),4000);
+   $().ready(function(){
+
+     initialization();
+
+     function loadObjects(){
+         <% @note.each do |n| %>
+           <%="NewNote( #{n.posX}, #{n.posY}, \"#{n.conteudo.gsub("\n", "<br />")}\", #{n.width}, #{n.height}, false, true, \"#{n.UUID}\" );"%>
+         <% end %>
+      }
+
+      window.setTimeout(loadObjects(),4000);
            
-         });
+   });
 
-	</script>
+</script>
 
 	<div id="odTableTop">
 	
