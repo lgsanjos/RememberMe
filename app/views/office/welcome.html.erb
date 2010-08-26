@@ -1,50 +1,57 @@
 <%  content_for :head do %>
   <%=stylesheet_link_tag 'welcome'%>
 <%  end %>
-
-<div id="cabecalho">
-  <div id="left">
-    <div id="logo"></div>
-  </div>
-  <div id="mid">
-    <div id="login">
-      <div id="content">
-        <p><label>Login</label><input type="text" id="user_login" name="login" class="input" /></p>
-        <p><label>Senha</label><input type="password" id="user_senha" name="senha" class="input" /></p>
-        <p>
-          <input type="button" value="Entrar"/>
-          <a href="#">Nova conta?</a>
-        </p>
+<div id="welcome">
+  <div id="cabecalho">
+    <div id="left">
+      <div id="logo"></div>
+    </div>
+    <div id="mid">
+    </div>
+    <div id="right">
+      <div id="login">
+        <div id="content">
+          <p><label>Login</label><input type="text" id="user_login" name="login" class="input" /></p>
+          <p><label>Senha</label><input type="password" id="user_senha" name="senha" class="input" /></p>
+          <p>
+            <input type="button" value="Entrar"/>
+            <a href="#">Nova conta?</a>
+          </p>
+        </div>
       </div>
     </div>
   </div>
-  <div id="right">
-  </div>
+
+    <div id="corpo">
+      <div id="left">
+      </div>
+      <div id="mid">
+      </div>
+      <div id="right">
+      </div>
+    </div>
+
+    <div id="rodape">
+      <div id="left">
+      </div>
+      <div id="mid">
+      </div>
+      <div id="right">
+      </div>
+    </div>
 </div>
 
-<div id="corpo">
-  <div id="left">
-  </div>
-  <div id="mid">
-  </div>
-  <div id="right">
-  </div>
-</div>
-
-<div id="rodape">
-  <div id="left">
-  </div>
-  <div id="mid">
-  </div>
-  <div id="right">
-  </div>
-</div>
 
   <script>
     $().ready(function (){
       try{
-        $('#login').fadeIn('slow');
-        $('#user_login').focus();
+
+        setTimeout(function (){
+          $('#login').fadeIn('slow');
+
+          $('#user_login').focus();
+        }, 600);
+
       }catch(E){
         alert(E);
       }

@@ -11,6 +11,19 @@
    Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 */
 
+div#page{
+  background: white url(../images/welcome/cabecalho.jpg) repeat-x;
+}
+
+div#welcome{
+  position: absolute;
+
+  width: 980px;
+  left:50%;
+  margin-left: -460px;
+  
+}
+
 div#cabecalho{
   height:270px;
   overflow: hidden;
@@ -24,7 +37,7 @@ div#cabecalho{
     width:250px;
     height:230px;
 
-    left: 20px;
+    left: 10px;
     top: 5px;
 
     cursor: pointer;
@@ -36,19 +49,19 @@ div#cabecalho{
     display: none;
     
     position:absolute;
-    z-index: 999;
+    z-index: 998;
     
-    width:314px;
-    height:144px;
+    width:396px;
+    height:229px;
 
-    right: 140px;
-    top: 25px;
-    
-    background: url(../images/welcome/login.jpg) no-repeat transparent;
+    right: 0px;
+    top: -10px;
+  
+    background: url(../images/welcome/login.png) no-repeat;
   }
 
     div#cabecalho div#login div#content{
-      padding : 10px 25px;
+      padding: 45px 0px 0px 80px;
     }
 
       div#cabecalho div#login div#content p{
@@ -73,7 +86,7 @@ div#cabecalho{
 
   div#cabecalho div#left{
     float:left;
-    width:120px;
+    width:119px;
 
     position:absolute;
     height: inherit;    
@@ -86,24 +99,20 @@ div#cabecalho{
     float:left;
     width:100%;
 
-    min-width: 560px;
-
-    position:absolute;
     height: inherit;   
-    left: 120px;
     
     background: white url(../images/welcome/cabecalho_mid.jpg) repeat-x;
   }
 
   div#cabecalho div#right{
     float:left;
-    width:120px;
+    width:119px;
 
     position:absolute;
     right:0px;
     height: inherit;
     
-    background: white url(../images/welcome/cabecalho_right.jpg) no-repeat
+    background: white url(../images/welcome/cabecalho_right.jpg) no-repeat;
   }
 
 
@@ -113,7 +122,7 @@ div#corpo{
 
   div#corpo div#left{
     float:left;
-    width:120px;
+    width:119px;
 
     position:absolute;
     height: inherit;
@@ -125,18 +134,15 @@ div#corpo{
   div#corpo div#mid{
     float:left;
     width:100%;
-    min-width: 560px;
 
-    position:absolute;
     height: inherit;
-    left: 120px;
 
     background: white;
   }
 
   div#corpo div#right{
     float:left;
-    width:120px;
+    width:119px;
 
     position:absolute;
     right:0px;
@@ -153,7 +159,7 @@ div#rodape{
 
   div#rodape div#left{
     float:left;
-    width:120px;
+    width:119px;
 
     position:absolute;
     height: inherit;
@@ -165,18 +171,15 @@ div#rodape{
   div#rodape div#mid{
     float:left;
     width:100%;
-    min-width: 560px;
 
-    position:absolute;
-    height: inherit;
-    left: 120px;
+    height: inherit;   
 
     background: white url(../images/welcome/rodape_mid.jpg) repeat-x;
   }
 
   div#rodape div#right{
     float:left;
-    width:120px;
+    width:119px;
 
     position:absolute;
     right:0px;
