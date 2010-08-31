@@ -1,6 +1,9 @@
 <%  content_for :head do %>
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css">
-  <%=stylesheet_link_tag 'welcome'%>
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css" />
+  <%=  stylesheet_link_tag 'welcome'%>
+  <%=  stylesheet_link_tag 'piro/css'%>
+  <%=  stylesheet_link_tag 'piro/style/style'%>
+  <%=  javascript_include_tag 'jquery/piro/pirobox.min.js'%>
 <%  end %>
 <div id="welcome">
   <div id="cabecalho">
@@ -61,7 +64,15 @@
 
 
       function novaConta(){
-        div = '<%=render_partial :novaConta%>'
+        div = '<div class="piroBox">cadastre-se aqui!</div>'
       }
+
+      $().piroBox({
+            my_speed: 300, //animation speed
+            bg_alpha: 0.5, //background opacity
+            slideShow : 'false', // true == slideshow on, false == slideshow off
+            slideSpeed : 3, //slideshow
+            close_all : '.piro_close' // add class .piro_overlay(with comma)if you want overlay click close piroBox
+            });
     });
   </script>

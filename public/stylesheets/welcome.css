@@ -29,9 +29,8 @@ div#welcome{
 }
 
 div#cabecalho{
-  height:270px;
+  height: 270px;
   overflow: hidden;
-  
 }
 
   div#cabecalho div#logo{
@@ -132,7 +131,7 @@ div#corpo{
     float:left;
     width:119px;
 
-    position:absolute;
+    position: absolute;
     height: inherit;
     left:0px;
 
