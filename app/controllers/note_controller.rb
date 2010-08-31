@@ -23,7 +23,7 @@ class NoteController < ApplicationController
   def trash
     @note = Note.find(:first, :conditions => { :UUID => params[:note][:UUID] })
 
-    unless @note.blank
+    unless @note.blank?
       @note.trashed = true
       @note.save
     end

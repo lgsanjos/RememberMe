@@ -1,4 +1,5 @@
 <%  content_for :head do %>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css">
   <%=stylesheet_link_tag 'welcome'%>
 <%  end %>
 <div id="welcome">
@@ -11,12 +12,14 @@
     <div id="right">
       <div id="login">
         <div id="content">
-          <p><label>Login</label><input type="text" id="user_login" name="login" class="input" /></p>
-          <p><label>Senha</label><input type="password" id="user_senha" name="senha" class="input" /></p>
+          <% form_tag :controller =>"usuarios/login" do %>
+          <p><label>Login</label><%=text_field("login","login", :class => "input")%></p>
+          <p><label>Senha</label><%=text_field("login","senha", :class => "input")%></p>
           <p>
-            <input type="button" value="Entrar"/>
+            <%= submit_tag "Entrar"   %>
             <a href="#">Nova conta?</a>
           </p>
+          <% end%>
         </div>
       </div>
     </div>
@@ -49,11 +52,16 @@
         setTimeout(function (){
           $('#login').fadeIn('slow');
 
-          $('#user_login').focus();
+          $('#login_login').focus();
         }, 600);
 
       }catch(E){
         alert(E);
+      }
+
+
+      function novaConta(){
+        div = '<%=render_partial :novaConta%>'
       }
     });
   </script>

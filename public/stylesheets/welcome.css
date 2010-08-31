@@ -11,6 +11,10 @@
    Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 */
 
+body{
+  margin: 0px;
+  padding: 0px;
+}
 div#page{
   background: white url(../images/welcome/cabecalho.jpg) repeat-x;
 }
@@ -61,11 +65,12 @@ div#cabecalho{
   }
 
     div#cabecalho div#login div#content{
-      padding: 45px 0px 0px 80px;
+      padding: 60px 0px 0px 80px;
     }
 
       div#cabecalho div#login div#content p{
-        padding : 0px;
+        padding : 5px 0px;
+        line-height: 120%;
       }
 
       div#cabecalho div#login div#content .input{
@@ -118,6 +123,9 @@ div#cabecalho{
 
 div#corpo{
   height: 200px;
+  padding: 0px;
+  margin:0px;
+  clear:both;
 }
 
   div#corpo div#left{

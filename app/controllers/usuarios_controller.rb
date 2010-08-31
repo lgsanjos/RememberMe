@@ -1,6 +1,5 @@
 class UsuariosController < ApplicationController
-  # GET /usuarios
-  # GET /usuarios.xml
+  
   def index
     @usuarios = Usuario.all
 
@@ -10,8 +9,24 @@ class UsuariosController < ApplicationController
     end
   end
 
-  # GET /usuarios/1
-  # GET /usuarios/1.xml
+
+  def login    
+    if user = Usuario.authenticate(params[:login])
+      session[:id] = user.id # Remember the user's id during this session 
+      redirect_to :controller => 'office', :action => 'index' 
+    else
+      flash[:error] = 'Usuário ou senha inválido.' 
+      redirect_to :controller => "office", :action => "welcome"
+    end
+  end
+  
+  def logout
+    reset_session
+    flash[:message] = 'Sessão limpa' 
+    redirect_to :controller => "office", :action => "welcome" 
+  end  
+
+
   def show
     @usuario = Usuario.find(params[:id])
 
@@ -21,8 +36,6 @@ class UsuariosController < ApplicationController
     end
   end
 
-  # GET /usuarios/new
-  # GET /usuarios/new.xml
   def new
     @usuario = Usuario.new
 
@@ -54,8 +67,7 @@ class UsuariosController < ApplicationController
   end
 
   # PUT /usuarios/1
-  # PUT /usuarios/1.xml
-  def update
+    def update
     @usuario = Usuario.find(params[:id])
 
     respond_to do |format|
