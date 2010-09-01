@@ -1,3 +1,20 @@
 <div id="novaConta">
-
+  <h1>Criar nova conta</h1>
+  <p>Junte-se ao OfficeDesk e gerencie suas tarefas, lembretes, anotacoes de uma maneira muito mais fácil e intuitiva.</p>
+  <p>Torne o OfficeDesk sua aplicacao incial clicando <a href="#">aqui</a> e mantenha-se sempre informado.</p>
+  
+  <div>
+    <h2>Dados para cadastro</h2>
+    <%form_tag :controller => "usuarios/create" do %>
+    <p><label>Nome:</label></p>
+    <p><label>Login:</label></p>
+    <p><label>Email:</label></p>
+    <br />
+    <p><label>Senha:</label></p>
+    <p><label>Repetir senha:</label></p>
+    <%= submit_tag "Cadastrar" %>
+    
+    <input type="button" value="Cancelar" id="btnCancelar" onclick="closePiro();" />
+    <% end %>
+  </div>
 </div>

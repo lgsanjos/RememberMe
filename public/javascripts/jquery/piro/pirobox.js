@@ -14,10 +14,11 @@
 		bg_alpha : 0.5,
 		close_all : '.piro_close,.piro_overlay',
 		slideShow : null,
-		slideSpeed : null
+		slideSpeed : null,
+                conteudoHtml : 'hello world'
 		}, opt);
 
-		function start_pirobox() {
+		function start_pirobox(aConteudo) {
 		  var corners = 
 			  '<tr>'+					   
 			  '<td colspan="3" class="pirobox_up"></td>'+
@@ -53,10 +54,10 @@
 			$('body').append(bg_overlay).append(main_cont);
 			main_cont.append(corners);
 			$('.pirobox_up').append(piro_close);
-			$('.pirobox_down').append(piro_nav);
-			$('.pirobox_down').append(piro_play);
-			piro_play.hide();
-			$('.pirobox_down').append(piro_prev).append(piro_next);
+			//$('.pirobox_down').append(piro_nav);
+			//$('.pirobox_down').append(piro_play);
+			//piro_play.hide();
+			//$('.pirobox_down').append(piro_prev).append(piro_next);
 			piro_nav.append(caption);
 			var my_nav_w = piro_prev.width();
 			main_cont.hide();
@@ -168,168 +169,41 @@
 				var piro_open = function(my_url) {
 					piro_play.add(piro_stop).hide();
 					piro_close.add(caption).add(piro_next).add(piro_prev).css('visibility','hidden');
-					if(main_cont.is(':visible')) {
-						$('.c_c div').children().fadeOut(300, function() {
-							$('.c_c div').children().remove();
-							load_img(my_url);
-						});
-					} else {
-						$('.c_c div').children().remove();
-						main_cont.show();
-						bg_overlay.fadeIn(300,function(){
-						load_img(my_url);
-						});
-					}
-				}
-				var load_img = function(my_url) {
-				if(main_cont.is('.loading')) {return;}
-				main_cont.addClass('loading');
-				var img = new Image();
-				img.onerror = function (){
-					var main_cont_h = $(main_cont).height();
-					main_cont.css({marginTop : parseInt($(document).scrollTop())-(main_cont_h/1.9)});
-				  $('.c_c div').append('<p class="err_mess">There seems to be an Error:&nbsp;<a href="#close" class="close_pirobox">Close Pirobox</a></p>');
-					$('.close_pirobox').bind('click',function(c) {
-						c.preventDefault();
-						piro_close.add(bg_overlay).add(main_cont).add(caption).add(piro_next).add(piro_prev).hide(0,function(){ img.src = '';});
-						main_cont.removeClass('loading');
-					});
-				}
-				img.onload = function() {
-					var imgH = img.height;
-					var imgW = img.width;
-					var main_cont_h = $(main_cont).height();
-					var w_H = $(window).height();
-					var w_W = $(window).width();
-					$(img).height(imgH).width(imgW).hide();
-						$('.c_c div').animate({height:imgH+'px',width:imgW+'px'},opt.my_speed);
-						var fix = imgH/w_H*2.3;
-						if(w_H < imgH){h_fix = fix;}else{h_fix = 2;}
-						main_cont.animate({
-						height : (imgH+40) + 'px' ,
-						width : (imgW+40) + 'px' , 
-						marginLeft : '-' +((imgW)/2+20) +'px',
-						marginTop : parseInt($(document).scrollTop())-(imgH/h_fix)},opt.my_speed, function(){
-						$('.piro_nav,.caption').css({width:(imgW)+'px','margin-bottom':'10px'});
-						$('.piro_nav').css('margin-left','-'+(imgW)/2+'px');
-							var caption_height = caption.height();
-							$('.c_c div').append(img);					
-							piro_close.css('display','block');
-							piro_next.add(piro_prev).add(piro_close).css('visibility','visible');
-							caption.css({'visibility':'visible','display':'block','opacity':'0.8','overflow':'hidden'});
-							main_cont.hover(function(){
-								caption.stop().fadeTo(200,0.8);},
-								function(){caption.stop().fadeTo(200,0);
-								});
-								$(img).fadeIn(300);
-									main_cont.removeClass('loading');
-									if(opt.slideShow === true){
-									   piro_play.add(piro_stop).show();
-									}else{
-										 piro_play.add(piro_stop).hide();
-									}	
-							});			
-						}
-					img.src = my_url;
-					$('html').bind("keyup", function (c) {
-						 if(c.keyCode == 27) {
-							c.preventDefault();
-							if($(img).is(':visible') || $('.c_c>div>p>a').is('.close_pirobox')){
-								$(piro_gallery).removeClass('slideshow').removeClass('item');
-								piro_close.add(bg_overlay).add(main_cont).add(caption).add(piro_next).add(piro_prev).hide(0,function(){ img.src = '';});
-								main_cont.removeClass('loading');
-								clearTimeout(timer);
-								$(piro_gallery).children().removeAttr('class');
-								$('.stop').remove();
-								$('.c_c').append(piro_play);
-								$('.sc_menu').css('display','none');
-								$('ul.sc_menu li a').removeClass('img_active').css('opacity','0.4');	
-								piro_next.add(piro_prev).show().css({'top':'50%'});	
-								$(piro_gallery).children().fadeTo(100,1);
-							}
-						}
-					});
-					$('html').bind("keyup" ,function(e) {
-						 if ($('.item').is('.first')){
-						}else if(e.keyCode == 37){
-						e.preventDefault();
-							if($(img).is(':visible')){
-								clearTimeout(timer);
-								$(piro_gallery).children().removeAttr('class');
-								$('.stop').remove();
-								$('.c_c').append(piro_play);
-								piro_prev.click();
-							}
-						 }
-					});
-					$('html').bind("keyup" ,function(z) {
-						if ($('.item').is('.last')){
-						}else if(z.keyCode == 39){
-						z.preventDefault();
-							if($(img).is(':visible')){
-								clearTimeout(timer);
-								$(piro_gallery).children().removeAttr('class');
-								$('.stop').remove();
-								$('.c_c').append(piro_play);
-								piro_next.click();
-								//alert('click')
-							}
-						}
-					});
-					var win_h = $(window).height();
-					piro_stop.bind('click',function(x){
-						x.preventDefault();
-						clearTimeout(timer);
-						$(piro_gallery).removeClass('slideshow');
-						$('.stop').remove();
-						$('.pirobox_down').append(piro_play);
-						piro_next.add(piro_prev).css('width',my_nav_w+'px');
-					});
-					piro_play.bind('click',function(w){
-						w.preventDefault();
-						clearTimeout(timer);
-						if($(img).is(':visible')){
-						$(piro_gallery).addClass('slideshow');
-						$('.play').remove();
-						$('.pirobox_down').append(piro_stop);
-						}
-						piro_next.add(piro_prev).css({'width':'0px'});
-						return slideshow();
-					});
-				  $(opt.close_all).bind('click',function(c) {
-					$(piro_gallery).removeClass('slideshow');
-					clearTimeout(timer);
-					if($(img).is(':visible')){
-						c.preventDefault();
-						piro_close.add(bg_overlay).add(main_cont).add(caption).add(piro_next).add(piro_prev).hide(0,function(){ img.src = '';});
-						main_cont.removeClass('loading');
-						$(piro_gallery).removeClass('slideshow');
-						piro_next.add(piro_prev).css('width',my_nav_w+'px').hide();
-						$('.stop').remove();
-						$('.pirobox_down').append(piro_play);
-						piro_play.hide();
-					}
-				  });	
-					if(opt.slideShow === true){
-						function slideshow(){
-							if( $(piro_gallery).filter('.item').is('.last')){
-							clearTimeout(timer);
-							$(piro_gallery).removeClass('slideshow');
-							$('.stop').remove();
-							$('.pirobox_down').append(piro_play);
-							piro_next.add(piro_prev).css('width',my_nav_w+'px');								 
-							} else if($(piro_gallery).is('.slideshow' ) && $(img).is(':visible')){
-								clearTimeout(timer);
-								piro_next.click();
-							}
-						}					
-						var timer = setInterval(slideshow,opt.slideSpeed*1000 );
-					}
 
+                                        $('.c_c div').children().remove();
+                                        main_cont.show();
+                                        bg_overlay.fadeIn(0,function(){
 
+                                        // Adicionar aqui o conteudo
+                                        $(".c_c div").append('<div>' + aConteudo + '</div>');
+                                        // -------------------------
+
+                                        });
+					
 				}
+
 			}
 
-		start_pirobox();
+		start_pirobox(opt.conteudoHtml);
 	}
 })(jQuery);
+
+
+  function setPirobox(conteudo){
+
+      $().piroBox({
+                  my_speed: 300, //animation speed
+                  bg_alpha: 0.5, //background opacity
+                  slideShow : 'false', // true == slideshow on, false == slideshow off
+                  slideSpeed : 3, //slideshow
+                  conteudoHtml : conteudo,
+                  close_all : '.piro_close' // add class .piro_overlay(with comma)if you want overlay click close piroBox
+                  });
+
+  }
+
+  function closePiro(){
+    $('.pirobox_content').fadeOut("fast");
+    $('.piro_overlay').fadeOut("slow");
+
+  }

@@ -194,3 +194,47 @@ div#rodape{
 
     background: white url(../images/welcome/rodape_right.jpg) no-repeat;
   }
+
+
+
+
+  /*
+   -----------------------------------------------------------------
+   ----- _NovaConta.html
+   -----------------------------------------------------------------
+  */
+
+
+#novaConta{
+  height: 100%;
+  letter-spacing: 1px;
+  padding: 20px;
+
+}
+
+#novaConta h1{
+  font-size: 160%;
+  line-height: 160%;
+  display: block;
+  color: teal;
+  word-spacing: 3px;
+  font-weight: bold;
+}
+
+#novaConta h2{
+  font-size: 120%;
+  line-height: 130%;
+  display: block;
+  color: teal;
+  word-spacing: 3px;
+}
+
+#novaConta p{
+  line-height: 100%;
+  padding: 1px 0px;
+  margin: 0px;
+}
+
+#novaConta label{
+  font-weight: bold;
+}
