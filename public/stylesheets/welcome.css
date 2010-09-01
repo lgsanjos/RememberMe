@@ -208,33 +208,45 @@ div#rodape{
 #novaConta{
   height: 100%;
   letter-spacing: 1px;
-  padding: 20px;
+  margin: 0px 15px;
 
 }
 
 #novaConta h1{
   font-size: 160%;
-  line-height: 160%;
+  line-height: 130%;
   display: block;
   color: teal;
   word-spacing: 3px;
   font-weight: bold;
 }
 
-#novaConta h2{
-  font-size: 120%;
-  line-height: 130%;
+#novaConta h6{
+  border:1px solid red;
   display: block;
   color: teal;
   word-spacing: 3px;
+
+  margin: 0px;
+  padding: 0px;
 }
 
 #novaConta p{
-  line-height: 100%;
-  padding: 1px 0px;
+  padding: 0px 0px;
   margin: 0px;
 }
 
 #novaConta label{
   font-weight: bold;
+  font-size: 110%;
+  display: inline-block;
+  width: 65px;
+  overflow: visible;
+}
+
+#novaConta .input{
+  font-size: 115%;
+  letter-spacing: 1px;
+  word-spacing: 4px;
+  padding: 2px;
 }

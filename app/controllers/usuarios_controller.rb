@@ -10,14 +10,19 @@ class UsuariosController < ApplicationController
   end
 
 
-  def login    
-    if user = Usuario.authenticate(params[:login])
-      session[:id] = user.id # Remember the user's id during this session 
-      redirect_to :controller => 'office', :action => 'index' 
+  def login
+    usr = Usuario.find(:first, :conditions => (['login=? AND senha=?', params[:login]["login"], params[:login]["senha"]]))
+    
+    if (usr.authenticate unless usr.blank?)
+      logger.info "autentico " + usr.id.to_s
+      session[:id] = usr.id # Remember the user's id during this session
+      redirect_to :controller => 'office', :action => 'index'
+
     else
-      flash[:error] = 'Usuário ou senha inválido.' 
+      flash[:error] = 'Usuário ou senha inválido.'
       redirect_to :controller => "office", :action => "welcome"
     end
+
   end
   
   def logout
@@ -55,15 +60,13 @@ class UsuariosController < ApplicationController
   def create
     @usuario = Usuario.new(params[:usuario])
 
-    respond_to do |format|
-      if @usuario.save
-        format.html { redirect_to(@usuario, :notice => 'Usuario was successfully created.') }
-        format.xml  { render :xml => @usuario, :status => :created, :location => @usuario }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @usuario.errors, :status => :unprocessable_entity }
-      end
+    if @usuario.save
+      session[:id] = @usuario.id # Remember the user's id during this session
+      redirect_to :controller => 'office', :action => 'index'
+    else
+      format.html { redirect_to :controller => "office/welcome" }
     end
+   
   end
 
   # PUT /usuarios/1

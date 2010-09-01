@@ -1,20 +1,13 @@
 <div id="novaConta">
   <h1>Criar nova conta</h1>
-  <p>Junte-se ao OfficeDesk e gerencie suas tarefas, lembretes, anotacoes de uma maneira muito mais fácil e intuitiva.</p>
-  <p>Torne o OfficeDesk sua aplicacao incial clicando <a href="#">aqui</a> e mantenha-se sempre informado.</p>
-  
-  <div>
-    <h2>Dados para cadastro</h2>
-    <%form_tag :controller => "usuarios/create" do %>
-    <p><label>Nome:</label></p>
-    <p><label>Login:</label></p>
-    <p><label>Email:</label></p>
-    <br />
-    <p><label>Senha:</label></p>
-    <p><label>Repetir senha:</label></p>
-    <%= submit_tag "Cadastrar" %>
-    
-    <input type="button" value="Cancelar" id="btnCancelar" onclick="closePiro();" />
-    <% end %>
-  </div>
+    <p>Junte-se ao OfficeDesk e gerencie suas tarefas, lembretes, anotacoes de uma maneira muito mais fácil e intuitiva.</p>
+    <p>Torne o OfficeDesk sua aplicacao incial clicando <a href="#">aqui</a> e mantenha-se sempre informado.</p>
+<%form_tag :controller => "usuarios/create" do %>
+    <p><label>Nome:  </label><%= text_field("usuario","nome", :class => "input nome") %></p>
+    <p><label>Login: </label><%= text_field("usuario","login", :class => "input login") %></p>
+    <p><label>Email: </label><%= text_field("usuario","email", :class => "input email", :email => true) %></p>
+    <p><label>Senha: </label><%= text_field("usuario","senha", :class => "input senha") %></p>
+    <p><label style="width:135px;">Repita a senha: </label><%= text_field("","resenha", :class => "input resenha") %></p>
+    <%= submit_tag "Cadastrar" %> <input type="button" value="Voltar" id="btnCancelar" onclick="closePiro();" />
+<% end %>
 </div>

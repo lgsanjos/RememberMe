@@ -13,8 +13,7 @@ class ApplicationController < ActionController::Base
     if @user.blank?
       redirect_to :controller => 'office', :action => 'welcome'
     end
-  end  
-
+  end
 
  
 end
