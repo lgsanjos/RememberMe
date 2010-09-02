@@ -1,0 +1,25 @@
+# Logfile created on Thu Sep 02 13:25:20 -0300 2010  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2010-09-02 13:28:04) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered office/_novaConta (34.7ms)
+Completed in 201ms (View: 196, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-02 13:28:19) [GET]
+  [4;36;1mUsuario Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (17.4ms)[0m   [0mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;36;1mNote Load (1.7ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+  [4;35;1mNote Columns (6.1ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mNote Create (1.3ms)[0m   [0mINSERT INTO `notes` (`created_at`, `titulo`, `updated_at`, `trashed`, `conteudo`, `posX`, `user_id`, `UUID`, `posY`, `height`, `shared`, `width`, `state`) VALUES('2010-09-02 16:28:19', NULL, '2010-09-02 16:28:19', 0, 'Bem vindo ao OfficeDesk, clique com o botão direito para acessar o menu.', '200', NULL, NULL, '170', '160', 0, '150', NULL)[0m
+  [4;36;1mSQL (26.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mNote Load (0.6ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Completed in 257ms (View: 49, DB: 58) | 200 OK [http://localhost/office]
