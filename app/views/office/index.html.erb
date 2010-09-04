@@ -1,6 +1,8 @@
 <% content_for :head do%>
 
   <%= javascript_include_tag :all, :recursive => true %>
+  <%= stylesheet_link_tag 'droppedItems/note.css' %>
+  <%= stylesheet_link_tag 'index.css' %>
   <%= stylesheet_link_tag 'contextMenu/jquery.contextmenu' %>
 
 <% end %>
@@ -23,18 +25,18 @@
 
 </script>
 
-	<div id="odTableTop">
-	
-		<div id="header">
-			LOGO
-		</div>
-		
-		
-		<div id="right_menu">
-			<input type="button" value="Nota" id="btCriador"/><br/>
-			<input type="button" value="Agenda" id="btCriador"/><br/>
-			<input type="button" value="Recado" id="btCriador"/><br/>
-			<input type="button" value="Trash" id="btCriador"/><br/>
-		</div>
-	
-	</div>
+<div id="odTableTop">
+  <div id="header">
+     LOGO
+  </div>
+
+
+  <div id="right_menu">
+    <a id="note" class="menuItem" href="#">&nbsp;</a>
+    <a id="cal" class="menuItem" href="#"></a>
+    <a id="address" class="menuItem" href="#"></a>
+    <a id="text" class="menuItem" href="#"></a>
+    <a id="trash" class="menuItem" href="#"></a>
+  </div>
+
+</div>

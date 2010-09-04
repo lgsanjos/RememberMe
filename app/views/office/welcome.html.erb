@@ -1,10 +1,9 @@
 <%  content_for :head do %>
   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css" />
   <%=  stylesheet_link_tag 'welcome'%>
-  
   <%=  stylesheet_link_tag 'piro/style/style', :media => 'screen', :title => 'black'%>
   <%=  javascript_include_tag 'jquery/piro/pirobox.js'%>
-  <%  end %>
+<%  end %>
 <div id="welcome">
   <div id="cabecalho">
     <div id="left">
@@ -17,7 +16,7 @@
         <div id="content">
           <% form_tag :controller =>"usuarios/login" do %>
           <p><label>Login</label><%=text_field("login","login", :class => "input")%></p>
-          <p><label>Senha</label><%=text_field("login","senha", :class => "input")%></p>
+          <p><label>Senha</label><%=password_field("login","senha", :class => "input")%></p>
           <p>
             <%= submit_tag "Entrar"   %>
             <a href="#" id="lkNovaConta" class="pirobox">Nova conta?</a>
@@ -57,12 +56,17 @@
           $('#login').fadeIn('slow');
 
           $('#login_login').focus();
+
+          $('#lkNovaConta').click( function (){
+            setTimeout( function (){
+              $('#usuario_nome').focus();
+            }, 1000);
+          });
         }, 600);
 
       }catch(E){
         alert(E);
       }
-
 
       var novaConta = '<%=(render :partial => "novaConta").gsub("\n", "<br />") %>';
       setPirobox(novaConta);

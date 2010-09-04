@@ -41,7 +41,7 @@ production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: OfficeDesk_Brave_prod
+  database: rt
   pool: 5
   username: root
   password: 123

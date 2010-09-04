@@ -1,0 +1,81 @@
+#odTableTop{
+  background-image: url(../images/index/background.jpg);
+  background-repeat: repeat-x repeat-y;
+  height:100%;
+  width:100%;
+}
+
+#header{
+  z-index:999;
+  position:absolute;
+}
+
+#right_menu{
+  z-index:999;
+  background-image: url(../images/index/menu_right.png);
+  position:absolute;
+
+  float:right;
+  right:0px;
+  top:50px;
+  
+  height:600px;
+  width:150px;
+  text-align: center;
+  outline: 0px;
+
+}
+
+#right_menu .menuItem{
+  width:100px;
+  height: 100px;
+  margin-top:15px;
+  margin-left: 30px;
+  cursor: move;
+  display: block;
+}
+
+#right_menu #note{
+  background-image: url(../images/index/mr_Note.png);
+  background-repeat: no-repeat;
+}
+
+#right_menu #note:hover{
+  background: url(../images/index/mr_Note_active.png);
+}
+
+#right_menu #cal{
+  background-image: url(../images/index/mr_Cal.png);
+  background-repeat: no-repeat;
+}
+
+#right_menu #cal:hover{
+  background: url(../images/index/mr_Cal_active.png);
+}
+
+#right_menu #address{
+  background-image: url(../images/index/mr_Address.png);
+  background-repeat: no-repeat;
+}
+
+#right_menu #address:hover{
+  background: url(../images/index/mr_Address_active.png);
+}
+
+#right_menu #text{
+  background-image: url(../images/index/mr_Text.png);
+  background-repeat: no-repeat;
+}
+
+#right_menu #text:hover{
+  background: url(../images/index/mr_Text_active.png);
+}
+
+#right_menu #trash{
+  background-image: url(../images/index/mr_Trash.png);
+  background-repeat: no-repeat;
+}
+
+#right_menu #trash:hover{
+  background: url(../images/index/mr_Trash_active.png);
+}

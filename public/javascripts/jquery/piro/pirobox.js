@@ -205,5 +205,7 @@
   function closePiro(){
     $('.pirobox_content').fadeOut("fast");
     $('.piro_overlay').fadeOut("slow");
+    $(document).removeData($('.pirobox_content'));
+    $(document).removeData($('.pirobox_overlay'));
 
   }

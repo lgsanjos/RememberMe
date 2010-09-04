@@ -14,10 +14,8 @@ class UsuariosController < ApplicationController
     usr = Usuario.find(:first, :conditions => (['login=? AND senha=?', params[:login]["login"], params[:login]["senha"]]))
     
     if (usr.authenticate unless usr.blank?)
-      logger.info "autentico " + usr.id.to_s
       session[:id] = usr.id # Remember the user's id during this session
-      redirect_to :controller => 'office', :action => 'index'
-
+      redirect_to :controller => 'office/index/'
     else
       flash[:error] = 'Usuário ou senha inválido.'
       redirect_to :controller => "office", :action => "welcome"
@@ -64,7 +62,7 @@ class UsuariosController < ApplicationController
       session[:id] = @usuario.id # Remember the user's id during this session
       redirect_to :controller => 'office', :action => 'index'
     else
-      format.html { redirect_to :controller => "office/welcome" }
+      redirect_to :controller => "office", :action => "welcome"
     end
    
   end

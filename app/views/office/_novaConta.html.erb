@@ -3,11 +3,11 @@
     <p>Junte-se ao OfficeDesk e gerencie suas tarefas, lembretes, anotacoes de uma maneira muito mais fácil e intuitiva.</p>
     <p>Torne o OfficeDesk sua aplicacao incial clicando <a href="#">aqui</a> e mantenha-se sempre informado.</p>
 <%form_tag :controller => "usuarios/create" do %>
-    <p><label>Nome:  </label><%= text_field("usuario","nome", :class => "input nome") %></p>
-    <p><label>Login: </label><%= text_field("usuario","login", :class => "input login") %></p>
-    <p><label>Email: </label><%= text_field("usuario","email", :class => "input email", :email => true) %></p>
-    <p><label>Senha: </label><%= text_field("usuario","senha", :class => "input senha") %></p>
-    <p><label style="width:135px;">Repita a senha: </label><%= text_field("","resenha", :class => "input resenha") %></p>
+    <p><label>Nome:  </label><%= text_field("usuario","nome", :class => "input nome", :size => 25, :maxlength => 30) %></p>
+    <p><label>Email: </label><%= text_field("usuario","email", :class => "input email", :email => true, :size => 30, :maxlength => 50) %></p>
+    <p><label>Login: </label><%= text_field("usuario","login", :class => "input login", :size => 25, :maxlength => 30) %></p>
+    <p><label class="lbSenha">Senha: </label><%= password_field("usuario","senha", :class => "input senha", :size => 9, :maxlength => 15) %></p>
+    <p><label class="lbSenha">Repita a senha: </label><%= password_field("","resenha", :class => "input resenha", :size => 9, :maxlength => 15) %></p>
     <%= submit_tag "Cadastrar" %> <input type="button" value="Voltar" id="btnCancelar" onclick="closePiro();" />
 <% end %>
 </div>

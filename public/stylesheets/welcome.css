@@ -70,11 +70,13 @@ div#cabecalho{
       div#cabecalho div#login div#content p{
         padding : 5px 0px;
         line-height: 120%;
+        text-shadow: #AAA 2px 1px 2px;
       }
 
       div#cabecalho div#login div#content .input{
         font-size:120%;
         width:195px;
+        text-shadow: #AAA 1px 1px 1px;
       }
 
       div#cabecalho div#login div#content label{
@@ -219,6 +221,8 @@ div#rodape{
   color: teal;
   word-spacing: 3px;
   font-weight: bold;
+  text-shadow: #AAA 2px 1px 2px;
+
 }
 
 #novaConta h6{
@@ -242,6 +246,12 @@ div#rodape{
   display: inline-block;
   width: 65px;
   overflow: visible;
+}
+
+#novaConta .lbSenha{
+  width:125px;
+  text-align: right;
+  padding-right: 10px;
 }
 
 #novaConta .input{

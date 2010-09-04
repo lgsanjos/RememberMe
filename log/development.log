@@ -1,25 +1,1504 @@
-# Logfile created on Thu Sep 02 13:25:20 -0300 2010  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
   [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing OfficeController#welcome (for 127.0.0.1 at 2010-09-02 13:28:04) [GET]
+Processing OfficeController#welcome (for 127.0.1.1 at 2010-09-03 21:15:06) [GET]
 Rendering template within layouts/application
 Rendering office/welcome
-Rendered office/_novaConta (34.7ms)
-Completed in 201ms (View: 196, DB: 1) | 200 OK [http://localhost/]
-  [4;36;1mSQL (0.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+
+
+Processing OfficeController#welcome (for 127.0.1.1 at 2010-09-03 21:15:06) [GET]
+Rendered office/_novaConta (42.2ms)
+Completed in 266ms (View: 262, DB: 1) | 200 OK [http://officedesk/]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered office/_novaConta (49.2ms)
+Completed in 217ms (View: 198, DB: 1) | 200 OK [http://officedesk/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsuariosController#login (for 127.0.1.1 at 2010-09-03 21:16:44) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"Yc715q1Pheb4jRLXkRHZJuM45LxqBP2ADEr8Ymb4ejg=", "login"=>{"login"=>"SAnjos", "senha"=>"sasa"}}
+  [4;36;1mUsuario Load (3.1ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (login='SAnjos' AND senha='sasa') LIMIT 1[0m
+  [4;35;1mUsuario Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (login='SAnjos' AND senha='sasa') LIMIT 1[0m
+authenticate = true
+Redirected to http://officedesk/office/index
+Completed in 60ms (DB: 8) | 302 Found [http://officedesk/usuarios/login]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.1.1 at 2010-09-03 21:16:47) [GET]
+  [4;35;1mUsuario Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (5.7ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.5ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 93ms (View: 32, DB: 11) | 200 OK [http://officedesk/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing NoteController#save (for 127.0.1.1 at 2010-09-03 21:17:08) [POST]
+  Parameters: {"note"=>{"titulo"=>"", "conteudo"=>"Corrigir problema de roteamento no passenger", "posX"=>"276", "height"=>"160", "posY"=>"250", "UUID"=>"183DB8E7753A4999AFE5A85910456BC0", "state"=>"1", "width"=>"150"}}
+  [4;35;1mNote Load (2.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`UUID` = '183DB8E7753A4999AFE5A85910456BC0') LIMIT 1[0m
+  [4;36;1mNote Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mNote Update (138.5ms)[0m   [0;1mUPDATE `notes` SET `updated_at` = '2010-09-04 00:17:08', `conteudo` = 'Corrigir problema de roteamento no passenger' WHERE `id` = 12[0m
+  [4;35;1mSQL (23.7ms)[0m   [0mCOMMIT[0m
+Completed in 205ms (View: 16, DB: 167) | 200 OK [http://officedesk/note/save]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.1.1 at 2010-09-03 21:18:01) [GET]
+  [4;36;1mUsuario Columns (5.7ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.4ms)[0m   [0mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;36;1mNote Load (1.3ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;35;1mNote Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 56ms (View: 19, DB: 14) | 200 OK [http://officedesk/office/index]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (5.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsuariosController#login (for 127.0.1.1 at 2010-09-03 21:22:15) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"Yc715q1Pheb4jRLXkRHZJuM45LxqBP2ADEr8Ymb4ejg=", "login"=>{"login"=>"SAnjos", "senha"=>"sasa"}}
+  [4;36;1mUsuario Load (1.1ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (login='SAnjos' AND senha='sasa') LIMIT 1[0m
+  [4;35;1mUsuario Columns (5.2ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (login='SAnjos' AND senha='sasa') LIMIT 1[0m
+authenticate = true
+Redirected to http://officedesk/office/index
+Completed in 27ms (DB: 12) | 302 Found [http://officedesk/usuarios/login]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.1.1 at 2010-09-03 21:23:17) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered office/_novaConta (10.3ms)
+Completed in 37ms (View: 30, DB: 1) | 200 OK [http://officedesk/]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.1.1 at 2010-09-03 21:23:22) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered office/_novaConta (4.5ms)
+Completed in 16ms (View: 13, DB: 1) | 200 OK [http://officedesk/]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (3.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.1.1 at 2010-09-03 21:23:39) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+
+
+Processing OfficeController#welcome (for 127.0.1.1 at 2010-09-03 21:23:39) [GET]
+Rendered office/_novaConta (19.1ms)
+Completed in 102ms (View: 97, DB: 1) | 200 OK [http://officedesk/]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered office/_novaConta (10.6ms)
+Completed in 95ms (View: 83, DB: 5) | 200 OK [http://officedesk/]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.1.1 at 2010-09-03 21:23:42) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered office/_novaConta (4.2ms)
+Completed in 18ms (View: 14, DB: 1) | 200 OK [http://officedesk/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.1.1 at 2010-09-03 21:25:06) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered office/_novaConta (4.9ms)
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://officedesk/]
+  [4;36;1mSQL (9.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsuariosController#login (for 127.0.1.1 at 2010-09-03 21:25:13) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"Yc715q1Pheb4jRLXkRHZJuM45LxqBP2ADEr8Ymb4ejg=", "login"=>{"login"=>"sanjos", "senha"=>"sasa"}}
+  [4;36;1mUsuario Load (1.6ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (login='sanjos' AND senha='sasa') LIMIT 1[0m
+  [4;35;1mUsuario Columns (6.1ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.6ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (login='SAnjos' AND senha='sasa') LIMIT 1[0m
+authenticate = true
+Redirected to http://officedesk/office/index
+Completed in 53ms (DB: 18) | 302 Found [http://officedesk/usuarios/login]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsuariosController#login (for 127.0.1.1 at 2010-09-03 21:25:45) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"Yc715q1Pheb4jRLXkRHZJuM45LxqBP2ADEr8Ymb4ejg=", "login"=>{"login"=>"sanjos", "senha"=>"sasa"}}
+  [4;35;1mUsuario Load (5.9ms)[0m   [0mSELECT * FROM `usuarios` WHERE (login='sanjos' AND senha='sasa') LIMIT 1[0m
+  [4;36;1mUsuario Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (2.5ms)[0m   [0mSELECT * FROM `usuarios` WHERE (login='SAnjos' AND senha='sasa') LIMIT 1[0m
+authenticate = true
+Redirected to http://officedesk/office/index
+Completed in 42ms (DB: 14) | 302 Found [http://officedesk/usuarios/login]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
   [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing OfficeController#index (for 127.0.0.1 at 2010-09-02 13:28:19) [GET]
-  [4;36;1mUsuario Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
-  [4;35;1mUsuario Load (17.4ms)[0m   [0mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
-  [4;36;1mNote Load (1.7ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
-  [4;35;1mNote Columns (6.1ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
-  [4;36;1mSQL (1.2ms)[0m   [0;1mBEGIN[0m
-  [4;35;1mNote Create (1.3ms)[0m   [0mINSERT INTO `notes` (`created_at`, `titulo`, `updated_at`, `trashed`, `conteudo`, `posX`, `user_id`, `UUID`, `posY`, `height`, `shared`, `width`, `state`) VALUES('2010-09-02 16:28:19', NULL, '2010-09-02 16:28:19', 0, 'Bem vindo ao OfficeDesk, clique com o botão direito para acessar o menu.', '200', NULL, NULL, '170', '160', 0, '150', NULL)[0m
-  [4;36;1mSQL (26.7ms)[0m   [0;1mCOMMIT[0m
+Processing UsuariosController#login (for 127.0.1.1 at 2010-09-03 21:25:54) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"Yc715q1Pheb4jRLXkRHZJuM45LxqBP2ADEr8Ymb4ejg=", "login"=>{"login"=>"sanjos", "senha"=>"sasa"}}
+  [4;36;1mUsuario Load (9.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (login='sanjos' AND senha='sasa') LIMIT 1[0m
+  [4;35;1mUsuario Columns (3.5ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (3.2ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (login='SAnjos' AND senha='sasa') LIMIT 1[0m
+authenticate = true
+Redirected to http://officedesk/office/index
+Completed in 62ms (DB: 16) | 302 Found [http://officedesk/usuarios/login]
+  [4;35;1mSQL (2.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.1.1 at 2010-09-03 21:25:59) [GET]
+  [4;35;1mUsuario Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (1.1ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.5ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (4.8ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 75ms (View: 23, DB: 11) | 200 OK [http://officedesk/office/index]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.1.1 at 2010-09-04 18:06:37) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered office/_novaConta (6.2ms)
+Completed in 133ms (View: 129, DB: 1) | 200 OK [http://officedesk/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsuariosController#login (for 127.0.1.1 at 2010-09-04 18:06:50) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/controllers/usuarios_controller.rb:14:in `login'
+  /usr/lib/ruby/1.8/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  /usr/lib/ruby/1.8/phusion_passenger/railz/application_spawner.rb:374:in `start_request_handler'
+  /usr/lib/ruby/1.8/phusion_passenger/railz/application_spawner.rb:332:in `handle_spawn_application'
+  /usr/lib/ruby/1.8/phusion_passenger/utils.rb:184:in `safe_fork'
+  /usr/lib/ruby/1.8/phusion_passenger/railz/application_spawner.rb:330:in `handle_spawn_application'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:352:in `__send__'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:163:in `start'
+  /usr/lib/ruby/1.8/phusion_passenger/railz/application_spawner.rb:209:in `start'
+  /usr/lib/ruby/1.8/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  /usr/lib/ruby/1.8/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  /usr/lib/ruby/1.8/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  /usr/lib/ruby/1.8/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  /usr/lib/ruby/1.8/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:352:in `__send__'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  /usr/lib/phusion_passenger/passenger-spawn-server:61
+
+Rendered rescues/_trace (60.4ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsuariosController#login (for 127.0.1.1 at 2010-09-04 18:07:43) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/controllers/usuarios_controller.rb:14:in `login'
+  /usr/lib/ruby/1.8/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  /usr/lib/ruby/1.8/phusion_passenger/railz/application_spawner.rb:374:in `start_request_handler'
+  /usr/lib/ruby/1.8/phusion_passenger/railz/application_spawner.rb:332:in `handle_spawn_application'
+  /usr/lib/ruby/1.8/phusion_passenger/utils.rb:184:in `safe_fork'
+  /usr/lib/ruby/1.8/phusion_passenger/railz/application_spawner.rb:330:in `handle_spawn_application'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:352:in `__send__'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:163:in `start'
+  /usr/lib/ruby/1.8/phusion_passenger/railz/application_spawner.rb:209:in `start'
+  /usr/lib/ruby/1.8/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  /usr/lib/ruby/1.8/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  /usr/lib/ruby/1.8/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  /usr/lib/ruby/1.8/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  /usr/lib/ruby/1.8/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:352:in `__send__'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  /usr/lib/phusion_passenger/passenger-spawn-server:61
+
+Rendered rescues/_trace (147.3ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsuariosController#login (for 127.0.1.1 at 2010-09-04 18:07:44) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/controllers/usuarios_controller.rb:14:in `login'
+  /usr/lib/ruby/1.8/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  /usr/lib/ruby/1.8/phusion_passenger/railz/application_spawner.rb:374:in `start_request_handler'
+  /usr/lib/ruby/1.8/phusion_passenger/railz/application_spawner.rb:332:in `handle_spawn_application'
+  /usr/lib/ruby/1.8/phusion_passenger/utils.rb:184:in `safe_fork'
+  /usr/lib/ruby/1.8/phusion_passenger/railz/application_spawner.rb:330:in `handle_spawn_application'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:352:in `__send__'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:163:in `start'
+  /usr/lib/ruby/1.8/phusion_passenger/railz/application_spawner.rb:209:in `start'
+  /usr/lib/ruby/1.8/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  /usr/lib/ruby/1.8/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  /usr/lib/ruby/1.8/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  /usr/lib/ruby/1.8/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  /usr/lib/ruby/1.8/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:352:in `__send__'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  /usr/lib/phusion_passenger/passenger-spawn-server:61
+
+Rendered rescues/_trace (46.4ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsuariosController#login (for 127.0.1.1 at 2010-09-04 18:07:45) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/controllers/usuarios_controller.rb:14:in `login'
+  /usr/lib/ruby/1.8/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  /usr/lib/ruby/1.8/phusion_passenger/railz/application_spawner.rb:374:in `start_request_handler'
+  /usr/lib/ruby/1.8/phusion_passenger/railz/application_spawner.rb:332:in `handle_spawn_application'
+  /usr/lib/ruby/1.8/phusion_passenger/utils.rb:184:in `safe_fork'
+  /usr/lib/ruby/1.8/phusion_passenger/railz/application_spawner.rb:330:in `handle_spawn_application'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:352:in `__send__'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:163:in `start'
+  /usr/lib/ruby/1.8/phusion_passenger/railz/application_spawner.rb:209:in `start'
+  /usr/lib/ruby/1.8/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  /usr/lib/ruby/1.8/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  /usr/lib/ruby/1.8/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  /usr/lib/ruby/1.8/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  /usr/lib/ruby/1.8/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:352:in `__send__'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  /usr/lib/ruby/1.8/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  /usr/lib/phusion_passenger/passenger-spawn-server:61
+
+Rendered rescues/_trace (46.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsuariosController#login (for 127.0.1.1 at 2010-09-04 18:07:51) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"WpLvn0ffAyFlSdiwc/p093rlv53zV3PK0Yr54tafYs0=", "login"=>{"login"=>"SAnjos", "senha"=>"sasa"}}
+  [4;36;1mUsuario Load (28.4ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (login='SAnjos' AND senha='sasa') LIMIT 1[0m
+  [4;35;1mUsuario Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (login='SAnjos' AND senha='sasa') LIMIT 1[0m
+authenticate = true
+Redirected to http://officedesk/office/index
+Completed in 83ms (DB: 31) | 302 Found [http://officedesk/usuarios/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.1.1 at 2010-09-04 18:07:56) [GET]
+Redirected to http://officedesk/office/welcome?return=true
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://officedesk/office/index]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2010-09-04 18:09:06) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered office/_novaConta (7.7ms)
+Completed in 57ms (View: 53, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsuariosController#login (for 127.0.0.1 at 2010-09-04 18:09:10) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"DakEPe19pRDy3+bHPDSWJOqTejMMS4sZwAnhoX0UebU=", "login"=>{"login"=>"Sanjos", "senha"=>"sasa"}}
+  [4;36;1mUsuario Load (2.2ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (login='Sanjos' AND senha='sasa') LIMIT 1[0m
+  [4;35;1mUsuario Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (3.8ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (login='SAnjos' AND senha='sasa') LIMIT 1[0m
+authenticate = true
+Redirected to http://localhost:3000/office/index
+Completed in 69ms (DB: 8) | 302 Found [http://localhost/usuarios/login]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:09:10) [GET]
+Redirected to http://localhost:3000/office/welcome
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/office/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2010-09-04 18:09:10) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered office/_novaConta (9.2ms)
+Completed in 27ms (View: 23, DB: 0) | 200 OK [http://localhost/office/welcome]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsuariosController#login (for 127.0.0.1 at 2010-09-04 18:09:18) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"DakEPe19pRDy3+bHPDSWJOqTejMMS4sZwAnhoX0UebU=", "login"=>{"login"=>"SAnjos", "senha"=>"sasa"}}
+  [4;35;1mUsuario Load (7.1ms)[0m   [0mSELECT * FROM `usuarios` WHERE (login='SAnjos' AND senha='sasa') LIMIT 1[0m
+  [4;36;1mUsuario Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `usuarios` WHERE (login='SAnjos' AND senha='sasa') LIMIT 1[0m
+authenticate = true
+Redirected to http://localhost:3000/office/index
+Completed in 46ms (DB: 11) | 302 Found [http://localhost/usuarios/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:09:18) [GET]
+Redirected to http://localhost:3000/office/welcome
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 1ms (DB: 1) | 302 Found [http://localhost/office/index]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2010-09-04 18:09:18) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered office/_novaConta (4.2ms)
+Completed in 17ms (View: 14, DB: 0) | 200 OK [http://localhost/office/welcome]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsuariosController#create (for 127.0.0.1 at 2010-09-04 18:09:33) [POST]
+  Parameters: {"commit"=>"Cadastrar", "resenha"=>"sasa", "authenticity_token"=>"DakEPe19pRDy3+bHPDSWJOqTejMMS4sZwAnhoX0UebU=", "usuario"=>{"nome"=>"Guilherme", "login"=>"SAnjos", "senha"=>"sasa", "email"=>"guilherme.sanjos@gmail.com"}}
+  [4;36;1mUsuario Columns (9.6ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mUsuario Load (5.0ms)[0m   [0;1mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`login` = BINARY 'SAnjos') LIMIT 1[0m
+  [4;35;1mUsuario Load (4.2ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`email` = BINARY 'guilherme.sanjos@gmail.com') LIMIT 1[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mROLLBACK[0m
+
+ArgumentError (too few arguments):
+  app/controllers/usuarios_controller.rb:65:in `format'
+  app/controllers/usuarios_controller.rb:65:in `create'
+
+Rendered rescues/_trace (51.8ms)
+Rendered rescues/_request_and_response (2.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsuariosController#create (for 127.0.0.1 at 2010-09-04 18:10:50) [POST]
+  Parameters: {"commit"=>"Cadastrar", "resenha"=>"sasa", "authenticity_token"=>"DakEPe19pRDy3+bHPDSWJOqTejMMS4sZwAnhoX0UebU=", "usuario"=>{"nome"=>"Guilherme", "login"=>"SAnjos", "senha"=>"sasa", "email"=>"guilherme.sanjos@gmail.com"}}
+  [4;35;1mUsuario Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsuario Load (0.5ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`login` = BINARY 'SAnjos') LIMIT 1[0m
+  [4;36;1mUsuario Load (2.4ms)[0m   [0;1mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`email` = BINARY 'guilherme.sanjos@gmail.com') LIMIT 1[0m
+  [4;35;1mSQL (6.5ms)[0m   [0mROLLBACK[0m
+Redirected to http://localhost:3000/office/welcome
+Completed in 51ms (DB: 13) | 302 Found [http://localhost/usuarios/create]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2010-09-04 18:10:50) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered office/_novaConta (5.6ms)
+Completed in 28ms (View: 21, DB: 0) | 200 OK [http://localhost/office/welcome]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsuariosController#login (for 127.0.0.1 at 2010-09-04 18:10:54) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"DakEPe19pRDy3+bHPDSWJOqTejMMS4sZwAnhoX0UebU=", "login"=>{"login"=>"SAnjos", "senha"=>"sasa"}}
+  [4;36;1mUsuario Load (3.0ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (login='SAnjos' AND senha='sasa') LIMIT 1[0m
+  [4;35;1mUsuario Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (login='SAnjos' AND senha='sasa') LIMIT 1[0m
+authenticate = true
+Redirected to http://localhost:3000/office/index
+Completed in 30ms (DB: 5) | 302 Found [http://localhost/usuarios/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:10:54) [GET]
+Redirected to http://localhost:3000/office/welcome
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2010-09-04 18:10:54) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered office/_novaConta (4.6ms)
+Completed in 15ms (View: 13, DB: 0) | 200 OK [http://localhost/office/welcome]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsuariosController#login (for 127.0.0.1 at 2010-09-04 18:10:59) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"DakEPe19pRDy3+bHPDSWJOqTejMMS4sZwAnhoX0UebU=", "login"=>{"login"=>"sanjos", "senha"=>"sasa"}}
+  [4;35;1mUsuario Load (2.4ms)[0m   [0mSELECT * FROM `usuarios` WHERE (login='sanjos' AND senha='sasa') LIMIT 1[0m
+  [4;36;1mUsuario Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.2ms)[0m   [0mSELECT * FROM `usuarios` WHERE (login='SAnjos' AND senha='sasa') LIMIT 1[0m
+authenticate = true
+Redirected to http://localhost:3000/office/index
+Completed in 30ms (DB: 5) | 302 Found [http://localhost/usuarios/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:10:59) [GET]
+Redirected to http://localhost:3000/office/welcome
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/office/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2010-09-04 18:10:59) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered office/_novaConta (4.4ms)
+Completed in 17ms (View: 15, DB: 0) | 200 OK [http://localhost/office/welcome]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2010-09-04 18:11:52) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered office/_novaConta (5.0ms)
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://localhost/office/welcome]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsuariosController#login (for 127.0.0.1 at 2010-09-04 18:12:02) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"DakEPe19pRDy3+bHPDSWJOqTejMMS4sZwAnhoX0UebU=", "login"=>{"login"=>"SAnjos", "senha"=>"sasa"}}
+  [4;36;1mUsuario Load (0.4ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (login='SAnjos' AND senha='sasa') LIMIT 1[0m
+  [4;35;1mUsuario Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (login='SAnjos' AND senha='sasa') LIMIT 1[0m
+authenticate = true
+Redirected to http://localhost:3000/office/index
+Completed in 25ms (DB: 2) | 302 Found [http://localhost/usuarios/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:12:02) [GET]
+  [4;35;1mUsuario Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (1.0ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (1.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 104ms (View: 27, DB: 6) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-04 18:12:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/index/menu_right.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing NoteController#save (for 127.0.0.1 at 2010-09-04 18:12:13) [POST]
+  Parameters: {"note"=>{"titulo"=>"", "conteudo"=>"Implementar resize da note", "posX"=>"548", "height"=>"160", "posY"=>"273", "UUID"=>"55FC1BD89817459880247A780E77A2C7", "state"=>"1", "width"=>"150"}}
+  [4;35;1mNote Load (1.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`UUID` = '55FC1BD89817459880247A780E77A2C7') LIMIT 1[0m
+  [4;36;1mNote Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mNote Update (2.9ms)[0m   [0;1mUPDATE `notes` SET `updated_at` = '2010-09-04 21:12:13', `posY` = '273', `posX` = '548' WHERE `id` = 13[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mCOMMIT[0m
+Completed in 48ms (View: 20, DB: 9) | 200 OK [http://localhost/note/save]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-04 18:12:15) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/contextMenu/cmenu-vista-bg.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-04 18:12:18) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/contextMenu/cmenu-vista-menu-item-hover.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing NoteController#trash (for 127.0.0.1 at 2010-09-04 18:12:22) [POST]
+  Parameters: {"note"=>{"UUID"=>"26A9577605A1476084AC0AE878F51F0D"}}
+  [4;36;1mNote Load (1.3ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`UUID` = '26A9577605A1476084AC0AE878F51F0D') LIMIT 1[0m
+
+ActionView::MissingTemplate (Missing template note/trash.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing NoteController#save (for 127.0.0.1 at 2010-09-04 18:12:23) [POST]
+  Parameters: {"note"=>{"titulo"=>"", "conteudo"=>"Lembrete...", "posX"=>"917", "height"=>"160", "posY"=>"274", "UUID"=>"26A9577605A1476084AC0AE878F51F0D", "state"=>"1", "width"=>"150"}}
+  [4;35;1mNote Load (0.5ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`UUID` = '26A9577605A1476084AC0AE878F51F0D') LIMIT 1[0m
+  [4;36;1mNote Columns (4.5ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mNote Create (95.8ms)[0m   [0;1mINSERT INTO `notes` (`created_at`, `titulo`, `updated_at`, `trashed`, `conteudo`, `posX`, `user_id`, `UUID`, `posY`, `height`, `shared`, `width`, `state`) VALUES('2010-09-04 21:12:23', '', '2010-09-04 21:12:23', 0, 'Lembrete...', '917', 1, '26A9577605A1476084AC0AE878F51F0D', '274', '160', 0, '150', '1')[0m
+  [4;35;1mSQL (27.8ms)[0m   [0mCOMMIT[0m
+Completed in 154ms (View: 2, DB: 130) | 200 OK [http://localhost/note/save]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:12:40) [GET]
+  [4;36;1mUsuario Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.4ms)[0m   [0mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;36;1mNote Load (1.2ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;35;1mNote Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 44ms (View: 17, DB: 5) | 200 OK [http://localhost/office/index]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-04 18:12:41) [GET]
+
+ActionController::RoutingError (No route matches "/images/index/menu_right.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:12:43) [GET]
+  [4;36;1mUsuario Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (1.0ms)[0m   [0mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;36;1mNote Load (0.3ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;35;1mNote Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 62ms (View: 28, DB: 4) | 200 OK [http://localhost/office/index]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-04 18:12:43) [GET]
+
+ActionController::RoutingError (No route matches "/images/index/menu_right.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing NoteController#trash (for 127.0.0.1 at 2010-09-04 18:12:44) [POST]
+  Parameters: {"note"=>{"UUID"=>"26A9577605A1476084AC0AE878F51F0D"}}
+  [4;36;1mNote Load (0.8ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`UUID` = '26A9577605A1476084AC0AE878F51F0D') LIMIT 1[0m
+  [4;35;1mNote Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mNote Update (0.7ms)[0m   [0mUPDATE `notes` SET `trashed` = 1, `updated_at` = '2010-09-04 21:12:44' WHERE `id` = 15[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mCOMMIT[0m
+
+ActionView::MissingTemplate (Missing template note/trash.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:13:04) [GET]
+  [4;35;1mUsuario Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (1.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 134ms (View: 20, DB: 7) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:13:33) [GET]
+  [4;35;1mUsuario Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.6ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
   [4;35;1mNote Load (0.6ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
 Rendering template within layouts/application
 Rendering office/index
-Completed in 257ms (View: 49, DB: 58) | 200 OK [http://localhost/office]
+  [4;36;1mNote Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 41ms (View: 18, DB: 5) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:13:35) [GET]
+  [4;35;1mUsuario Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.2ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.7ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 45ms (View: 18, DB: 4) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:13:36) [GET]
+  [4;35;1mUsuario Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.5ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 161ms (View: 20, DB: 4) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:14:17) [GET]
+  [4;35;1mUsuario Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.5ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.8ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (4.1ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 48ms (View: 21, DB: 7) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:14:18) [GET]
+  [4;35;1mUsuario Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (2.8ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.6ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 55ms (View: 21, DB: 7) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:14:20) [GET]
+  [4;35;1mUsuario Columns (5.9ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 67ms (View: 25, DB: 9) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:14:20) [GET]
+  [4;35;1mUsuario Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (3.0ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 73ms (View: 29, DB: 13) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:14:49) [GET]
+  [4;35;1mUsuario Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.5ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 40ms (View: 16, DB: 4) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:14:52) [GET]
+  [4;35;1mUsuario Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.4ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 39ms (View: 16, DB: 4) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:15:20) [GET]
+  [4;35;1mUsuario Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.9ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (3.1ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 64ms (View: 34, DB: 8) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:15:20) [GET]
+  [4;35;1mUsuario Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.6ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 38ms (View: 15, DB: 5) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:15:20) [GET]
+  [4;35;1mUsuario Columns (9.9ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.6ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (4.2ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (3.6ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 86ms (View: 37, DB: 19) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:15:44) [GET]
+  [4;35;1mUsuario Columns (5.9ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.2ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 137ms (View: 21, DB: 9) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:15:44) [GET]
+  [4;35;1mUsuario Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (5.7ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (1.5ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 81ms (View: 36, DB: 12) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:16:02) [GET]
+  [4;35;1mUsuario Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.5ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 44ms (View: 24, DB: 4) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:17:18) [GET]
+  [4;35;1mUsuario Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.6ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 134ms (View: 17, DB: 6) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:17:20) [GET]
+  [4;35;1mUsuario Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 50ms (View: 21, DB: 4) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:17:21) [GET]
+  [4;35;1mUsuario Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (2.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (5.1ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 108ms (View: 40, DB: 16) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:17:21) [GET]
+  [4;35;1mUsuario Columns (8.8ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (2.2ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 70ms (View: 19, DB: 15) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:17:37) [GET]
+  [4;35;1mUsuario Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.4ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (1.2ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 46ms (View: 17, DB: 6) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:17:39) [GET]
+  [4;35;1mUsuario Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 55ms (View: 26, DB: 11) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:18:05) [GET]
+  [4;35;1mUsuario Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.4ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.6ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 39ms (View: 16, DB: 5) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:18:06) [GET]
+  [4;35;1mUsuario Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (1.1ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (6.7ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 60ms (View: 29, DB: 10) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:18:16) [GET]
+  [4;35;1mUsuario Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.6ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.6ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 40ms (View: 14, DB: 7) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:19:02) [GET]
+  [4;35;1mUsuario Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.4ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 46ms (View: 23, DB: 5) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:19:04) [GET]
+  [4;35;1mUsuario Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.4ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 42ms (View: 15, DB: 7) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:19:17) [GET]
+  [4;35;1mUsuario Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.4ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 61ms (View: 27, DB: 4) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:19:18) [GET]
+  [4;35;1mUsuario Columns (3.6ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (6.7ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (5.4ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (3.5ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 78ms (View: 30, DB: 20) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:19:19) [GET]
+  [4;35;1mUsuario Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.5ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.5ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 44ms (View: 17, DB: 4) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.9ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:19:20) [GET]
+  [4;35;1mUsuario Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.4ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.5ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 44ms (View: 19, DB: 7) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:19:20) [GET]
+  [4;35;1mUsuario Columns (6.7ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 52ms (View: 19, DB: 9) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:19:21) [GET]
+  [4;35;1mUsuario Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (5.3ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 91ms (View: 34, DB: 10) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:19:21) [GET]
+  [4;35;1mUsuario Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.8ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 40ms (View: 17, DB: 5) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:19:23) [GET]
+  [4;35;1mUsuario Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.5ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.1ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 49ms (View: 19, DB: 6) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:19:37) [GET]
+  [4;35;1mUsuario Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.5ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 121ms (View: 16, DB: 5) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:19:38) [GET]
+  [4;35;1mUsuario Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (1.9ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 50ms (View: 20, DB: 7) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:19:39) [GET]
+  [4;35;1mUsuario Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 69ms (View: 29, DB: 6) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:19:39) [GET]
+  [4;35;1mUsuario Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (2.4ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (4.9ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 187ms (View: 144, DB: 11) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:19:40) [GET]
+  [4;35;1mUsuario Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.6ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 44ms (View: 18, DB: 6) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:19:55) [GET]
+  [4;35;1mUsuario Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.9ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 39ms (View: 15, DB: 5) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:19:57) [GET]
+  [4;35;1mUsuario Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.6ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 37ms (View: 17, DB: 4) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:20:03) [GET]
+  [4;35;1mUsuario Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (1.2ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 40ms (View: 17, DB: 6) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:20:06) [GET]
+  [4;35;1mUsuario Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.6ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 39ms (View: 16, DB: 4) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:20:07) [GET]
+  [4;35;1mUsuario Columns (4.4ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 42ms (View: 16, DB: 7) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:20:13) [GET]
+  [4;35;1mUsuario Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 40ms (View: 16, DB: 5) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:20:32) [GET]
+  [4;35;1mUsuario Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (1.6ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 42ms (View: 17, DB: 6) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:20:57) [GET]
+  [4;35;1mUsuario Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.6ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 40ms (View: 18, DB: 5) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:21:10) [GET]
+  [4;35;1mUsuario Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.5ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 43ms (View: 19, DB: 7) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:21:26) [GET]
+  [4;35;1mUsuario Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.4ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.5ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 41ms (View: 16, DB: 6) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:21:34) [GET]
+  [4;35;1mUsuario Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.4ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 37ms (View: 16, DB: 4) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:21:53) [GET]
+  [4;35;1mUsuario Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 45ms (View: 18, DB: 4) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:22:00) [GET]
+  [4;35;1mUsuario Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 37ms (View: 14, DB: 5) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:22:08) [GET]
+  [4;35;1mUsuario Columns (3.5ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.4ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.5ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 41ms (View: 18, DB: 7) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:22:13) [GET]
+  [4;35;1mUsuario Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.4ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 42ms (View: 17, DB: 4) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:22:18) [GET]
+  [4;35;1mUsuario Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.5ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 37ms (View: 15, DB: 4) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:23:55) [GET]
+  [4;35;1mUsuario Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.4ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (5.6ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 77ms (View: 45, DB: 8) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-04 18:23:58) [GET]
+
+ActionController::RoutingError (No route matches "/images/index/Cal_active.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:24:58) [GET]
+  [4;35;1mUsuario Columns (4.6ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.5ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.5ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 44ms (View: 17, DB: 8) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:24:59) [GET]
+  [4;35;1mUsuario Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (2.9ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 52ms (View: 24, DB: 7) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:25:23) [GET]
+  [4;35;1mUsuario Columns (4.5ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.5ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.6ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (5.3ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 75ms (View: 46, DB: 11) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:25:26) [GET]
+  [4;35;1mUsuario Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.4ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 42ms (View: 19, DB: 4) | 200 OK [http://localhost/office/index]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-04 18:27:15) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/contextMenu/cmenu-vista-bg.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing NoteController#save (for 127.0.0.1 at 2010-09-04 18:27:17) [POST]
+  Parameters: {"note"=>{"titulo"=>"", "conteudo"=>"Implementar resize da note", "posX"=>"476", "height"=>"160", "posY"=>"395", "UUID"=>"55FC1BD89817459880247A780E77A2C7", "state"=>"1", "width"=>"150"}}
+  [4;35;1mNote Load (1.8ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`UUID` = '55FC1BD89817459880247A780E77A2C7') LIMIT 1[0m
+  [4;36;1mNote Columns (4.1ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mNote Update (0.7ms)[0m   [0;1mUPDATE `notes` SET `updated_at` = '2010-09-04 21:27:17', `posY` = '395', `posX` = '476' WHERE `id` = 13[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mCOMMIT[0m
+Completed in 33ms (View: 4, DB: 11) | 200 OK [http://localhost/note/save]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing NoteController#save (for 127.0.0.1 at 2010-09-04 18:27:17) [POST]
+  Parameters: {"note"=>{"titulo"=>"", "conteudo"=>"Corrigir problema de roteamento no passenger", "posX"=>"267", "height"=>"160", "posY"=>"236", "UUID"=>"183DB8E7753A4999AFE5A85910456BC0", "state"=>"1", "width"=>"150"}}
+  [4;36;1mNote Load (0.8ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`UUID` = '183DB8E7753A4999AFE5A85910456BC0') LIMIT 1[0m
+  [4;35;1mNote Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mNote Update (0.7ms)[0m   [0mUPDATE `notes` SET `updated_at` = '2010-09-04 21:27:17', `posY` = '236', `posX` = '267' WHERE `id` = 12[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mCOMMIT[0m
+Completed in 107ms (View: 1, DB: 7) | 200 OK [http://localhost/note/save]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-04 18:27:22) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/contextMenu/cmenu-vista-menu-item-hover.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing NoteController#save (for 127.0.0.1 at 2010-09-04 18:27:27) [POST]
+  Parameters: {"note"=>{"titulo"=>"", "conteudo"=>"Ver", "posX"=>"769", "height"=>"160", "posY"=>"270", "UUID"=>"05EAE4A3B2554B4D924F1431B3B01186", "state"=>"1", "width"=>"150"}}
+  [4;35;1mNote Load (0.9ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`UUID` = '05EAE4A3B2554B4D924F1431B3B01186') LIMIT 1[0m
+  [4;36;1mNote Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mNote Create (0.7ms)[0m   [0;1mINSERT INTO `notes` (`created_at`, `titulo`, `updated_at`, `trashed`, `conteudo`, `posX`, `user_id`, `UUID`, `posY`, `height`, `shared`, `width`, `state`) VALUES('2010-09-04 21:27:27', '', '2010-09-04 21:27:27', 0, 'Ver', '769', 1, '05EAE4A3B2554B4D924F1431B3B01186', '270', '160', 0, '150', '1')[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mCOMMIT[0m
+Completed in 36ms (View: 2, DB: 7) | 200 OK [http://localhost/note/save]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing NoteController#save (for 127.0.0.1 at 2010-09-04 18:27:37) [POST]
+  Parameters: {"note"=>{"titulo"=>"", "conteudo"=>"Verificar preco do Bg", "posX"=>"769", "height"=>"160", "posY"=>"270", "UUID"=>"05EAE4A3B2554B4D924F1431B3B01186", "state"=>"1", "width"=>"150"}}
+  [4;36;1mNote Load (0.7ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`UUID` = '05EAE4A3B2554B4D924F1431B3B01186') LIMIT 1[0m
+  [4;35;1mNote Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mNote Update (41.2ms)[0m   [0mUPDATE `notes` SET `updated_at` = '2010-09-04 21:27:37', `conteudo` = 'Verificar preco do Bg' WHERE `id` = 16[0m
+  [4;36;1mSQL (6.2ms)[0m   [0;1mCOMMIT[0m
+Completed in 84ms (View: 2, DB: 50) | 200 OK [http://localhost/note/save]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-09-04 18:27:40) [GET]
+  [4;35;1mUsuario Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.2ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (1.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+  [4;36;1mNote Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 40ms (View: 17, DB: 6) | 200 OK [http://localhost/office/index]

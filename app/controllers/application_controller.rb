@@ -9,10 +9,13 @@ class ApplicationController < ActionController::Base
 
   protected
   def authenticate
-    @user = Usuario.find(session[:id]) if @user.nil? && session[:id]
+
+    @user = Usuario.find(session[:id]) if session[:id]
     if @user.blank?
       redirect_to :controller => 'office', :action => 'welcome'
     end
+    
+
   end
 
  

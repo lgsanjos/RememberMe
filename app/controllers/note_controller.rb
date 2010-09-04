@@ -11,6 +11,8 @@ class NoteController < ApplicationController
       @note.attributes=(params[:note])
     end
 
+
+    @note.user_id = session[:id];
     if @note.save
       render :inline => "OK"
     else
