@@ -12,6 +12,7 @@ class OfficeController < ApplicationController
       @note.width = '150'
       @note.height = '160'
       @note.save
+
       @note = Note.find(:all, :conditions => {'trashed' => false, 'user_id' => session[:id]} )
     end
   end

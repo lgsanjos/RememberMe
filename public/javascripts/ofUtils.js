@@ -21,13 +21,13 @@ function statusBar(aText){
 // -------------------
 // Define as funcionalidades para os elementos draggables
 function setDraggables(){
-  $('.draggable').draggable();
+  $('.draggable').draggable({ scroll: true });
 }
 
 // -------------------
 // Define as funcionalidades para os elementos resizables
 function setResizable(){
-  $('.draggable').resizable({ animate: true });
+  $('.draggable').resizable("enable");
 }
 
 // -------------------

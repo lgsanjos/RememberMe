@@ -12,16 +12,18 @@
 ActiveRecord::Schema.define(:version => 20100727221427) do
 
   create_table "notes", :force => true do |t|
-    t.string   "titulo"
     t.string   "UUID"
     t.string   "conteudo"
+    t.integer  "categoria",  :default => 0
+    t.integer  "prioridade"
     t.string   "posX"
     t.string   "posY"
     t.string   "width"
     t.string   "height"
-    t.string   "state"
     t.boolean  "trashed",    :default => false
     t.boolean  "shared",     :default => false
+    t.string   "state"
+    t.string   "titulo"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -13,6 +13,29 @@
 
      initialization();
 
+     function SetupRightMenu(){
+
+       $('#note').draggable({
+                              distance: 50,
+
+                              stop: function(event, ui) {
+                                try{
+                                  _posY = parseFloat($('#note').position().top + $('#right_menu').position().top);
+                                  _posX = parseFloat($('#note').position().left + window.innerWidth);
+                                  NewNote(_posX,_posY);
+
+                                  $('#note').css('top', 0);
+                                  $('#note').css('left', 0);
+                                }catch(E){
+                                  alert(E);
+                                }
+                              }
+                           });
+
+
+     }
+     SetupRightMenu();
+
      function loadObjects(){
          <% @note.each do |n| %>
            <%="NewNote( #{n.posX}, #{n.posY}, \"#{n.conteudo.gsub("\n", "<br />")}\", #{n.width}, #{n.height}, false, true, \"#{n.UUID}\" );"%>
@@ -20,19 +43,22 @@
       }
 
       window.setTimeout(loadObjects(),4000);
-           
    });
 
 </script>
 
 <div id="odTableTop">
   <div id="header">
-     LOGO
+    <p class="item">
+      <img src="images/index/logo.png" alt="OfficeDesk" class="logo"/>
+    </p>
+    <p class="item menu">Minha Conta</p>
+    <p class="item menu"><%= link_to "Sair", :controller => "usuarios", :action => "logout" %></p>
   </div>
 
 
   <div id="right_menu">
-    <a id="note" class="menuItem" href="#">&nbsp;</a>
+    <a id="note" class="menuItem" href="#"></a>
     <a id="cal" class="menuItem" href="#"></a>
     <a id="address" class="menuItem" href="#"></a>
     <a id="text" class="menuItem" href="#"></a>

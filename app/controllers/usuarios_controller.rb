@@ -15,7 +15,7 @@ class UsuariosController < ApplicationController
     
     if (usr.authenticate unless usr.blank?)
       session[:id] = usr.id # Remember the user's id during this session
-      redirect_to :controller => 'office/index/'
+      redirect_to :controller => 'office', :action => 'index'
     else
       flash[:error] = 'Usuário ou senha inválido.'
       redirect_to :controller => "office", :action => "welcome"
@@ -56,14 +56,17 @@ class UsuariosController < ApplicationController
   # POST /usuarios
   # POST /usuarios.xml
   def create
-    @usuario = Usuario.new(params[:usuario])
 
-    if @usuario.save
-      session[:id] = @usuario.id # Remember the user's id during this session
-      redirect_to :controller => 'office', :action => 'index'
-    else
-      redirect_to :controller => "office", :action => "welcome"
-    end
+    if request.post?
+      usr = Usuario.new(params[:usuario])
+      
+      if usr.save
+        session[:id] = usr.id # Remember the user's id during this session
+        redirect_to :controller => 'office', :action => 'index'
+      else
+        redirect_to :controller => "office", :action => "welcome"
+      end
+   end
    
   end
 

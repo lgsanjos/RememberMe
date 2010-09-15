@@ -37,11 +37,11 @@ div#cabecalho{
     position: absolute;
     z-index:999;
 
-    width:250px;
-    height:230px;
+    width:310px;
+    height:90px;
 
-    left: 10px;
-    top: 5px;
+    left: -20px;
+    top: 50px;
 
     cursor: pointer;
    

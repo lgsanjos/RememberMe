@@ -8,6 +8,28 @@
 #header{
   z-index:999;
   position:absolute;
+
+  background: url(../images/index/cabecalho.png) no-repeat;
+  width:600px;
+  height:100px;
+}
+
+#header img.logo{
+  margin: 0px 6px;
+  cursor: pointer;
+}
+
+#header p.item{
+  margin:0px;
+  padding:0px;
+  display: block;
+  float:left;
+}
+
+#header p.menu{
+  padding-top: 45px;
+  margin-left: 25px;
+  font-size:150%;
 }
 
 #right_menu{
@@ -23,6 +45,7 @@
   width:150px;
   text-align: center;
   outline: 0px;
+  
 
 }
 
