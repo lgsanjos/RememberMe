@@ -13,7 +13,7 @@ function statusBar(aText){
       _int = window.setInterval(function(){ $('#statusbar').fadeOut('slow'); clearInterval(_int); }, 1000); 
 
   }catch(E){
-    alert(E);
+    raiseException(E);
   }
  
 }
@@ -27,7 +27,7 @@ function setDraggables(){
 // -------------------
 // Define as funcionalidades para os elementos resizables
 function setResizable(){
-  $('.draggable').resizable("enable");
+  $('.resizable').resizable("enable");
 }
 
 // -------------------
@@ -47,7 +47,7 @@ function getUUID() {
       return uuid;
       
     }catch(E){
-      alert(E);
+      raiseException(E);
     }
 }
 
@@ -60,4 +60,13 @@ function sleep(milliseconds) {
       break;
     }
   }
+}
+
+// -----------
+// Todas as excećões serão ecoadas por essa fnc
+function raiseException(msg){
+
+    if ( msg !== undefined ){
+      alert(msg);
+    }
 }

@@ -7,7 +7,7 @@ function initialization(){
     startChangedMonitor(ChangedItens);
 
   }catch(E){
-    alert(E);
+    raiseException(E);
   }finally{
     statusBar('');
   }
@@ -27,7 +27,7 @@ function startChangedMonitor(aChangedList){
 	for (item in aChangedList.items) {       
           var _pointer = aChangedList.getItem(item);
 
-          if (_pointer instanceof DroppedItem){
+          if (_pointer instanceof ofdCustomDroppedItem){
 
             if (_pointer.Save()){
               statusBar('Salvo com sucesso...');
@@ -36,7 +36,7 @@ function startChangedMonitor(aChangedList){
           }          
         }
       }catch(E){
-        alert(E);
+        raiseException(E);
       }finally{
         statusBar('');
       }
@@ -50,18 +50,3 @@ function startChangedMonitor(aChangedList){
 
 // --------------
 
-function setContextMenu(){
-    try{
-        var menu1 = [
-        {'Novo lembrete': function(menuItem,menuObject) {
-                                var pos = $(menuObject.menu).position();
-                                NewNote(pos.left, pos.top);
-                                }}
-        ];
-
-        $('#page').contextMenu(menu1,{theme:'vista'});
-
-    }catch(E){
-        alert(E);
-    }
-}

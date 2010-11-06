@@ -1,4 +1,4 @@
-var DroppedItem = Class.extend({
+var ofdCustomDroppedItem = Class.extend({
 
     // constructor
     init : function(){

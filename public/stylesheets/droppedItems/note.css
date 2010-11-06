@@ -5,15 +5,19 @@
   display: block;
   float: none;
   position:absolute;
-  letter-spacing:1px;
   z-index:2;
   overflow:hidden;
 }
 
-.note .noteHeader {
-  background: gold;
+.noteHeader{
+  background-color: #FFC71F;
+  height:1.3em;
+
+  padding:1px;
+  cursor: move;
+  
   font-weight: bold;
-  font-size:115%;
+  font-size:80%;
 
 }
 
@@ -27,6 +31,10 @@
    width:100%;
    height:100%;
    border:0px;
+   padding:2px;
+   font-size: 110%;
+   font-family: arial;
+   letter-spacing: 1px;
    background-color: inherit;
 }
 

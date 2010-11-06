@@ -5,7 +5,7 @@
   //   JQuery, DroppedItem, Base
   // -------------------
 
-var Note = DroppedItem.extend({
+var Note = ofdCustomDroppedItem.extend({
 
     // constructor
     init: function(){
@@ -135,7 +135,7 @@ var Note = DroppedItem.extend({
 
 
              $(container).append(nota);
-
+             $('.note:last').hide();
              $('.note:last').attr("id",this.UUID);
              $('.note:last').css("left",this.posX);
              $('.note:last').css("top",this.posY);
@@ -143,7 +143,8 @@ var Note = DroppedItem.extend({
              $('.note:last').css("height",this.height);
              // $('.noteBody:last > .TextArea').val(this.content);
              $('#' + this.UUID + '> .noteBody > .textArea').val(this.content.replace('<br />', "\n"));
-             $('.note:last').fadeIn('fast');
+             $('.note:last').fadeIn('slow');
+             $('.note:last').resizable();
 
              // Define eventos que serão interpretados futuramente,
              // logo todos os dados dentro dos eventos devem ser variados e analisados
@@ -177,8 +178,9 @@ var Note = DroppedItem.extend({
           alert(E);
         }finally{
          //Finaliza adicionando comportamento
-         setDraggables();
          setResizable();
+          setDraggables();
+
         } 
     }
 
@@ -186,17 +188,18 @@ var Note = DroppedItem.extend({
 
 function NewNote(posX,posY, aContent, aWidth, aHeight, shared, visible, aUUID){
    try{
-      var note = new Note();
 
-      if (aUUID !== undefined) note.UUID = aUUID;
-      if (aContent !== undefined) note.content = aContent;
-      if (posX !== undefined) note.posX = posX;
-      if (posY !== undefined) note.posY = posY;
-      if (aWidth !== undefined) note.width = aWidth;
-      if (aHeight !== undefined) note.height = aHeight;
-      if (shared !== undefined) note.shared = shared;
+      var _note = new Note();
 
-      note.Append($('#page'));
+      if (aUUID !== undefined) _note.UUID = aUUID;
+      if (aContent !== undefined) _note.content = aContent;
+      if (posX !== undefined) _note.posX = posX;
+      if (posY !== undefined) _note.posY = posY;
+      if (aWidth !== undefined) _note.width = aWidth;
+      if (aHeight !== undefined) _note.height = aHeight;
+      if (shared !== undefined) _note.shared = shared;
+
+      _note.Append($('#page'));
     }catch(E){
       alert(E);
     }
