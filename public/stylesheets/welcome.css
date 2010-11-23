@@ -37,11 +37,12 @@ div#cabecalho{
     position: absolute;
     z-index:999;
 
-    width:310px;
-    height:90px;
+    width:396px;
+    height:229px;
 
     left: -20px;
-    top: 50px;
+    top: 0px;
+    
 
     cursor: pointer;
    
@@ -62,6 +63,7 @@ div#cabecalho{
   
     background: url(../images/welcome/login.png) no-repeat;
   }
+
 
     div#cabecalho div#login div#content{
       padding: 60px 0px 0px 80px;

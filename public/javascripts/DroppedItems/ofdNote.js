@@ -2,7 +2,7 @@
   // Descricao:
   //   Objeto responsável pelo componente Note
   // Dependencia:
-  //   JQuery, DroppedItem, Base
+  //   JQuery, DroppedItem, Base, ofdSystem
   // -------------------
 
 var Note = ofdCustomDroppedItem.extend({
@@ -124,8 +124,8 @@ var Note = ofdCustomDroppedItem.extend({
             }
 
              var nota = '';
-             nota += '<div class="note draggable resizable" id="">';
-             nota +=   '<div class="noteHeader">';
+             nota += '<div class="note DroppedItem" id="">';
+             nota +=   '<div class="noteHeader draggable">';
              nota +=     '<a class="noteFechar">X</a>';
              nota +=   '</div>';
              nota +=   '<div class="noteBody">';
@@ -144,7 +144,6 @@ var Note = ofdCustomDroppedItem.extend({
              // $('.noteBody:last > .TextArea').val(this.content);
              $('#' + this.UUID + '> .noteBody > .textArea').val(this.content.replace('<br />', "\n"));
              $('.note:last').fadeIn('slow');
-             $('.note:last').resizable();
 
              // Define eventos que serão interpretados futuramente,
              // logo todos os dados dentro dos eventos devem ser variados e analisados
@@ -175,12 +174,10 @@ var Note = ofdCustomDroppedItem.extend({
              });
              
         }catch(E){
-          alert(E);
+          raiseException(E);
         }finally{
          //Finaliza adicionando comportamento
-         setResizable();
-          setDraggables();
-
+         setDnR();
         } 
     }
 
@@ -201,7 +198,7 @@ function NewNote(posX,posY, aContent, aWidth, aHeight, shared, visible, aUUID){
 
       _note.Append($('#page'));
     }catch(E){
-      alert(E);
+      raiseException(E);
     }
 
 

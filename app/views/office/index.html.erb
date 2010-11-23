@@ -1,29 +1,27 @@
 <% content_for :head do%>
 
-  <%= javascript_include_tag :all, :recursive => true %>
   <%= stylesheet_link_tag 'droppedItems/note.css' %>
   <%= stylesheet_link_tag 'index.css' %>
   <%= stylesheet_link_tag 'contextMenu/jquery.contextmenu' %>
+  <%= stylesheet_link_tag 'piro/style/style', :media => 'screen', :title => 'black'%>
+  
+  <%#= javascript_include_tag "3rd party/jquery/ui/", :all, :recursive => true %>
+  <%= javascript_include_tag "3rd party/jquery/jquery-ui-1.8.6.custom.min.js" %>
+  <%#= javascript_include_tag "3rd party/jquery/jqDnR/jqDnR.js" %>
+
+  <%= javascript_include_tag "3rd party/Base.js" %>
+  <%= javascript_include_tag "3rd party/hash.js" %>
+  <%= javascript_include_tag "3rd party/jquery/jquery.contextmenu-r2.js" %>
+  <%= javascript_include_tag '3rd party/jquery/piro/pirobox.js'%>
+
+  <%= javascript_include_tag "ofdApplication.js" %>
+  <%= javascript_include_tag "ofdSystem.js" %>
+  <%= javascript_include_tag "office/index.js" %>
+  <%= javascript_include_tag "DroppedItems/ofdCustomItem.js" %>
+  <%= javascript_include_tag "DroppedItems/ofdNote.js" %>
 
 <% end %>
 
-<script type="text/javascript">
-
-   $().ready(function(){
-
-     initialization();
-     SetupRightMenu();
-
-     function loadObjects(){
-         <% @note.each do |n| %>
-           <%="NewNote( #{n.posX}, #{n.posY}, \"#{n.conteudo.gsub("\n", "<br />")}\", #{n.width}, #{n.height}, false, true, \"#{n.UUID}\" );"%>
-         <% end %>
-      }
-
-      window.setTimeout(loadObjects(),4000);
-   });
-
-</script>
 
 <div id="odTableTop">
   <div id="header">
@@ -31,6 +29,7 @@
       <img src="images/index/logo.png" alt="OfficeDesk" class="logo"/>
     </p>
     <p class="item menu">Minha Conta</p>
+    <p class="item menu"><a href="#" class="pirobox">Lixeira</a></p>
     <p class="item menu"><%= link_to "Sair", :controller => "usuarios", :action => "logout" %></p>
   </div>
   
@@ -42,4 +41,46 @@
     <a id="trash" class="menuItem" href="#"></a>
   </div-->
 
+  <div class="contextMenu" id="divContextMenu">
+    <ul>
+      <li id="novaNota">Novo Lembrete</li>     
+    </ul>
+
+  </div>
+
 </div>
+
+
+
+
+<script type="text/javascript">
+
+   $().ready(function(){
+
+     initialization();
+     //SetupRightMenu();
+     preparaPirobox();
+     showNotes();
+
+   });
+
+   function preparaPirobox(){
+     try{
+       var viewTrash = '<%=(render "note/viewTrash").gsub("\n", "<br />") %>';
+       setPirobox(viewTrash);
+     }catch(e){
+       raiseException(e);
+     }
+   }
+
+   function showNotes(){
+     function loadObjects(){
+       <% @note.each do |n| %>
+         <%="NewNote( #{n.posX}, #{n.posY}, \"#{n.conteudo.gsub("\n", "<br />")}\", #{n.width}, #{n.height}, false, true, \"#{n.UUID}\" );"%>
+       <% end %>
+     }
+
+      window.setTimeout(loadObjects(),4000);
+   }
+
+</script>

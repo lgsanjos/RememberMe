@@ -202,6 +202,7 @@
 
   }
 
+
   function closePiro(){
     $('.pirobox_content').fadeOut("fast");
     $('.piro_overlay').fadeOut("slow");

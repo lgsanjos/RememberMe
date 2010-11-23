@@ -3,6 +3,7 @@
   <%=  stylesheet_link_tag 'welcome'%>
   <%=  stylesheet_link_tag 'piro/style/style', :media => 'screen', :title => 'black'%>
   <%=  javascript_include_tag '3rd party/jquery/piro/pirobox.js'%>
+
 <%  end %>
 <div id="welcome">
   <div id="cabecalho">
@@ -51,6 +52,7 @@
   <script>
     $().ready(function (){
       try{
+        
 
         setTimeout(function (){
           $('#login').fadeIn('slow');
@@ -68,7 +70,7 @@
         raiseException(E);
       }
 
-      var novaConta = '<%=(render :partial => "novaConta").gsub("\n", "<br />") %>';
+      var novaConta = '<%=(render "usuarios/novaConta").gsub("\n", "<br />") %>';
       setPirobox(novaConta);
       
     });
