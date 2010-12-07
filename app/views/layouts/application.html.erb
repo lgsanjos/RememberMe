@@ -9,6 +9,10 @@
 </head>
 <body>
 
+  <% if flash[:notice] %>
+    <script>window.alert('<%= flash[:notice] %>');</script>
+  <% end %>
+
   <div id="page">
     <%= yield %>
   </div>

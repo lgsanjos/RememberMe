@@ -2,8 +2,10 @@
 
   <%= stylesheet_link_tag 'droppedItems/note.css' %>
   <%= stylesheet_link_tag 'index.css' %>
-  <%= stylesheet_link_tag 'contextMenu/jquery.contextmenu' %>
+  <%= stylesheet_link_tag 'contextMenu/jquery.contextmenu.css' %>
+  <%= stylesheet_link_tag '3rd party/datatables.css' %>
   <%= stylesheet_link_tag 'piro/style/style', :media => 'screen', :title => 'black'%>
+  
   
   <%#= javascript_include_tag "3rd party/jquery/ui/", :all, :recursive => true %>
   <%= javascript_include_tag "3rd party/jquery/jquery-ui-1.8.6.custom.min.js" %>
@@ -13,6 +15,7 @@
   <%= javascript_include_tag "3rd party/hash.js" %>
   <%= javascript_include_tag "3rd party/jquery/jquery.contextmenu-r2.js" %>
   <%= javascript_include_tag '3rd party/jquery/piro/pirobox.js'%>
+  <%= javascript_include_tag '3rd party/jquery/jquery.dataTables.min.js'%>
 
   <%= javascript_include_tag "ofdApplication.js" %>
   <%= javascript_include_tag "ofdSystem.js" %>
@@ -65,9 +68,31 @@
    });
 
    function preparaPirobox(){
+
+     function onShow(){
+             $.ajax({
+                      type: 'GET',
+                      url: 'note/view_trash',
+                      async: true,
+                      success: function(data){
+
+                        $('#trashListTable').html(data);
+                        drawTrashListTable();
+
+                      },
+                      error: function(XMLHttpRequest, textStatus, errorThrow){
+                            raiseException('Ocorreu o seguinte erro ao listar a lixeira: ' + errorThrow);
+
+                      }
+                    });
+
+
+     }
+
+
      try{
-       var viewTrash = '<%=(render "note/viewTrash").gsub("\n", "<br />") %>';
-       setPirobox(viewTrash);
+       var viewTrash = '<%=(render "note/viewTrash").gsub("\n", "") %>';
+       setPirobox(viewTrash, onShow);
      }catch(e){
        raiseException(e);
      }
@@ -81,6 +106,96 @@
      }
 
       window.setTimeout(loadObjects(),4000);
+   }
+
+   function removeNote(id){
+     
+     $.ajax({
+              type: 'POST',
+              async: true,
+              data: ({
+                 'note':{
+                          'id': id
+                        }  
+                      }),
+
+              url: '<%= url_for( :controller => :note, :action => :remove )%>',
+
+              success: function(data){
+                         if (data === 'Ok'){
+                            $('#tr_' + id).fadeOut("fast",function(){
+                              $('#trashListTable').dataTable().fnDestroy();
+                              $(this).remove();
+                              drawTrashListTable();
+                            });
+                            
+                           
+                         }
+              },
+
+              error: function(XMLHttpRequest, textStatus, errorThrow){
+                    raiseException('Ocorreu o seguinte erro ao salvar : ' + errorThrow);
+              }
+
+     });
+   }
+
+   function recycleNote(id){
+     $.ajax({
+              type: 'POST',
+              async: true,
+              data: ({
+                 'note':{
+                          'id': id
+                        }
+                      }),
+
+              url: '<%= url_for( :controller => :note, :action => :recycle )%>',
+
+              success: function(data){
+
+                         $('#tr_' + id).fadeOut("fast",function(){
+                            var func = '';
+                            func = 'try{';
+                            func += data;
+                            func += '}catch(e){';
+                            func += '  raiseException(e);';
+                            func += '}';
+                            eval(func);
+                            
+                            $('#trashListTable').dataTable().fnDestroy();
+                            $(this).remove();
+                            drawTrashListTable();
+
+                         });
+
+              },
+
+              error: function(XMLHttpRequest, textStatus, errorThrow){
+                    raiseException('Ocorreu o seguinte erro ao salvar : ' + errorThrow);
+              }
+
+     });
+   }
+
+   function drawTrashListTable(){
+        $('#trashListTable').dataTable({
+            "bPaginate": true,
+            "sPaginationType": "full_numbers",
+            "bLengthChange": false,
+            "bFilter": false,
+            "bSort": true,
+            "bInfo": false,
+            "bAutoWidth": false,
+            "iDisplayLength": 15,
+            "oLanguage": {
+                    "sLengthMenu": "Display _MENU_ records per page",
+                    "sZeroRecords": "Sua lixeira está vazia",
+                    "sInfo": "Showing _START_ to _END_ of _TOTAL_ records",
+                    "sInfoEmpty": "Exibindo 0 a 0 de 0 registros",
+                    "sInfoFiltered": "(filtered from _MAX_ total records)"
+            }
+        });
    }
 
 </script>

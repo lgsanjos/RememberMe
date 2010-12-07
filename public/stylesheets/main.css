@@ -56,3 +56,26 @@ a:hover { color: #fff; background-color:#000; }
   padding: 0px 20px;
   text-align:center;
 }
+
+#msg_header{
+  display: block;
+  top: 0px;
+  padding:30px;
+
+  font-weight: lighter;
+  letter-spacing: 1px;
+  word-spacing: 6px;
+  font-size: 110%;
+}
+
+.msg_notice{
+  border: 2px solid #B3FFB3;
+  background-color: #E5FFE5;
+  color: #00E600;
+}
+
+.msg_warn{
+  border: 2px solid #FFFF85;
+  background-color: #FFFFB8;
+  color: #FFFF05;
+}

@@ -204,45 +204,45 @@ div#rodape{
 
   /*
    -----------------------------------------------------------------
-   ----- _NovaConta.html
+   ----- _NovaConta.html e _esqueceuConta.html
    -----------------------------------------------------------------
   */
 
 
-#novaConta{
+#piroPanel{
   height: 100%;
   letter-spacing: 1px;
   margin: 0px 15px;
 
 }
 
-#novaConta h1{
+#piroPanel h1{
   font-size: 160%;
   line-height: 130%;
   display: block;
-  color: teal;
+  color: #008080;
   word-spacing: 3px;
   font-weight: bold;
   text-shadow: #AAA 2px 1px 2px;
 
 }
 
-#novaConta h6{
+#piroPanel h6{
   border:1px solid red;
   display: block;
-  color: teal;
+  color: #008080;
   word-spacing: 3px;
 
   margin: 0px;
   padding: 0px;
 }
 
-#novaConta p{
+#piroPanel p{
   padding: 0px 0px;
   margin: 0px;
 }
 
-#novaConta label{
+#piroPanel label{
   font-weight: bold;
   font-size: 110%;
   display: inline-block;
@@ -250,13 +250,13 @@ div#rodape{
   overflow: visible;
 }
 
-#novaConta .lbSenha{
+#piroPanel .lbSenha{
   width:125px;
   text-align: right;
   padding-right: 10px;
 }
 
-#novaConta .input{
+#piroPanel .input{
   font-size: 115%;
   letter-spacing: 1px;
   word-spacing: 4px;

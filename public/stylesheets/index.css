@@ -104,3 +104,61 @@
 #right_menu #trash:hover{
   background: url(../images/index/mr_Trash_active.png);
 }
+
+
+  /*
+   -----------------------------------------------------------------
+   ----- _view_trash.html
+   -----------------------------------------------------------------
+  */
+
+div#viewTrash{
+   height: 405px;
+   width:758px;
+   overflow: hidden;
+
+}
+
+div#viewTrash table#trashListTable{
+  width:100%;
+  margin: 0px;
+  padding:0px;
+  clear:none;
+}
+
+div#viewTrash div#viewTrashBody{
+  height: 315px;
+  width:100%;
+  margin: 0px;
+  padding:0px;
+  clear:none;
+}
+
+div#viewTrash div#footer{
+    clear:none;
+    float:left;
+    
+}
+
+div#viewTrash h1{
+  margin: 0px;
+  padding:0px;
+  top:0px;
+  clear: none;
+
+  font-size: 180%;
+  line-height: 130%;
+  color: #5aa7dc;
+  word-spacing: 3px;
+  font-weight: bold;
+  text-shadow: #AAA 2px 1px 2px;
+
+}
+
+div#viewTrash p{
+  font-weight: lighter;
+  letter-spacing: 1px;
+
+  margin: 0px;
+  padding:0px;
+}

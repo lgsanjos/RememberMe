@@ -14,7 +14,7 @@ class UsuariosController < ApplicationController
     usr = Usuario.find(:first, :conditions => (['login=? AND senha=?', params[:login]["login"], params[:login]["senha"]]))
     
     if (usr.authenticate unless usr.blank?)
-      session[:id] = usr.id # Remember the user's id during this session
+      session[:usr] = usr
       redirect_to :controller => 'office', :action => 'index'
     else
       flash[:error] = 'Usuário ou senha inválido.'
@@ -61,7 +61,7 @@ class UsuariosController < ApplicationController
       usr = Usuario.new(params[:usuario])
       
       if usr.save
-        session[:id] = usr.id # Remember the user's id during this session
+        session[:usr] = usr
         redirect_to :controller => 'office', :action => 'index'
       else
         redirect_to :controller => "office", :action => "welcome"
@@ -96,4 +96,25 @@ class UsuariosController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def esqueceu_senha
+    @usuario = Usuario.find(:first, :conditions => {:login => params[:esqueceu][:login], :email => params[:esqueceu][:email]})
+
+    unless @usuario.blank?
+      begin
+        Emailer::deliver_mail(params[:esqueceu][:email], "Recupera&ccedil;&atilde;o de senha.", "Nós recebemos o pedido de recupera&ccedil;&atilde;o de senha do usuário:")
+        logger.info "Envio ?"
+        flash[:notice] = "Email enviado com sucesso para: #{params[:esqueceu][:email]}. "
+      rescue
+        flash[:notice] = "Ocorreu uma falha ao enviar o E-mail. Tente novamente após alguns minutos. #{$!}"
+      ensure
+      end
+    else
+      flash[:notice] = "Não foi encontrado nenhum usuário com login: #{params[:esqueceu][:login]} e e-mail #{params[:esqueceu][:email]}."
+    end
+
+    redirect_to :controller => :office, :action => :welcome
+    
+  end
+
 end

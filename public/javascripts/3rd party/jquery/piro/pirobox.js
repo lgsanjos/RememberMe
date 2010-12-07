@@ -4,6 +4,9 @@
 * Autor: Diego Valobra (http://www.pirolab.it),(http://www.diegovalobra.com)
 * Version: 1.2.2
 * Licence: CC-BY-SA http://creativecommons.org/licenses/by-sa/2.5/it/
+*
+* Notas:
+* Esse plugin foi devidamente adaptado para a utilizacao no projeto officedesk
 **/
 
 (function($) {
@@ -15,7 +18,8 @@
 		close_all : '.piro_close,.piro_overlay',
 		slideShow : null,
 		slideSpeed : null,
-                conteudoHtml : 'hello world'
+                conteudoHtml : 'hello world',
+                onShowEvent: null
 		}, opt);
 
 		function start_pirobox(aConteudo) {
@@ -163,7 +167,14 @@
 						}					
 							$(piro_gallery).filter('.item').removeClass('item');
 							item.addClass('item');
-							$('.c_c').removeClass('unique');		
+							$('.c_c').removeClass('unique');
+
+
+                                                // Evento de callback (onShow)
+                                                if (opt.onShowEvent !== undefined){
+                                                    opt.onShowEvent.call();
+                                                 }
+                                                  
 					});
 				});
 				var piro_open = function(my_url) {
@@ -174,9 +185,8 @@
                                         main_cont.show();
                                         bg_overlay.fadeIn(0,function(){
 
-                                        // Adicionar aqui o conteudo
-                                        $(".c_c div").append('<div>' + aConteudo + '</div>');
-                                        // -------------------------
+                                          // Adicionar aqui o conteudo
+                                          $(".c_c div").append('<div>' + aConteudo + '</div>');
 
                                         });
 					
@@ -189,15 +199,15 @@
 })(jQuery);
 
 
-  function setPirobox(conteudo){
-
+  function setPirobox(conteudo, onShow){
       $().piroBox({
                   my_speed: 300, //animation speed
                   bg_alpha: 0.5, //background opacity
                   slideShow : 'false', // true == slideshow on, false == slideshow off
                   slideSpeed : 3, //slideshow
                   conteudoHtml : conteudo,
-                  close_all : '.piro_close' // add class .piro_overlay(with comma)if you want overlay click close piroBox
+                  close_all : '.piro_close', // add class .piro_overlay(with comma)if you want overlay click close piroBox
+                  onShowEvent : onShow
                   });
 
   }
