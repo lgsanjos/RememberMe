@@ -34984,3 +34984,67 @@ Processing NoteController#view_trash (for 127.0.0.1 at 2010-12-07 15:29:43) [GET
   [4;36;1mNote Load (6.1ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 1 AND `notes`.`user_id` = 1) ORDER BY notes.id DESC, notes.created_at DESC[0m
   [4;35;1mNote Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
 Completed in 79ms (View: 16, DB: 17) | 200 OK [http://localhost/note/view_trash]
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2010-12-08 00:34:24) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_novaConta (19.1ms)
+Rendered usuarios/_esqueceuConta (9.5ms)
+Completed in 176ms (View: 173, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsuariosController#login (for 127.0.0.1 at 2010-12-08 00:34:27) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"LBIKF700uM7V2wJb1lZNawfrIseG63JkJt/tBxWQoy4=", "login"=>{"login"=>"SAnjos", "senha"=>"sasa"}}
+  [4;36;1mUsuario Load (13.5ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (login='SAnjos' AND senha='sasa') LIMIT 1[0m
+  [4;35;1mUsuario Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (login='SAnjos' AND senha='sasa') LIMIT 1[0m
+Redirected to http://localhost:3000/office
+Completed in 56ms (DB: 17) | 302 Found [http://localhost/usuarios/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2010-12-08 00:34:27) [GET]
+  [4;35;1mUsuario Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (3.8ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (1.2ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (16.6ms)
+  [4;36;1mNote Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 179ms (View: 59, DB: 7) | 200 OK [http://localhost/office]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing NoteController#view_trash (for 127.0.0.1 at 2010-12-08 00:34:30) [GET]
+  [4;35;1mUsuario Columns (3.6ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (4.8ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) [0m
+  [4;35;1mNote Load (11.7ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 1 AND `notes`.`user_id` = 1) ORDER BY notes.id DESC, notes.created_at DESC[0m
+  [4;36;1mNote Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 121ms (View: 24, DB: 22) | 200 OK [http://localhost/note/view_trash]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-08 00:34:31) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/sort_asc.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-08 00:34:31) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/sort_both.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
