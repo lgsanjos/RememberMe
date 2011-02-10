@@ -8,7 +8,8 @@
   
   
   <%#= javascript_include_tag "3rd party/jquery/ui/", :all, :recursive => true %>
-  <%= javascript_include_tag "3rd party/jquery/jquery-ui-1.8.6.custom.min.js" %>
+  <% #drag %>
+  <%= javascript_include_tag "3rd party/jquery/jquery-ui-1.8.6.custom.min.js"%>
   <%#= javascript_include_tag "3rd party/jquery/jqDnR/jqDnR.js" %>
 
   <%= javascript_include_tag "3rd party/Base.js" %>
@@ -31,9 +32,8 @@
     <p class="item">
       <img src="images/index/logo.png" alt="OfficeDesk" class="logo"/>
     </p>
-    <p class="item menu">Minha Conta</p>
-    <p class="item menu"><a href="#" class="pirobox">Lixeira</a></p>
     <p class="item menu"><%= link_to "Sair", :controller => "usuarios", :action => "logout" %></p>
+    <p class="item menu"><a href="#" class="pirobox">Lixeira</a></p>
   </div>
   
   <!--div id="right_menu">

@@ -27,8 +27,10 @@
 }
 
 #header p.menu{
+  float:right;
+
   padding-top: 45px;
-  margin-left: 25px;
+  margin-right: 35px;
   font-size:150%;
 }
 
