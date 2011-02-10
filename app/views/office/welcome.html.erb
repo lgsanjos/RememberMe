@@ -76,7 +76,7 @@
 			</div>
 
 			<p id="mygallery-paginate" style="width: 660px; text-align:center;">
-                          <img src="images/welcome/opencircle.png" data-over="graycircle.png" data-select="closedcircle.png" data-moveby="1" />			  
+                          <img src="images/welcome/opencircle.png" data-over="images/welcome/graycircle.png" data-select="images/welcome/closedcircle.png" data-moveby="1" />
 			</p>		
 
       </div>
@@ -125,11 +125,11 @@ stepcarousel.setup({
 	panelclass: 'panel', //class of panel DIVs each holding content
 	autostep: {enable:false, moveby:1, pause:3000},
 	panelbehavior: {speed:500, wraparound:false, wrapbehavior:'slide', persist:true},
-	defaultbuttons: {enable: true, moveby: 1, leftnav: [], rightnav: []},
+	defaultbuttons: {enable: true, moveby: 1},
 	statusvars: ['statusA', 'statusB', 'statusC'], //register 3 variables that contain current panel (start), current panel (last), and total panels
 	contenttype: ['inline'] //content setting ['inline'] or ['ajax', 'path_to_external_file']
 });
-
+//defaultbuttons: {enable: true, moveby: 1, leftnav: [], rightnav: []},
 
 
      function setNovaConta(){
