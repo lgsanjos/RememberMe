@@ -32,7 +32,7 @@
     <p class="item">
       <img src="images/index/logo.png" alt="OfficeDesk" class="logo"/>
     </p>
-    <p class="item menu"><%= link_to "Sair", :controller => "usuarios", :action => "logout" %></p>
+    <p class="item menu"><%=h link_to "Sair", :controller => "usuarios", :action => "logout" %></p>
     <p class="item menu"><a href="#" class="pirobox">Lixeira</a></p>
   </div>
   
@@ -91,7 +91,7 @@
 
 
      try{
-       var viewTrash = '<%=(render "note/viewTrash").gsub("\n", "") %>';
+       var viewTrash = '<%=h (render "note/viewTrash").gsub("\n", "") %>';
        setPirobox(viewTrash, onShow);
      }catch(e){
        raiseException(e);
@@ -101,7 +101,7 @@
    function showNotes(){
      function loadObjects(){
        <% @note.each do |n| %>
-         <%="NewNote( #{n.posX}, #{n.posY}, \"#{n.conteudo.gsub("\n", "<br />")}\", #{n.width}, #{n.height}, false, true, \"#{n.UUID}\" );"%>
+         <%= "NewNote( #{n.posX}, #{n.posY}, \"#{trata_msg n.conteudo.gsub("\n", "<br />")}\", #{n.width}, #{n.height}, false, true, \"#{n.UUID}\" );"%>
        <% end %>
      }
 

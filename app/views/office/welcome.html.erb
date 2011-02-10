@@ -108,8 +108,8 @@
               $('#login_login').focus();
           });
           
-          novaConta = '<%=(render "usuarios/novaConta").gsub("\n", "<br />") %>';
-          esqueceuConta = '<%=(render "usuarios/esqueceuConta").gsub("\n", "") %>';
+          novaConta = '<%=h (render "usuarios/novaConta").gsub("\n", "<br />") %>';
+          esqueceuConta = '<%=h (render "usuarios/esqueceuConta").gsub("\n", "") %>';
           
 
       }catch(E){
