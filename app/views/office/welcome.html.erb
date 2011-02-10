@@ -3,6 +3,7 @@
   <%=  stylesheet_link_tag 'welcome'%>
   <%=  stylesheet_link_tag 'piro/style/style', :media => 'screen', :title => 'black'%>
   <%=  javascript_include_tag '3rd party/jquery/piro/pirobox.js'%>
+  <%=  javascript_include_tag '3rd party/jquery/stepcarousel.js'%>
 <%  end %>
 <div id="welcome">
   <div id="cabecalho">
@@ -31,7 +32,49 @@
       <div id="left">
       </div>
       <div id="mid">
-        
+
+			<div id="mygallery" class="stepcarousel">
+			<div class="belt">
+
+			<div class="panel">
+			  <h1>Hello! Welcome to the OfficeDesk.</h1>
+			  <h2> - What is Office Desk?</h2>
+			  <p>OffDesk is a FREE and online area, for you write and post reminds just like in a REAL desk!</p>
+			</div>
+
+			<div class="panel">
+			  <h2> - Is it a ticket manager or any stuff like that?</h2>
+			  <p>Absolutely no! Our pourpose is a friendly area for organize yours reminds,</p>
+			  <p>there is NO bunch of manuals, or "best practices to...". OffDesk is just like your home desk,</p>
+			  <p>You take a piece of paper, write and stick where you want!</p>
+			</div>
+
+			<div class="panel">
+			  <h2>I wanna a quick test!</h2>
+			  <p>If you don't wanna create a FREE account to test it, NO PROBLEM! Click here and get the shared test account</p>
+			  <h2></h2>
+			</div>
+
+			<div class="panel">
+			  <h2> - And what about new features?</h2>
+			  <p>We are working hard to develop news features, like calendar, note books, agenda, shared tasks and much more.</p>
+			  <p>Our team are waiting for suggestions, tips or any kind of FEEDBACK!</p>
+			  <p>Feel free to talk to us, we are really waiting for <a href="#">contact</a>. :)</p>
+			</div>
+
+			<div class="panel">
+			  <h2> - Ok, Ok... but it isn't an Office desk?</h2>
+			  <p>Yeah! In the future we will have some feature interesting to compannies like, financy organization.</p>
+			  <p>For now one, we are totaly focused on home users with personal purposes! ;)</p>
+			</div>
+
+			</div>
+			</div>
+
+			<p id="mygallery-paginate" style="width: 660px; text-align:center;">
+                          <img src="images/welcome/opencircle.png" data-over="graycircle.png" data-select="closedcircle.png" data-moveby="1" />			  
+			</p>		
+
       </div>
       <div id="right">
       </div>
@@ -73,3 +116,18 @@
       
     });
   </script>
+
+  <script type="text/javascript">
+
+stepcarousel.setup({
+	galleryid: 'mygallery', //id of carousel DIV
+	beltclass: 'belt', //class of inner "belt" DIV containing all the panel DIVs
+	panelclass: 'panel', //class of panel DIVs each holding content
+	autostep: {enable:false, moveby:1, pause:3000},
+	panelbehavior: {speed:500, wraparound:false, wrapbehavior:'slide', persist:true},
+	defaultbuttons: {enable: true, moveby: 1, leftnav: [], rightnav: []},
+	statusvars: ['statusA', 'statusB', 'statusC'], //register 3 variables that contain current panel (start), current panel (last), and total panels
+	contenttype: ['inline'] //content setting ['inline'] or ['ajax', 'path_to_external_file']
+})
+
+</script>

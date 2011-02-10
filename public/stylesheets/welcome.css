@@ -37,11 +37,12 @@ div#cabecalho{
     position: absolute;
     z-index:999;
 
-    width:310px;
-    height:90px;
+    width:396px;
+    height:229px;
 
     left: -20px;
-    top: 50px;
+    top: 0px;
+    
 
     cursor: pointer;
    
@@ -62,6 +63,7 @@ div#cabecalho{
   
     background: url(../images/welcome/login.png) no-repeat;
   }
+
 
     div#cabecalho div#login div#content{
       padding: 60px 0px 0px 80px;
@@ -123,7 +125,7 @@ div#cabecalho{
 
 
 div#corpo{
-  height: 200px;
+  height: 210px;
   padding: 0px;
   margin:0px;
   clear:both;
@@ -144,8 +146,8 @@ div#corpo{
     float:left;
     width:100%;
 
-    height: inherit;
-
+    margin:0px;
+    padding-left:160px;
     background: white;
   }
 
@@ -196,6 +198,55 @@ div#rodape{
 
     background: white url(../images/welcome/rodape_right.jpg) no-repeat;
   }
+
+
+  /*
+   -----------------------------------------------------------------
+   ----- step carousel
+   -----------------------------------------------------------------
+  */
+
+
+  	.stepcarousel{
+	position: relative; /*leave this value alone*/
+	border: 0px solid black;
+	overflow: scroll; /*leave this value alone*/
+	width: 660px; /*Width of Carousel Viewer itself*/
+	height: 180px; /*Height should enough to fit largest content's height*/
+	}
+
+	.stepcarousel .belt{
+	  position: absolute; /*leave this value alone*/
+	  left: 0;
+	  top: 0;
+	}
+
+	.stepcarousel .panel{
+	  float: left; /*leave this value alone*/
+	  overflow: hidden; /*clip content that go outside dimensions of holding panel DIV*/
+	  margin: 0px; /*margin around each panel*/
+	  width: 660px; /*Width of each panel holding each content. If removed, widths should be individually defined on each content DIV then. */
+	}
+
+        .stepcarousel .panel h1{
+            font-size: 30px;
+            line-height: 33px;
+            margin:20px 0px;
+        }
+
+        .stepcarousel .panel h2{
+            font-size: 26px;
+            line-height: 26px;
+            margin:10px 0px;
+            color: gray;
+        }
+
+        .stepcarousel .panel p{
+            margin:2px 0px;
+            padding: 0px;
+        }
+
+
 
 
 
