@@ -9,7 +9,6 @@ class Usuario < ActiveRecord::Base
     
     def authenticate
       temp =  Usuario.find(:first, :conditions => (['login=? AND senha=?', self.login, self.senha]))
-      logger.info "authenticate = " + (not temp.blank?).to_s
       not temp.blank?
     end
    

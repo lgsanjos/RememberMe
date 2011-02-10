@@ -1,8 +1,13 @@
+/* SetupRightMenu
+ *   Adiciona as funcionalidades para os itens do menu direito (Right_Menu)
+ *   tais como as de drag n drop e click
+ */
 function SetupRightMenu(){
 
    function noteClick(){
      NewNote();
    }
+
    $('#note').click(noteClick);
 
    $('#note').draggable({
@@ -38,16 +43,23 @@ function SetupRightMenu(){
 
 function setContextMenu(){
     try{
-        var menu1 = [
-        {'Novo lembrete': function(menuItem,menuObject) {
-                                var pos = $(menuObject.menu).position();
-                                NewNote(pos.left, pos.top);
-                                }}
-        ];
 
-        $('#page').contextMenu(menu1,{theme:'vista'});
+      $('#page').contextMenu('divContextMenu', {
+
+         bindings: {
+
+             'novaNota' : function(e,target,pos){
+                            //alert('left: ' pos.left + ' top: ' + pos.top);
+                            NewNote(pos.left, pos.top);
+             }
+
+         }
+      });
+
 
     }catch(E){
         raiseException(E);
     }
 }
+
+// -------------

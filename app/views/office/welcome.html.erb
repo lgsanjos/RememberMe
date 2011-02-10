@@ -5,6 +5,7 @@
   <%=  javascript_include_tag '3rd party/jquery/piro/pirobox.js'%>
   <%=  javascript_include_tag '3rd party/jquery/stepcarousel.js'%>
 <%  end %>
+  
 <div id="welcome">
   <div id="cabecalho">
     <div id="left">
@@ -18,9 +19,12 @@
           <% form_tag :controller =>"usuarios/login" do %>
           <p><label>Login</label><%=text_field("login","login", :class => "input")%></p>
           <p><label>Senha</label><%=password_field("login","senha", :class => "input")%></p>
-          <p>
-            <%= submit_tag "Entrar"   %>
-            <a href="#" id="lkNovaConta" class="pirobox">Nova conta?</a>
+          <p style="float:left; padding-right:15px; padding-top:10px;">
+            <%= submit_tag "Entrar", :style => "width:80px;" %>
+          </p>
+          <p style="float:left;">
+            <a href="#" id="lkNovaConta" class="pirobox" onfocus="setNovaConta();" onmouseover="setNovaConta();">Nova conta?</a> <br />
+            <a href="#" id="lkEsqueceuConta" class="pirobox"  onfocus="setEsqueceuConta();" onmouseover="setEsqueceuConta();">Esqueceu a senha?</a>
           </p>
           <% end%>
         </div>
@@ -94,27 +98,23 @@
   <script>
     $().ready(function (){
       try{
+        
 
-        setTimeout(function (){
-          $('#login').fadeIn('slow');
-
-          $('#login_login').focus();
-
-          $('#lkNovaConta').click( function (){
-            setTimeout( function (){
-              $('#usuario_nome').focus();
-            }, 1000);
+          $('#login').fadeIn(1000, function(){
+              $('#login_login').focus();
           });
-        }, 600);
+          
+          novaConta = '<%=(render "usuarios/novaConta").gsub("\n", "<br />") %>';
+          esqueceuConta = '<%=(render "usuarios/esqueceuConta").gsub("\n", "") %>';
 
       }catch(E){
         raiseException(E);
       }
 
-      var novaConta = '<%=(render :partial => "novaConta").gsub("\n", "<br />") %>';
-      setPirobox(novaConta);
-      
+           
     });
+
+
   </script>
 
   <script type="text/javascript">
@@ -128,6 +128,20 @@ stepcarousel.setup({
 	defaultbuttons: {enable: true, moveby: 1, leftnav: [], rightnav: []},
 	statusvars: ['statusA', 'statusB', 'statusC'], //register 3 variables that contain current panel (start), current panel (last), and total panels
 	contenttype: ['inline'] //content setting ['inline'] or ['ajax', 'path_to_external_file']
-})
+});
 
-</script>
+
+
+     function setNovaConta(){
+       setPirobox(novaConta, function(){
+                                  $('#usuario_nome').focus();
+                             });
+     }
+
+     function setEsqueceuConta(){
+        setPirobox(esqueceuConta, function(){
+                                    $('#esqueceu_login').focus();
+                                  });
+      }
+
+  </script>

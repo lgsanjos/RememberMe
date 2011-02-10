@@ -1,36 +1,14 @@
-function statusBar(aText){
-  try{
-    // Singletone
-    if (!$('#statusbar').length){
-      cont = '<div id="statusbar" class="statusbar"></div>';
-      $('#page').append(cont);
-    }
-  
-    if (aText != '')
-      $('#statusbar').html(aText).fadeIn('slow');
-    else
-      //Adicionado um delay só pra fazer graca
-      _int = window.setInterval(function(){ $('#statusbar').fadeOut('slow'); clearInterval(_int); }, 1000); 
+  // # ofdSystem.js
+  // Descricao:
+  //   Responsavel por funcoes de uso genério para qualquer sistema
+  //   independente do framework.
+  //   (camada mais baixa do OfficeDesk)
+  // Dependencia:
+  //   
+  // -------------------
 
-  }catch(E){
-    raiseException(E);
-  }
- 
-}
 
-// -------------------
-// Define as funcionalidades para os elementos draggables
-function setDraggables(){
-  $('.draggable').draggable({ scroll: true });
-}
 
-// -------------------
-// Define as funcionalidades para os elementos resizables
-function setResizable(){
-  $('.resizable').resizable("enable");
-}
-
-// -------------------
 // Número único gerado, será uma das chaves primarias do sistema
 function getUUID() {
     try{
@@ -70,3 +48,35 @@ function raiseException(msg){
       alert(msg);
     }
 }
+
+
+function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+
+// -------------
+
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
+// -------------
+
+function eraseCookie(name) {
+	createCookie(name,"",-1);
+}
+
+// -------------
