@@ -55,19 +55,9 @@
 
 
 
-
 <script type="text/javascript">
 
-   $().ready(function(){
-
-     initialization();
-     //SetupRightMenu();
-     preparaPirobox();
-     showNotes();
-
-   });
-
-   function preparaPirobox(){
+     function preparaPirobox(){
 
      function onShow(){
              $.ajax({
@@ -104,19 +94,19 @@
          <% @note.each do |n| %>
            <%= "NewNote( #{n.posX}, #{n.posY}, \"#{Note.trata_conteudo n.conteudo}\", #{n.width}, #{n.height}, false, true, \"#{n.UUID}\" );"%>
          <% end %>
-      },6000);
-      
+      },10);
+
    }
 
    function removeNote(id){
-     
+
      $.ajax({
               type: 'POST',
               async: true,
               data: ({
                  'note':{
                           'id': id
-                        }  
+                        }
                       }),
 
               url: '<%= url_for( :controller => :note, :action => :remove )%>',
@@ -128,8 +118,8 @@
                               $(this).remove();
                               drawTrashListTable();
                             });
-                            
-                           
+
+
                          }
               },
 
@@ -162,7 +152,7 @@
                             func += '  raiseException(e);';
                             func += '}';
                             eval(func);
-                            
+
                             $('#trashListTable').dataTable().fnDestroy();
                             $(this).remove();
                             drawTrashListTable();
@@ -197,5 +187,18 @@
             }
         });
    }
+
+</script>
+
+<script type="text/javascript">
+
+   $().ready(function(){
+
+     initialization();
+     //SetupRightMenu();
+     preparaPirobox();
+     showNotes();
+
+   });
 
 </script>

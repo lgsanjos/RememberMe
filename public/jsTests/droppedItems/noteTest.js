@@ -70,6 +70,13 @@ test("Testar Append",function(){
 });
 
 
-test("",function(){
+test("testar hash",function(){
+  var has = new Hash();
+  has.clear();
+  has.setItem('teste', 'teste');
+
+  for (item in has.items){
+    equals(item === 'teste');
+  }
 
 })

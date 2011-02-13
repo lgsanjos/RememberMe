@@ -2,6 +2,7 @@ function Hash()
 {
 	this.length = 0;
 	this.items = new Array();
+
 	for (var i = 0; i < arguments.length; i += 2) {
 		if (typeof(arguments[i + 1]) != 'undefined') {
 			this.items[arguments[i]] = arguments[i + 1];

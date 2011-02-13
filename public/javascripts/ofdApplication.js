@@ -31,7 +31,7 @@ function startChangedMonitor(aChangedList){
       try{
         statusBar('Salvando...');
 
-	for (item in aChangedList.items) {       
+	for (var item in aChangedList.items) {
           var _pointer = aChangedList.getItem(item);
 
           if (_pointer instanceof ofdCustomDroppedItem){

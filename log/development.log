@@ -44768,3 +44768,463 @@ Processing NoteController#save (for 127.0.0.1 at 2011-02-13 11:53:53) [POST]
   [4;35;1mNote Update (0.0ms)[0m   [0mUPDATE `notes` SET `updated_at` = '2011-02-13 13:53:53', `posY` = '227', `posX` = '188' WHERE `id` = 85[0m
   [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
 Completed in 44ms (View: 4, DB: 4) | 200 OK [http://localhost/note/save]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 12:19:49) [GET]
+  [4;36;1mUsuario Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (24.0ms)
+  [4;35;1mNote Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 212ms (View: 136, DB: 8) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 12:21:25) [GET]
+  [4;36;1mUsuario Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (4.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 48ms (View: 16, DB: 8) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 12:21:27) [GET]
+  [4;36;1mUsuario Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 48ms (View: 20, DB: 8) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 12:21:59) [GET]
+  [4;36;1mUsuario Columns (12.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (4.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (8.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 68ms (View: 32, DB: 32) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 12:22:04) [GET]
+  [4;36;1mUsuario Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 40ms (View: 20, DB: 4) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 12:22:09) [GET]
+  [4;36;1mUsuario Columns (12.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 32ms (View: 4, DB: 20) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 12:22:13) [GET]
+  [4;36;1mUsuario Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (4.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (16.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 44ms (View: 0, DB: 32) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 12:22:17) [GET]
+  [4;36;1mUsuario Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 44ms (View: 20, DB: 4) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 12:22:24) [GET]
+  [4;36;1mUsuario Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 44ms (View: 16, DB: 8) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 12:22:31) [GET]
+  [4;36;1mUsuario Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (4.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 56ms (View: 28, DB: 8) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 12:22:34) [GET]
+  [4;36;1mUsuario Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (8.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (20.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 56ms (View: 16, DB: 32) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 12:22:39) [GET]
+  [4;36;1mUsuario Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (4.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 132ms (View: 100, DB: 12) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 12:23:08) [GET]
+  [4;36;1mUsuario Load (40.0ms)[0m   [0;1mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/office/welcome
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 76ms (DB: 40) | 302 Found [http://localhost/office]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-02-13 12:23:08) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_novaConta (32.0ms)
+Rendered usuarios/_esqueceuConta (4.0ms)
+Completed in 72ms (View: 68, DB: 0) | 200 OK [http://localhost/office/welcome]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsuariosController#login (for 127.0.0.1 at 2011-02-13 12:23:10) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"g3CDWeBwPs0HV5HX1Adx8waCcPZMbqA6e4z8sBBRHrU=", "login"=>{"login"=>"SAnjos", "senha"=>"sasa"}}
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT * FROM `usuarios` WHERE (login='SAnjos' AND senha='sasa') LIMIT 1[0m
+  [4;36;1mUsuario Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `usuarios` WHERE (login='SAnjos' AND senha='sasa') LIMIT 1[0m
+Redirected to http://localhost:3000/office
+Completed in 20ms (DB: 4) | 302 Found [http://localhost/usuarios/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 12:23:10) [GET]
+  [4;36;1mUsuario Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 80ms (View: 40, DB: 0) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 14:51:37) [GET]
+  [4;36;1mUsuario Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 48ms (View: 20, DB: 8) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 14:51:51) [GET]
+  [4;36;1mUsuario Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (4.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 72ms (View: 28, DB: 16) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 14:52:13) [GET]
+  [4;36;1mUsuario Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 168ms (View: 20, DB: 8) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 14:52:30) [GET]
+  [4;36;1mUsuario Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 52ms (View: 24, DB: 8) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 14:52:41) [GET]
+  [4;36;1mUsuario Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (4.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (12.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 48ms (View: 4, DB: 24) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 14:52:51) [GET]
+  [4;36;1mUsuario Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 44ms (View: 16, DB: 8) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 14:53:11) [GET]
+  [4;36;1mUsuario Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (4.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 72ms (View: 44, DB: 16) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 14:53:24) [GET]
+  [4;36;1mUsuario Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 64ms (View: 24, DB: 8) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 14:54:21) [GET]
+  [4;36;1mUsuario Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (4.0ms)
+  [4;35;1mNote Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 44ms (View: 20, DB: 8) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 14:54:34) [GET]
+  [4;36;1mUsuario Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (4.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 36ms (View: 8, DB: 12) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 14:55:25) [GET]
+  [4;36;1mUsuario Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 48ms (View: 20, DB: 4) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 14:55:28) [GET]
+  [4;36;1mUsuario Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 36ms (View: 12, DB: 4) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 14:55:28) [GET]
+  [4;36;1mUsuario Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (8.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 72ms (View: 24, DB: 16) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 14:55:28) [GET]
+  [4;36;1mUsuario Columns (24.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 56ms (View: 20, DB: 28) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 14:55:28) [GET]
+  [4;36;1mUsuario Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (4.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (12.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 40ms (View: 8, DB: 24) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 14:57:30) [GET]
+  [4;36;1mUsuario Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 56ms (View: 28, DB: 4) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 14:57:31) [GET]
+  [4;36;1mUsuario Columns (12.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (8.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (8.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 96ms (View: 28, DB: 36) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 15:00:21) [GET]
+  [4;36;1mUsuario Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (4.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;35;1mNote Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 48ms (View: 24, DB: 4) | 200 OK [http://localhost/office]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing NoteController#save (for 127.0.0.1 at 2011-02-13 15:00:32) [POST]
+  Parameters: {"note"=>{"titulo"=>"", "conteudo"=>"4 bele", "posX"=>"751", "height"=>"160", "posY"=>"439", "UUID"=>"F3854E9D35C344168D14BEFB9D9D86DD", "state"=>"1", "width"=>"150"}}
+  [4;36;1mUsuario Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.0ms)[0m   [0mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Load (12.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.`UUID` = 'F3854E9D35C344168D14BEFB9D9D86DD') LIMIT 1[0m
+  [4;35;1mNote Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mNote Update (8.0ms)[0m   [0mUPDATE `notes` SET `updated_at` = '2011-02-13 17:00:32', `posY` = '439', `conteudo` = '4 bele', `posX` = '751' WHERE `id` = 82[0m
+  [4;36;1mSQL (36.0ms)[0m   [0;1mCOMMIT[0m
+Completed in 140ms (View: 32, DB: 64) | 200 OK [http://localhost/note/save]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-02-13 15:00:48) [GET]
+  [4;35;1mUsuario Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.0ms)[0m   [0;1mSELECT `usuarios`.id FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;35;1mNote Load (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.`trashed` = 0 AND `notes`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering office/index
+Rendered note/_viewTrash (0.0ms)
+  [4;36;1mNote Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 44ms (View: 20, DB: 0) | 200 OK [http://localhost/office]
