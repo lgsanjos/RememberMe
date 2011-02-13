@@ -6,7 +6,8 @@ class Usuario < ActiveRecord::Base
 
     # If a user matching the credentials is found, returns the User object.
     # If no matching user is found, returns nil.
-    
+
+    public
     def authenticate
       temp =  Usuario.find(:first, :conditions => (['login=? AND senha=?', self.login, self.senha]))
       not temp.blank?

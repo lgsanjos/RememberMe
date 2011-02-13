@@ -17,8 +17,8 @@
       <div id="login">
         <div id="content">
           <% form_tag :controller =>"usuarios/login" do %>
-          <p><label>Login</label><%=text_field("login","login", :class => "input")%></p>
-          <p><label>Senha</label><%=password_field("login","senha", :class => "input")%></p>
+          <p><label>Login</label><%=h text_field("login","login", :class => "input")%></p>
+          <p><label>Senha</label><%=h password_field("login","senha", :class => "input")%></p>
           <p style="float:left; padding-right:15px; padding-top:10px;">
             <%= submit_tag "Entrar", :style => "width:80px;" %>
           </p>
@@ -75,7 +75,7 @@
 			</div>
 			</div>
 
-			<p id="mygallery-paginate" style="width: 660px; text-align:center;">
+			<p id="mygallery-paginate" style="width: 640px; text-align:center;">
 
                           <img src="<%= image_path "welcome/opencircle.png" %>"
                                data-over="<%= image_path "welcome/graycircle.png" %>"
@@ -108,8 +108,8 @@
               $('#login_login').focus();
           });
           
-          novaConta = '<%=h (render "usuarios/novaConta").gsub("\n", "<br />") %>';
-          esqueceuConta = '<%=h (render "usuarios/esqueceuConta").gsub("\n", "") %>';
+          novaConta = '<%= (render "usuarios/novaConta").gsub("\n", "<br />") %>';
+          esqueceuConta = '<%= (render "usuarios/esqueceuConta").gsub("\n", "") %>';
           
 
       }catch(E){

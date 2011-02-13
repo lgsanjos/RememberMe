@@ -14,8 +14,4 @@ module ApplicationHelper
     end
   end
 
-  def trata_msg(str)
-    str.gsub("\n", "").gsub("'","\'").gsub('"','\"')
-  end
-
 end

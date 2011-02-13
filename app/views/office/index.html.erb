@@ -91,7 +91,7 @@
 
 
      try{
-       var viewTrash = '<%=h (render "note/viewTrash").gsub("\n", "") %>';
+       var viewTrash = '<%= (render "note/viewTrash").gsub("\n", "") %>';
        setPirobox(viewTrash, onShow);
      }catch(e){
        raiseException(e);
@@ -101,7 +101,7 @@
    function showNotes(){
      function loadObjects(){
        <% @note.each do |n| %>
-         <%= "NewNote( #{n.posX}, #{n.posY}, \"#{trata_msg n.conteudo.gsub("\n", "<br />")}\", #{n.width}, #{n.height}, false, true, \"#{n.UUID}\" );"%>
+         <%= "NewNote( #{n.posX}, #{n.posY}, \"#{Note.trata_conteudo n.conteudo}\", #{n.width}, #{n.height}, false, true, \"#{n.UUID}\" );"%>
        <% end %>
      }
 

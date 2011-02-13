@@ -90,7 +90,7 @@ class NoteController < ApplicationController
       @note.trashed = false
       @note.save
       #TODO: Refotarar, retornar o comando JS é gambiarra
-      render :inline => "NewNote( #{@note.posX}, #{@note.posY}, \"#{@note.conteudo.gsub("\n", "<br />")}\", #{@note.width}, #{@note.height}, false, true, \"#{@note.UUID}\" );"
+      render :inline => "NewNote( #{@note.posX}, #{@note.posY}, \"#{@note.conteudo_tratado}\", #{@note.width}, #{@note.height}, false, true, \"#{@note.UUID}\" );"
     end
   end
 

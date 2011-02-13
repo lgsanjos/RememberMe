@@ -1,5 +1,5 @@
 class OfficeController < ApplicationController
-  before_filter :authenticate, :only => [:index] 
+  before_filter :authenticate, :except => [:welcome]
     
   def index
     @note = Note.find(:all, :conditions => {'trashed' => false, 'user_id' => session[:usr].id} )

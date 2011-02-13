@@ -9,9 +9,7 @@ class ApplicationController < ActionController::Base
 
   protected
   def authenticate
-
-    redirect_to :controller => 'office', :action => 'welcome' unless Usuario.find(session[:usr].id)
-
+    redirect_to :controller => 'office', :action => 'welcome' unless Usuario.exists? session[:usr]
   end
 
  
