@@ -27,15 +27,23 @@
 
 }
 
-.note textarea{
+
+.note textarea,
+.note textarea:focus{
    width:100%;
    height:100%;
+
    resize:none;
    outline: 0px;
+
+
    border:0px;
    padding:2px;
+   margin: 2px;
+   
    font-size: 110%;
-   font-family: arial;
+   font-family: Tahoma, sans-serif, arial;
+   font-weight: lighter;
    letter-spacing: 1px;
    background-color: inherit;
 }

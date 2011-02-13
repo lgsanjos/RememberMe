@@ -135,15 +135,22 @@ var Note = ofdCustomDroppedItem.extend({
 
 
              $(container).append(nota);
-             $('.note:last').hide();
-             $('.note:last').attr("id",this.UUID);
-             $('.note:last').css("left",this.posX);
-             $('.note:last').css("top",this.posY);
-             $('.note:last').css("width",this.width);
-             $('.note:last').css("height",this.height);
+             var $note = $('.note:last');
+             $note.hide();
+             $note.attr("id",this.UUID);
+             $note.css("left",this.posX);
+             $note.css("top",this.posY);
+             $note.css("width",this.width);
+             $note.css("height",this.height);
              // $('.noteBody:last > .TextArea').val(this.content);
              $('#' + this.UUID + '> .noteBody > .textArea').val(this.content.replace('<br />', "\n"));
-             $('.note:last').fadeIn('slow');
+             // Aguarda um tempo aleatorio para dar efeito
+
+
+             setTimeout(function(){
+               $note.fadeIn('slow');
+             }, Math.floor((Math.random()* 900)));
+             
 
              // Define eventos que serão interpretados futuramente,
              // logo todos os dados dentro dos eventos devem ser variados e analisados

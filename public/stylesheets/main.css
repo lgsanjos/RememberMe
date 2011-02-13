@@ -1,3 +1,6 @@
+*{
+  outline: 0px;
+}
 body{
  margin:0px;
  padding:0px;
@@ -19,8 +22,9 @@ pre {
 }
 
 a { color: #000; }
+a:link,
 a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
+a:hover { color: #999; opacity: 0.7; }
 
 .fieldWithErrors {
   padding: 2px;
