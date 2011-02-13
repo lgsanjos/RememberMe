@@ -99,13 +99,13 @@
    }
 
    function showNotes(){
-     function loadObjects(){
-       <% @note.each do |n| %>
-         <%= "NewNote( #{n.posX}, #{n.posY}, \"#{Note.trata_conteudo n.conteudo}\", #{n.width}, #{n.height}, false, true, \"#{n.UUID}\" );"%>
-       <% end %>
-     }
 
-      window.setTimeout(loadObjects(),6000);
+      window.setTimeout(function(){
+         <% @note.each do |n| %>
+           <%= "NewNote( #{n.posX}, #{n.posY}, \"#{Note.trata_conteudo n.conteudo}\", #{n.width}, #{n.height}, false, true, \"#{n.UUID}\" );"%>
+         <% end %>
+      },6000);
+      
    }
 
    function removeNote(id){

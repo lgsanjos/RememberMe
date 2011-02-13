@@ -6,6 +6,7 @@
   float: none;
   position:absolute;
   z-index:2;
+  overflow: hidden;
   
 }
 
@@ -32,21 +33,22 @@
 .note textarea:focus{
    width:100%;
    height:100%;
-
-   resize:none;
-   outline: 0px;
-
-   overflow: hidden;
-   
    border:0px;
    padding:2px;
    margin: 2px;
+
+   resize:none;
+   outline: 0px;
+   background-color: yellow;
+   overflow: hidden;
+   display:block;
+
    
    font-size: 110%;
    font-family: Tahoma, sans-serif, arial;
    font-weight: lighter;
    letter-spacing: 1px;
-   background-color: yellow;
+
 }
 
 .note input{
