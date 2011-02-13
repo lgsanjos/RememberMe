@@ -17,7 +17,7 @@ class UsuariosController < ApplicationController
       session[:usr] = usr
       redirect_to :controller => 'office', :action => 'index'
     else
-      flash[:error] = 'Usuário ou senha inválido.'
+      flash[:error] = 'Incorrect username or password, please try again.'
       redirect_to :controller => "office", :action => "welcome"
     end
 
@@ -102,15 +102,16 @@ class UsuariosController < ApplicationController
 
     unless @usuario.blank?
       begin
-        Emailer::deliver_mail(params[:esqueceu][:email], "Recupera&ccedil;&atilde;o de senha.", "Nós recebemos o pedido de recupera&ccedil;&atilde;o de senha do usuário:")
-        logger.info "Envio ?"
-        flash[:notice] = "Email enviado com sucesso para: #{params[:esqueceu][:email]}. "
+        # TODO: format the content as HTML and create a new password
+        Emailer::deliver_mail(params[:esqueceu][:email], "Recupera&ccedil;&atilde;o de senha.", "We received the request to create a new password.")
+        logger.info "Enviou ?"
+        flash[:notice] = "The email has been sent to #{params[:esqueceu][:email]} succesfully. "
       rescue
-        flash[:notice] = "Ocorreu uma falha ao enviar o E-mail. Tente novamente após alguns minutos. #{$!}"
+        flash[:notice] = "An error occurred while we were sending the email, please confirm your data and send it again.  #{$!}"
       ensure
       end
     else
-      flash[:notice] = "Não foi encontrado nenhum usuário com login: #{params[:esqueceu][:login]} e e-mail #{params[:esqueceu][:email]}."
+      flash[:notice] = "Sorry but there is no #{params[:esqueceu][:login]} with the email #{params[:esqueceu][:email]} registered in our system."
     end
 
     redirect_to :controller => :office, :action => :welcome

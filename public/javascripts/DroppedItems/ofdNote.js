@@ -17,9 +17,11 @@ var Note = ofdCustomDroppedItem.extend({
         this.posY = Math.floor((Math.random()* 300) + 100);
         this.width = 150;
         this.height = 160;
-        this.content = 'Lembrete...';
+        // TODO: fazer mensagens aleatórias
+        this.content = 'I must ...';
         this.shared = false;
         this.visible = true;
+        this.date = '';
     },
 
 
@@ -32,7 +34,7 @@ var Note = ofdCustomDroppedItem.extend({
         this.width   = parseFloat($('#' + this.UUID).css('width'));
         this.height  = parseFloat($('#' + this.UUID).css('height'));
         this.content = $('#' + this.UUID + '> .noteBody > .textArea').val();
-
+        this.date = $('#' + this.UUID + '> .noteHeader > p').text();
         var returned = '';
         
         //Send Ajax
@@ -57,7 +59,7 @@ var Note = ofdCustomDroppedItem.extend({
                },
 
                error: function(XMLHttpRequest, textStatus, errorThrow){
-                    returned = 'Ocorreu o seguinte erro ao salvar : ' + errorThrow;
+                    returned = 'OMG! An error happened when we were saving your note: ' + errorThrow;
                     
                }
 
@@ -99,7 +101,7 @@ var Note = ofdCustomDroppedItem.extend({
                },
 
                error: function(XMLHttpRequest, textStatus, errorThrow){
-                    returned = 'Ocorreu o seguinte erro ao mover a nota para a lixeira : ' + errorThrow;
+                    returned = 'Occurred and error while removing this note: ' + errorThrow;
 
                }
 
@@ -126,6 +128,7 @@ var Note = ofdCustomDroppedItem.extend({
              var nota = '';
              nota += '<div class="note DroppedItem" id="">';
              nota +=   '<div class="noteHeader draggable">';
+             nota +=     '<p>' + this.date + '</p>';
              nota +=     '<a class="noteFechar">X</a>';
              nota +=   '</div>';
              nota +=   '<div class="noteBody">';
@@ -190,7 +193,7 @@ var Note = ofdCustomDroppedItem.extend({
 
   });
 
-function NewNote(posX,posY, aContent, aWidth, aHeight, shared, visible, aUUID){
+function NewNote(posX,posY, aContent, aWidth, aHeight, shared, visible, aUUID, aDate){
    try{
 
       var _note = new Note();
@@ -202,6 +205,7 @@ function NewNote(posX,posY, aContent, aWidth, aHeight, shared, visible, aUUID){
       if (aWidth !== undefined) _note.width = aWidth;
       if (aHeight !== undefined) _note.height = aHeight;
       if (shared !== undefined) _note.shared = shared;
+      if (aDate !== undefined) _note.date = aDate;
 
       _note.Append($('#page'));
     }catch(E){

@@ -1,19 +1,19 @@
 <div id="piroPanel">
-  <h1>Esqueceu a senha?</h1>
+  <h1>Forgot your password?</h1>
   <div id="esqueceuBody">
     <p>
-      Vamos enviar um email para voc&ecirc; contendo os dados de acesso. <br />
-      Mas antes precisamos confirmar o seu Login e Email cadastrado:
+      Don\'t worry. We will send you an email with a new password.<br />
+      But before that we need to confirm your login and email, ok?
     </p>
     <br />
     <% form_tag :controller => "usuarios/esqueceu_senha" do  %>
-      <p>Login: <%= text_field "esqueceu", "login", :class => "input" %> </p>
+      <p>Login: <%= text_field "esqueceu", "login", :class => "input", :size => 9 %> </p>
       <br />
-      <p>Email: <%= text_field "esqueceu", "email", :class => "input" %> </p>
+      <p>Email: <%= text_field "esqueceu", "email", :class => "input", :size => 30 %> </p>
       <br />
       <br />
       <p>
-         <%= submit_tag "Enviar", :onClick => "confirmaDadosEnviados();"%> <a href="#" onclick="closePiro();">Voltar</a>
+         <%= submit_tag "Send me", :onClick => "confirmaDadosEnviados();"%> <a href="#" onclick="closePiro();">Back</a>
       </p>
     <% end %>
   </div>

@@ -12,14 +12,24 @@
 
 .noteHeader{
   background-color: #FFC71F;
-  height:1.3em;
+  height:1.5em;
 
-  padding:1px;
+  margin: 0px;
+  padding:1px 3px;
   cursor: move;
   
   font-weight: bold;
   font-size:80%;
 
+}
+
+.noteHeader p {
+  margin: 0px;
+  padding: 0px;
+  font-size: 90%;
+
+  clear:none;
+  display: inline;
 }
 
 .note .noteBody{
@@ -43,7 +53,6 @@
    overflow: hidden;
    display:block;
 
-   
    font-size: 110%;
    font-family: Tahoma, sans-serif, arial;
    font-weight: lighter;

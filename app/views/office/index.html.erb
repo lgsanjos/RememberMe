@@ -32,8 +32,8 @@
     <p class="item">
       <img src="images/index/logo.png" alt="OfficeDesk" class="logo"/>
     </p>
-    <p class="item menu"><%=h link_to "Sair", :controller => "usuarios", :action => "logout" %></p>
-    <p class="item menu"><a href="#" class="pirobox">Lixeira</a></p>
+    <p class="item menu"><%=h link_to "Sign out", :controller => "usuarios", :action => "logout" %></p>
+    <p class="item menu"><a href="#" class="pirobox">Trash</a></p>
   </div>
   
   <!--div id="right_menu">
@@ -46,7 +46,7 @@
 
   <div class="contextMenu" id="divContextMenu">
     <ul>
-      <li id="novaNota">Novo Lembrete</li>     
+      <li id="novaNota">New note</li>
     </ul>
 
   </div>
@@ -71,7 +71,7 @@
 
                       },
                       error: function(XMLHttpRequest, textStatus, errorThrow){
-                            raiseException('Ocorreu o seguinte erro ao listar a lixeira: ' + errorThrow);
+                            raiseException('Sorry, but occurred an error while opening the trash: ' + errorThrow);
 
                       }
                     });
@@ -92,7 +92,7 @@
 
       window.setTimeout(function(){
          <% @note.each do |n| %>
-           <%= "NewNote( #{n.posX}, #{n.posY}, \"#{Note.trata_conteudo n.conteudo}\", #{n.width}, #{n.height}, false, true, \"#{n.UUID}\" );"%>
+           <%= "NewNote( #{n.posX}, #{n.posY}, \"#{Note.trata_conteudo n.conteudo}\", #{n.width}, #{n.height}, false, true, \"#{n.UUID}\", \"#{n.updated_at.strftime("%m/%d/%Y")}\" );"%>
          <% end %>
       },10);
 
@@ -124,7 +124,7 @@
               },
 
               error: function(XMLHttpRequest, textStatus, errorThrow){
-                    raiseException('Ocorreu o seguinte erro ao salvar : ' + errorThrow);
+                    raiseException('Oops, an error occurred while we were removing your note: ' + errorThrow);
               }
 
      });
@@ -162,7 +162,7 @@
               },
 
               error: function(XMLHttpRequest, textStatus, errorThrow){
-                    raiseException('Ocorreu o seguinte erro ao salvar : ' + errorThrow);
+                    raiseException('Just happened an error while we were recycling your note: ' + errorThrow);
               }
 
      });

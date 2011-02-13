@@ -18,13 +18,13 @@
         <div id="content">
           <% form_tag :controller =>"usuarios/login" do %>
           <p><label>Login</label><%=h text_field("login","login", :class => "input")%></p>
-          <p><label>Senha</label><%=h password_field("login","senha", :class => "input")%></p>
+          <p><label>Password</label><%=h password_field("login","senha", :class => "input")%></p>
           <p style="float:left; padding-right:15px; padding-top:10px;">
-            <%= submit_tag "Entrar", :style => "width:80px;" %>
+            <%= submit_tag "Sign in", :style => "width:80px;" %>
           </p>
           <p style="float:left;">
-            <a href="#" id="lkNovaConta" class="pirobox" onfocus="setNovaConta();" onmouseover="setNovaConta();">Nova conta?</a> <br />
-            <a href="#" id="lkEsqueceuConta" class="pirobox"  onfocus="setEsqueceuConta();" onmouseover="setEsqueceuConta();">Esqueceu a senha?</a>
+            <a href="#" id="lkNovaConta" class="pirobox" onfocus="setNovaConta();" onmouseover="setNovaConta();">Sign up?</a> <br />
+            <a href="#" id="lkEsqueceuConta" class="pirobox"  onfocus="setEsqueceuConta();" onmouseover="setEsqueceuConta();">Forgot your password?</a>
           </p>
           <% end%>
         </div>

@@ -1,13 +1,13 @@
 <div id="piroPanel">
-  <h1>Criar nova conta</h1>
-    <p>Junte-se ao OfficeDesk e gerencie suas tarefas, lembretes, anota&ccedil;&otilde;s de uma maneira muito mais fácil e intuitiva.</p>
-    <p>Torne o OfficeDesk sua aplicacao in&iacute;cial clicando <a href="#">aqui</a> e mantenha-se sempre informado.</p>
+  <h1>Sing up</h1>
+    <p>Join us make, post some notes, invite friends and make our team happy.</p>
+    <p>For better experience, our team recommends to set OfficeDesk as homepage by clicking <a href="#" id="setHomepage">here</a>.</p>
 <%form_tag :controller => "usuarios/create" do %>
-    <p><label>Nome:  </label><%= text_field("usuario","nome", :class => "input nome", :size => 25, :maxlength => 30) %></p>
+    <p><label>Name:  </label><%= text_field("usuario","nome", :class => "input nome", :size => 25, :maxlength => 30) %></p>
     <p><label>Email: </label><%= text_field("usuario","email", :class => "input email", :email => true, :size => 30, :maxlength => 50) %></p>
     <p><label>Login: </label><%= text_field("usuario","login", :class => "input login", :size => 25, :maxlength => 30) %></p>
-    <p><label class="lbSenha">Senha: </label><%= password_field("usuario","senha", :class => "input senha", :size => 9, :maxlength => 15) %></p>
-    <p><label class="lbSenha">Repita a senha: </label><%= password_field("","resenha", :class => "input resenha", :size => 9, :maxlength => 15) %></p>
-    <%= submit_tag "Cadastrar" %> <a href="#" onclick="closePiro();">Voltar</a>
+    <p><label class="lbSenha">Password: </label><%= password_field("usuario","senha", :class => "input senha", :size => 9, :maxlength => 15) %></p>
+    <p><label class="lbSenha">Repeat password: </label><%= password_field("","resenha", :class => "input resenha", :size => 9, :maxlength => 15) %></p>
+    <%= submit_tag "Sign Up" %> <a href="#" onclick="closePiro();">Back</a>
 <% end %>
 </div>

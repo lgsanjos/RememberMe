@@ -42,16 +42,16 @@ class NoteController < ApplicationController
     res = '
       <thead>
         <tr>
-          <th width="50%">Anota&ccedil;&atilde;o</th>
-          <th width="15%">Criado em</th>
-          <th width="15%">Foi pro lixo</th>
-          <th width="20%">A&ccedil;&otilde;es</th>
+          <th width="50%">Notes</th>
+          <th width="15%">Posted in</th>
+          <th width="15%">Sent to trash</th>
+          <th width="20%">Actions</th>
         </tr>
       </thead>
       <tbody>
     '
     if @note.blank?
-      res += '<td colspan="4">N&atilde;o h&aacute; itens na lixeira.<td>'
+      res += '<td colspan="4">Yeap, your trash is empty!.<td>'
     else
       @note.each_with_index do |item, index|
         res += "
@@ -60,8 +60,8 @@ class NoteController < ApplicationController
             <td>#{item.created_at.strftime('%d/%m/%Y')}</td>
             <td>#{item.updated_at.strftime('%d/%m/%Y')}</td>
             <td>
-              <a href='#' onclick='recycleNote(\"#{item.id}\");'>Restaurar</a>
-              <a href='#' onclick='removeNote(\"#{item.id}\");'>Remover</a>
+              <a href='#' onclick='recycleNote(\"#{item.id}\");'>Recycle</a>
+              <a href='#' onclick='removeNote(\"#{item.id}\");'>Remove</a>
             </td>
           </tr>
         "

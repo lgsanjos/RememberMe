@@ -77,8 +77,9 @@ div#cabecalho{
 
       div#cabecalho div#login div#content .input{
         font-size:120%;
-        width:195px;
+        width:155px;
         text-shadow: #AAA 1px 1px 1px;
+        
       }
 
       div#cabecalho div#login div#content label{
@@ -87,8 +88,11 @@ div#cabecalho{
 
         letter-spacing: 1px;
         font-size:100%;
-        width:50px;
+        width:80px;
 
+        margin-right:15px;
+
+        text-align: right;
         padding-top:5px;
       }
 
@@ -300,7 +304,7 @@ div#rodape{
 }
 
 #piroPanel .lbSenha{
-  width:125px;
+  width:145px;
   text-align: right;
   padding-right: 10px;
 }
