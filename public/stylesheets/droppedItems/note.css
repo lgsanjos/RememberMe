@@ -36,7 +36,8 @@
    resize:none;
    outline: 0px;
 
-
+   overflow: hidden;
+   
    border:0px;
    padding:2px;
    margin: 2px;
@@ -45,7 +46,7 @@
    font-family: Tahoma, sans-serif, arial;
    font-weight: lighter;
    letter-spacing: 1px;
-   background-color: inherit;
+   background-color: yellow;
 }
 
 .note input{
