@@ -15,8 +15,8 @@ var Note = ofdCustomDroppedItem.extend({
         // Properties
         this.posX = Math.floor(Math.random()* 650);
         this.posY = Math.floor((Math.random()* 300) + 100);
-        this.width = 150;
-        this.height = 160;
+        this.width = 210;
+        this.height = 200;
         // TODO: fazer mensagens aleatórias
         this.content = 'I must ...';
         this.shared = false;
