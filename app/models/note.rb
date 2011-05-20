@@ -1,4 +1,5 @@
 class Note < ActiveRecord::Base
+   belongs_to :desk
 
    public
    def conteudo_tratado

@@ -4,6 +4,8 @@ class Usuario < ActiveRecord::Base
     validates_confirmation_of :senha, :on => :create 
     validates_length_of :senha, :within => 4..40
 
+    has_many :desk
+
     # If a user matching the credentials is found, returns the User object.
     # If no matching user is found, returns nil.
 

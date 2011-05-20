@@ -32,17 +32,17 @@
     <p class="item">
       <img src="images/index/logo.png" alt="OfficeDesk" class="logo"/>
     </p>
-    <p class="item menu"><%=h link_to "Sign out", :controller => "usuarios", :action => "logout" %></p>
+    <p class="item menu"><a href="usuarios/logout" id="signOut">Sign out</a></p>
     <p class="item menu"><a href="#" class="pirobox">Trash</a></p>
   </div>
   
-  <!--div id="right_menu">
+  <div id="right_menu">
     <a id="note" class="menuItem" href="#"></a>
-    <a id="cal" class="menuItem" href="#"></a>
+    <!--a id="cal" class="menuItem" href="#"></a>
     <a id="address" class="menuItem" href="#"></a>
     <a id="text" class="menuItem" href="#"></a>
-    <a id="trash" class="menuItem" href="#"></a>
-  </div-->
+    <a id="trash" class="menuItem" href="#"></a-->
+  </div>
 
   <div class="contextMenu" id="divContextMenu">
     <ul>
@@ -88,13 +88,30 @@
      }
    }
 
+   function preparaSignOut(){
+     $("#signOut").click(function() {
+        saveChangedItensList();
+     });
+   }
+
    function showNotes(){
 
       window.setTimeout(function(){
-         <% @note.each do |n| %>
-           <%= "NewNote( #{n.posX}, #{n.posY}, \"#{Note.trata_conteudo n.conteudo}\", #{n.width}, #{n.height}, false, true, \"#{n.UUID}\", \"#{n.updated_at.strftime("%m/%d/%Y")}\" );"%>
+         <% if @note.empty? %>
+               NewNote(undefined,
+                      undefined,
+                      'Welcome to OffDesk. \n \n Drag and Drop this note, create more notes from the right menu. Click on the x to trash this.',
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined
+                    );
+         <% else %>
+           <% @note.each do |n| %>
+             <%= "NewNote( #{n.posX}, #{n.posY}, \"#{Note.trata_conteudo n.conteudo}\", #{n.width}, #{n.height}, false, true, \"#{n.UUID}\", \"#{n.updated_at.strftime("%m/%d/%Y")}\" );"%>
+           <% end %>
          <% end %>
-      },10);
+      },100);
 
    }
 
@@ -195,10 +212,26 @@
    $().ready(function(){
 
      initialization();
-     //SetupRightMenu();
+     SetupRightMenu();
      preparaPirobox();
+     preparaSignOut();
      showNotes();
 
    });
+
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-21985942-1']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+       var ga = document.createElement('script');
+       ga.type = 'text/javascript';
+       ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0];
+       s.parentNode.insertBefore(ga, s);
+   })();
+
+
 
 </script>

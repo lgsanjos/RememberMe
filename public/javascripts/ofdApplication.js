@@ -11,7 +11,7 @@ function initialization(){
    
     setContextMenu();
     ChangedItens = new Hash();
-    startChangedMonitor(ChangedItens);
+    startChangedMonitor();
 
   }catch(E){
     raiseException(E);
@@ -24,23 +24,21 @@ function initialization(){
 
 // --------------
 
-function startChangedMonitor(aChangedList){
-
-  function checkList(){
-    if ( aChangedList.length >= 1 ){
+function saveChangedItensList(){
+    if ( ChangedItens.length >= 1 ){
       try{
         statusBar('Salvando...');
 
-	for (var item in aChangedList.items) {
-          var _pointer = aChangedList.getItem(item);
+        for (var item in ChangedItens.items) {
+          var _pointer = ChangedItens.getItem(item);
 
           if (_pointer instanceof ofdCustomDroppedItem){
 
             if (_pointer.Save()){
               statusBar('Salvo com sucesso...');
-              aChangedList.removeItem(item);
+              ChangedItens.removeItem(item);
             }
-          }          
+          }
         }
       }catch(E){
         raiseException(E);
@@ -48,11 +46,11 @@ function startChangedMonitor(aChangedList){
         statusBar('');
       }
     }
-    
-  }
-  
+}
 
-  _int = window.setInterval(function(){checkList();}, 10000);
+function startChangedMonitor(){
+
+   _int = window.setInterval(function(){saveChangedItensList();}, 10000);
 }
 
 // --------------
