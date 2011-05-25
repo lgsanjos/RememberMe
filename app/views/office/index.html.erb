@@ -32,7 +32,12 @@
     <p class="item">
       <img src="images/index/logo.png" alt="OfficeDesk" class="logo"/>
     </p>
-    <p class="item menu"><a href="usuarios/logout" id="signOut">Sign out</a></p>
+    <% if is_usuario_administrador %>
+      <p class="item menu"><a href="usuarios/logout" id="signOut">Out</a></p>
+      <p class="item menu"><a href="office/adm" id="adm">Adm</a></p>
+    <% else %>
+      <p class="item menu"><a href="usuarios/logout" id="signOut">Sign out</a></p>
+    <% end %>
     <p class="item menu"><a href="#" class="pirobox">Trash</a></p>
   </div>
   

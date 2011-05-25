@@ -1,0 +1,51 @@
+<% content_for :head do%>
+  <style>
+    div#adminPage table.estatistica th{ background: #ddd; }
+    div#adminPage table.estatistica td{ background: #eee; }
+  </style>
+<% end %>
+
+<div id="adminPage">
+  <h1><%= session[:usr].login %> -> ADM Forever alone</h1>
+
+  <br /><br />
+
+  <h2>Estatisticas</h2>
+  <table class="estatistica" width="350px">
+    <thead>
+      <th>Descricao</th>
+      <th>Valores</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Total de Usuários</td>
+        <td><%=@totalUsuarios%></td>
+      </tr>
+      <tr>
+        <td>Total de Post ativos</td>
+        <td><%=@totalPostAtivos%></td>
+      </tr>
+      <tr>
+        <td>Total de Post trashed</td>
+        <td><%=@totalPostInativos%></td>
+      </tr>
+      <tr>
+        <td>Média de Posts ativos por usuário</td>
+        <td><%=@mediaPostAtivoPorUsuarios%></td>
+      </tr>
+      <tr>
+        <td>Média de Posts inativos por usuário</td>
+        <td><%=@mediaPostInativoPorUsuarios%></td>
+      </tr>
+      <tr>
+        <td>Média total de post por usuário</td>
+        <td><%=@mediaPostPorUsuarios%></td>
+      </tr>
+    </tbody>
+
+  </table>
+
+  <br /><br />
+
+  <%= link_to :voltar, :action => :index %>
+</div>

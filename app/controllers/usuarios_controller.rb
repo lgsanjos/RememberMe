@@ -59,6 +59,7 @@ class UsuariosController < ApplicationController
 
     if request.post?
       usr = Usuario.new(params[:usuario])
+      usr.nivel = 0
       
       if usr.save
         session[:usr] = usr

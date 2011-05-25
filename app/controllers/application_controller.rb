@@ -10,6 +10,11 @@ class ApplicationController < ActionController::Base
   protected
   def authenticate
     redirect_to :controller => 'office', :action => 'welcome' unless Usuario.exists? session[:usr]
+    return true
+  end
+
+  def is_usuario_administrador
+    return ( (Usuario.exists? session[:usr]) and (session[:usr].nivel == 1))
   end
 
  

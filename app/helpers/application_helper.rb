@@ -14,4 +14,8 @@ module ApplicationHelper
     end
   end
 
+  def is_usuario_administrador
+    return ((Usuario.exists? session[:usr]) and (session[:usr].nivel == 1 ))
+  end
+
 end
