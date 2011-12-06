@@ -15,8 +15,9 @@ ActiveRecord::Schema.define(:version => 20110729223533) do
     t.string   "nome",          :limit => 20
     t.string   "imgicon",       :limit => 40
     t.string   "imgbackground", :limit => 40
-    t.boolean  "private"
-    t.boolean  "shared"
+    t.string   "private"
+    t.string   "boolean"
+    t.string   "shared"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "usuario_id"

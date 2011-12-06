@@ -446,3 +446,1182 @@
   [4;35;1mSQL (44.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
   [4;36;1mSQL (45.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
   [4;35;1mSQL (33.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (220.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (129.7ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` tinyint(1), `shared` tinyint(1), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (104.0ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (95.4ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (99.4ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (188.9ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (37.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (43.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (43.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (43.9ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (43.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (44.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (246.8ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (115.2ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` tinyint(1), `shared` tinyint(1), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (115.0ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (93.9ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (95.7ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (213.1ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (37.5ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (44.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (43.6ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (44.3ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (44.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (43.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:10:25) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (38.7ms)
+Rendered usuarios/_esqueceu_conta (4.0ms)
+Completed in 130ms (View: 128, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (179.9ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (121.3ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` tinyint(1), `shared` tinyint(1), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (115.4ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (117.5ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (97.4ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (224.0ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (39.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (32.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (33.1ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (32.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (32.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (32.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:11:25) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (5.4ms)
+Rendered usuarios/_esqueceu_conta (2.6ms)
+Completed in 28ms (View: 25, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (182.3ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (126.4ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` tinyint(1), `shared` tinyint(1), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (125.6ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (94.0ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (97.4ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (213.2ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (48.2ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (55.1ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (54.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (55.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (43.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (43.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:12:01) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.1ms)
+Rendered usuarios/_esqueceu_conta (2.0ms)
+Completed in 137ms (View: 135, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (215.5ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (111.0ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` tinyint(1), `shared` tinyint(1), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (104.7ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (94.0ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (99.3ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (189.9ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (37.3ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (43.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (44.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (44.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (43.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (44.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:12:25) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.2ms)
+Rendered usuarios/_esqueceu_conta (2.0ms)
+Completed in 16ms (View: 14, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (223.6ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (117.9ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` tinyint(1), `shared` tinyint(1), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (93.8ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (95.7ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (100.1ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (292.7ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (59.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (54.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (43.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (44.2ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (44.5ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (44.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:13:05) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.2ms)
+Rendered usuarios/_esqueceu_conta (2.0ms)
+Completed in 23ms (View: 21, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#index (for 127.0.0.1 at 2011-12-06 19:13:25) [POST]
+  Parameters: {"commit"=>"Sign Up", "resenha"=>"", "authenticity_token"=>"nXJHyV1gIannEo73BbcdYeYi7D6KgxVwsFkga6200EQ=", "desk"=>"create", "usuario"=>{"nome"=>"teste", "login"=>"teste", "senha"=>"", "email"=>"teste"}, "login"=>"usuarios"}
+Redirected to http://localhost:3000/welcome
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/usuarios/create]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:13:25) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.2ms)
+Rendered usuarios/_esqueceu_conta (2.0ms)
+Completed in 14ms (View: 12, DB: 0) | 200 OK [http://localhost/welcome]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (228.7ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (101.2ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` tinyint(1), `shared` tinyint(1), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (105.3ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (120.4ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (108.5ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (233.8ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (48.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (43.9ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (43.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (43.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (44.2ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (44.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:14:26) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.2ms)
+Rendered usuarios/_esqueceu_conta (2.0ms)
+Completed in 16ms (View: 14, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:14:34) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.7ms)
+Rendered usuarios/_esqueceu_conta (2.0ms)
+Completed in 18ms (View: 15, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:14:42) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.2ms)
+Rendered usuarios/_esqueceu_conta (2.0ms)
+Completed in 16ms (View: 14, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (216.7ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (122.5ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` tinyint(1), `shared` tinyint(1), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (124.0ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (96.6ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (85.8ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (200.1ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (61.2ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (66.2ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (66.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (66.2ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (66.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (66.1ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:16:26) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.5ms)
+Rendered usuarios/_esqueceu_conta (2.2ms)
+Completed in 37ms (View: 35, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:16:53) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.0ms)
+Rendered usuarios/_esqueceu_conta (1.9ms)
+Completed in 14ms (View: 12, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (240.8ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (114.9ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` tinyint(1), `shared` tinyint(1), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (100.3ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (120.6ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (142.3ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (245.0ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (59.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (54.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (44.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (55.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (43.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (43.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:17:15) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.1ms)
+Rendered usuarios/_esqueceu_conta (8.6ms)
+Completed in 27ms (View: 25, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (220.6ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (103.2ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` tinyint(1), `shared` tinyint(1), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (100.9ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (84.2ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (86.4ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (191.3ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (37.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (43.9ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (43.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (43.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (43.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (44.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:19:33) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.3ms)
+Rendered usuarios/_esqueceu_conta (4.9ms)
+Completed in 20ms (View: 18, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (287.6ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (115.6ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` tinyint(1), `shared` tinyint(1), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (105.7ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (108.3ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (97.4ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (202.5ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (39.2ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (33.3ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (43.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (44.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (43.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (44.1ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:20:00) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.0ms)
+Rendered usuarios/_esqueceu_conta (2.3ms)
+Completed in 15ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (203.5ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (120.0ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` tinyint(1), `shared` tinyint(1), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (110.7ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (95.4ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (88.7ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (200.8ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (37.1ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (44.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (45.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (43.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (44.5ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (44.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:20:23) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.0ms)
+Rendered usuarios/_esqueceu_conta (2.1ms)
+Completed in 17ms (View: 14, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (232.6ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (104.2ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` tinyint(1), `shared` tinyint(1), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (93.1ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (95.7ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (108.7ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (244.3ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (40.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (44.2ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (43.6ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (44.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (46.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (33.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:21:11) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.0ms)
+Rendered usuarios/_esqueceu_conta (2.0ms)
+Completed in 14ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:21:20) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.0ms)
+Rendered usuarios/_esqueceu_conta (9.5ms)
+Completed in 24ms (View: 19, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:21:28) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.1ms)
+Rendered usuarios/_esqueceu_conta (6.0ms)
+Completed in 24ms (View: 22, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (198.9ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (120.2ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` tinyint(1), `shared` tinyint(1), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (116.2ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (118.1ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (96.9ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (202.0ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (37.2ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (43.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (43.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (44.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (43.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (43.9ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:22:06) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.1ms)
+Rendered usuarios/_esqueceu_conta (2.1ms)
+Completed in 16ms (View: 14, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:22:14) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.3ms)
+Rendered usuarios/_esqueceu_conta (6.2ms)
+Completed in 25ms (View: 23, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (8.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:22:22) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.2ms)
+Rendered usuarios/_esqueceu_conta (2.1ms)
+Completed in 17ms (View: 15, DB: 9) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (210.1ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (115.4ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` tinyint(1), `shared` tinyint(1), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (115.7ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (107.3ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (85.6ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (224.5ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (48.1ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (43.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (43.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (44.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (44.1ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (43.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:23:22) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (6.6ms)
+Rendered usuarios/_esqueceu_conta (3.0ms)
+Completed in 25ms (View: 22, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:23:31) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.1ms)
+Rendered usuarios/_esqueceu_conta (2.5ms)
+Completed in 24ms (View: 22, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:23:39) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.0ms)
+Rendered usuarios/_esqueceu_conta (2.0ms)
+Completed in 22ms (View: 20, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsuarios (20100717174326)
+Migrating to CreateNotes (20100727221427)
+Migrating to CreateDesks (20110311235038)
+Migrating to AlterDeskAddcolumnUser (20110729153229)
+Migrating to AlterNotesAddcolumnDesk (20110729153847)
+Migrating to ScriptCriaDeskERelacionaNotes (20110729223533)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSHOW FIELDS FROM `desks`[0m
+  [4;36;1mSQL (17.9ms)[0m   [0;1mdescribe `desks`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW KEYS FROM `desks`[0m
+  [4;36;1mSQL (4.4ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mSQL (3.8ms)[0m   [0mdescribe `notes`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW KEYS FROM `notes`[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `usuarios`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW KEYS FROM `usuarios`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (138.0ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` varchar(255), `boolean` varchar(255), `shared` varchar(255), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (115.7ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (117.8ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (119.8ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (224.8ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (37.6ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (55.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (33.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (33.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (34.1ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (43.9ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsuarios (20100717174326)
+Migrating to CreateNotes (20100727221427)
+Migrating to CreateDesks (20110311235038)
+Migrating to AlterDeskAddcolumnUser (20110729153229)
+Migrating to AlterNotesAddcolumnDesk (20110729153847)
+Migrating to ScriptCriaDeskERelacionaNotes (20110729223533)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `desks`[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mdescribe `desks`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `desks`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mSQL (3.5ms)[0m   [0mdescribe `notes`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW KEYS FROM `notes`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mdescribe `usuarios`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `usuarios`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (166.6ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (102.6ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` varchar(255), `boolean` varchar(255), `shared` varchar(255), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (94.0ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (117.9ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (97.2ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (224.7ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (37.6ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (43.9ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (44.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (43.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (43.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (43.9ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:24:51) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (2.8ms)
+Rendered usuarios/_esqueceu_conta (3.5ms)
+Completed in 17ms (View: 15, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (232.5ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (102.9ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` varchar(255), `boolean` varchar(255), `shared` varchar(255), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (92.1ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (94.7ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (87.6ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (236.2ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (47.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (43.9ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (43.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (44.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (34.1ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (32.9ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:25:16) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (2.9ms)
+Rendered usuarios/_esqueceu_conta (2.0ms)
+Completed in 19ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (200.3ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (92.1ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` varchar(255), `boolean` varchar(255), `shared` varchar(255), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (92.4ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (105.0ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (97.1ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (233.1ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (49.1ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (32.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (34.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (32.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (32.6ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (33.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:25:36) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.3ms)
+Rendered usuarios/_esqueceu_conta (2.8ms)
+Completed in 33ms (View: 30, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (243.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (104.6ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` varchar(255), `boolean` varchar(255), `shared` varchar(255), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (116.6ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (349.8ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (189.1ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (64.5ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (32.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (43.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (43.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (44.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (43.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (218.2ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (102.9ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` varchar(255), `boolean` varchar(255), `shared` varchar(255), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (104.2ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (105.9ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (89.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (222.1ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (37.5ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (43.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (44.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (44.2ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (44.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (43.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (215.1ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (108.5ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` varchar(255), `boolean` varchar(255), `shared` varchar(255), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (104.0ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (95.1ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (87.6ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (189.0ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (60.3ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (44.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (43.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (43.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (43.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (43.9ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (242.2ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (95.3ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` varchar(255), `boolean` varchar(255), `shared` varchar(255), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (118.1ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (105.8ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (98.7ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (223.8ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (30.1ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (32.9ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (33.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (33.3ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (33.3ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (32.3ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:29:13) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (2.9ms)
+Rendered usuarios/_esqueceu_conta (2.0ms)
+Completed in 16ms (View: 14, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (202.1ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (114.4ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` varchar(255), `boolean` varchar(255), `shared` varchar(255), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (104.4ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (108.7ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (86.2ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (188.9ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (37.1ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (43.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (43.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (43.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (43.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (44.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:29:35) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (2.9ms)
+Rendered usuarios/_esqueceu_conta (2.3ms)
+Completed in 14ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (250.3ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (118.7ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` varchar(255), `boolean` varchar(255), `shared` varchar(255), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (119.0ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (128.8ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (108.3ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (601.1ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (48.3ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (32.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (35.3ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (43.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (45.3ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (43.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:30:05) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.1ms)
+Rendered usuarios/_esqueceu_conta (2.1ms)
+Completed in 14ms (View: 12, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (235.2ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (151.1ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` varchar(255), `boolean` varchar(255), `shared` varchar(255), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (93.9ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (108.6ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (119.2ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (255.5ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (70.5ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (65.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (66.2ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (65.9ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (66.1ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (65.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:31:20) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.3ms)
+Rendered usuarios/_esqueceu_conta (2.0ms)
+Completed in 18ms (View: 15, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (272.6ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` varchar(255), `boolean` varchar(255), `shared` varchar(255), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (102.9ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (106.5ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (119.1ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (257.4ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (59.3ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (43.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (44.5ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (44.1ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (43.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (44.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:32:05) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (3.0ms)
+Rendered usuarios/_esqueceu_conta (2.0ms)
+Completed in 15ms (View: 13, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (223.2ms)[0m   [0;1mDROP DATABASE IF EXISTS `OfficeDesk_test`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE DATABASE `OfficeDesk_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (84.7ms)[0m   [0mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` varchar(255), `boolean` varchar(255), `shared` varchar(255), `created_at` datetime, `updated_at` datetime, `usuario_id` int(11), `ordem` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (106.4ms)[0m   [0mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime, `desk_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (106.4ms)[0m   [0mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (97.7ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (177.9ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (37.1ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (43.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153229')[0m
+  [4;36;1mSQL (44.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20110311235038')[0m
+  [4;35;1mSQL (44.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20110729153847')[0m
+  [4;36;1mSQL (43.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100717174326')[0m
+  [4;35;1mSQL (44.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100727221427')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:49:47) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (5.1ms)
+Rendered usuarios/_esqueceu_conta (7.7ms)
+Completed in 68ms (View: 65, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:50:31) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (2.8ms)
+Rendered usuarios/_esqueceu_conta (2.1ms)
+Completed in 16ms (View: 13, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OfficeController#welcome (for 127.0.0.1 at 2011-12-06 19:50:40) [GET]
+Rendering template within layouts/application
+Rendering office/welcome
+Rendered usuarios/_nova_conta (2.9ms)
+Rendered usuarios/_esqueceu_conta (2.4ms)
+Completed in 17ms (View: 15, DB: 0) | 200 OK [http://localhost/]
