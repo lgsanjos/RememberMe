@@ -1,0 +1,197 @@
+# Logfile created on Tue Dec 06 00:07:13 -0200 2011Unable to load usuario_basico, underlying cause no such file to load -- usuario_basico 
+
+ /home/sanjos/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/home/sanjos/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:158:in `require'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:265:in `require_or_load'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:224:in `depend_on'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:136:in `require_dependency'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `each'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:15
+/var/www/offdesk/test/unit/helpers/usuario_helper_test.rb:1:in `require'
+/var/www/offdesk/test/unit/helpers/usuario_helper_test.rb:1
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:9:in `require'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:9
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:9:in `each'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:9
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:5:in `each'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:5
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Unable to load usuario_basico, underlying cause no such file to load -- usuario_basico 
+
+ /home/sanjos/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/home/sanjos/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:158:in `require'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:265:in `require_or_load'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:224:in `depend_on'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:136:in `require_dependency'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `each'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:15
+/var/www/offdesk/test/unit/helpers/usuario_helper_test.rb:1:in `require'
+/var/www/offdesk/test/unit/helpers/usuario_helper_test.rb:1
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:9:in `require'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:9
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:9:in `each'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:9
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:5:in `each'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:5
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsuarios (20100717174326)
+Migrating to CreateNotes (20100727221427)
+Migrating to CreateDesks (20110311235038)
+Migrating to AlterDeskAddcolumnUser (20110729153229)
+Migrating to AlterNotesAddcolumnDesk (20110729153847)
+Migrating to ScriptCriaDeskERelacionaNotes (20110729223533)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `desks`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mdescribe `desks`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `desks`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mdescribe `notes`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `notes`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mdescribe `usuarios`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `usuarios`[0m
+Unable to load usuario_basico, underlying cause no such file to load -- usuario_basico 
+
+ /home/sanjos/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/home/sanjos/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:158:in `require'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:265:in `require_or_load'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:224:in `depend_on'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:136:in `require_dependency'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `each'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:15
+/var/www/offdesk/test/unit/helpers/usuario_helper_test.rb:1:in `require'
+/var/www/offdesk/test/unit/helpers/usuario_helper_test.rb:1
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:9:in `require'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:9
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:9:in `each'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:9
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:5:in `each'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:5
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (169.9ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (213.6ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsuarios (20100717174326)
+  [4;36;1mSQL (132.0ms)[0m   [0;1mCREATE TABLE `usuarios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(30), `login` varchar(30), `email` varchar(60), `senha` varchar(20), `nivel` tinyint, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (44.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100717174326')[0m
+Migrating to CreateNotes (20100727221427)
+  [4;36;1mSQL (148.9ms)[0m   [0;1mCREATE TABLE `notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `UUID` varchar(20), `conteudo` varchar(500), `categoria` int(11) DEFAULT 0, `prioridade` int(11), `posX` varchar(4), `posY` varchar(4), `width` varchar(4), `height` varchar(4), `trashed` tinyint(1) DEFAULT 0, `shared` tinyint(1) DEFAULT 0, `state` varchar(1), `titulo` varchar(150), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (43.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100727221427')[0m
+Migrating to CreateDesks (20110311235038)
+  [4;36;1mSQL (143.4ms)[0m   [0;1mCREATE TABLE `desks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(20), `imgicon` varchar(40), `imgbackground` varchar(40), `private` tinyint(1), `shared` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (33.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20110311235038')[0m
+Migrating to AlterDeskAddcolumnUser (20110729153229)
+  [4;36;1mSQL (276.7ms)[0m   [0;1mALTER TABLE `desks` ADD `usuario_id` int(11)[0m
+  [4;35;1mSQL (257.2ms)[0m   [0mALTER TABLE `desks` ADD `ordem` int(11)[0m
+  [4;36;1mSQL (31.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110729153229')[0m
+Migrating to AlterNotesAddcolumnDesk (20110729153847)
+  [4;35;1mSQL (483.0ms)[0m   [0mALTER TABLE `notes` ADD `desk_id` int(11)[0m
+  [4;36;1mSQL (44.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110729153847')[0m
+Migrating to ScriptCriaDeskERelacionaNotes (20110729223533)
+  [4;35;1mUsuario Load (7.6ms)[0m   [0mSELECT * FROM `usuarios` [0m
+  [4;36;1mSQL (58.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110729223533')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `desks`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mdescribe `desks`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW KEYS FROM `desks`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mdescribe `notes`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `notes`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `usuarios`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `usuarios`[0m
+Unable to load usuario_basico, underlying cause no such file to load -- usuario_basico 
+
+ /home/sanjos/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/home/sanjos/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:158:in `require'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:265:in `require_or_load'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:224:in `depend_on'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:136:in `require_dependency'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `each'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:15
+/var/www/offdesk/test/unit/helpers/usuario_helper_test.rb:1:in `require'
+/var/www/offdesk/test/unit/helpers/usuario_helper_test.rb:1
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:9:in `require'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:9
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:9:in `each'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:9
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:5:in `each'
+/home/sanjos/.rvm/gems/ruby-1.8.7-p334/gems/rake-0.9.2/lib/rake/rake_test_loader.rb:5
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m

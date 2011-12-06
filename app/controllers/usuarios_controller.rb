@@ -11,15 +11,17 @@ class UsuariosController < ApplicationController
 
 
   def login
-    usr = Usuario.find(:first, :conditions => (['login=? AND senha=?', params[:login]["login"], params[:login]["senha"]]))
+    #find(:first, :conditions => (['login=? AND senha=?', params[:login]["login"], params[:login]["senha"]]))
+    usr = Usuario.new(params[:login])
     
-    if (usr.authenticate unless usr.blank?)
+    if (usr.authenticate)
       session[:usr] = usr
-      redirect_to :controller => 'office', :action => 'index'
+      redirect_to :controller => usr.login
     else
       flash[:error] = 'Incorrect username or password, please try again.'
       redirect_to :controller => "office", :action => "welcome"
     end
+    
 
   end
   
@@ -116,7 +118,14 @@ class UsuariosController < ApplicationController
     end
 
     redirect_to :controller => :office, :action => :welcome
-    
+  end
+
+  def esqueceu_conta
+
+  end
+
+  def nova_conta
+
   end
 
 end

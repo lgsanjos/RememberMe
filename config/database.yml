@@ -16,13 +16,14 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 development:
   adapter: mysql
-  socket: /var/run/mysqld/mysqld.sock
+  # JRuby doesn't support socket:
+  #socket: /var/run/mysqld/mysqld.sock
   encoding: utf8
   reconnect: false
-  database: OfficeDesk_Brave_dev
+  database: OfficeDesk
   pool: 5
   username: root
-  password: adm
+  password: 123
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -32,19 +33,18 @@ test:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: OfficeDesk_Brave_test
+  database: OfficeDesk_test
   pool: 5
   username: root
-  password: adm
+  password: 123
   host: localhost
-  socket: /var/run/mysqld/mysqld.sock 
 
 production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: rt
+  database: offdesk
   pool: 5
-  username: root
-  password: adm
-  host: localhost
+  username: sasolucoadm
+  password: KgND39N1
+  host: mysql.offdesk.com

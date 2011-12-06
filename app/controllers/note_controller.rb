@@ -14,7 +14,8 @@ class NoteController < ApplicationController
     end
 
 
-    @note.user_id = session[:usr].id;
+    @note.user_id = session[:usr].id
+    @note.desk_id = session[:desk].id
     if @note.save
       render :inline => "OK"
     else

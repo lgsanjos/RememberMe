@@ -4,8 +4,14 @@
   <%=  stylesheet_link_tag 'piro/style/style', :media => 'screen', :title => 'black'%>
   <%=  javascript_include_tag '3rd party/jquery/piro/pirobox.js'%>
   <%=  javascript_include_tag '3rd party/jquery/stepcarousel.js'%>
-<%  end %>
+
+  <script>
+    novaConta = '<%= (render "usuarios/nova_conta").gsub("\n", "<br />") %>';
+    esqueceuConta = '<%= (render "usuarios/esqueceu_conta").gsub("\n", "") %>';
+  </script>
   
+<% end %>
+
 <div id="welcome">
   <div id="cabecalho">
     <div id="left">
@@ -16,7 +22,7 @@
     <div id="right">
       <div id="login">
         <div id="content">
-          <% form_tag :controller =>"usuarios/login" do %>
+          <% form_tag :controller =>"login" do %>
           <p><label>Login</label><%=h text_field("login","login", :class => "input")%></p>
           <p><label>Password</label><%=h password_field("login","senha", :class => "input")%></p>
           <p style="float:left; padding-right:15px; padding-top:10px;">
@@ -35,55 +41,55 @@
     <div id="corpo">
       <div id="left">
       </div>
+
       <div id="mid">
+          <div id="mygallery" class="stepcarousel">
+          <div class="belt">
 
-			<div id="mygallery" class="stepcarousel">
-			<div class="belt">
+          <div class="panel">
+            <h1>Hello! Welcome to the OfficeDesk.</h1>
+            <h2> - What is Office Desk?</h2>
+            <p>OffDesk is a FREE and online area, for you write and post reminds just like in a REAL desk!</p>
+          </div>
 
-			<div class="panel">
-			  <h1>Hello! Welcome to the OfficeDesk.</h1>
-			  <h2> - What is Office Desk?</h2>
-			  <p>OffDesk is a FREE and online area, for you write and post reminds just like in a REAL desk!</p>
-			</div>
+          <div class="panel">
+            <h2> - Is it a ticket manager or any stuff like that?</h2>
+            <p>Absolutely no! Our pourpose is a friendly area for organize yours reminds,</p>
+            <p>there is NO bunch of manuals, or "best practices to...". OffDesk is just like your home desk,</p>
+            <p>You take a piece of paper, write and stick where you want!</p>
+          </div>
 
-			<div class="panel">
-			  <h2> - Is it a ticket manager or any stuff like that?</h2>
-			  <p>Absolutely no! Our pourpose is a friendly area for organize yours reminds,</p>
-			  <p>there is NO bunch of manuals, or "best practices to...". OffDesk is just like your home desk,</p>
-			  <p>You take a piece of paper, write and stick where you want!</p>
-			</div>
+          <div class="panel">
+            <h2>I wanna a quick test!</h2>
+            <p>If you don't wanna create a FREE account to test it, NO PROBLEM! Click here and get the shared test account</p>
+            <h2></h2>
+          </div>
 
-			<div class="panel">
-			  <h2>I wanna a quick test!</h2>
-			  <p>If you don't wanna create a FREE account to test it, NO PROBLEM! Click here and get the shared test account</p>
-			  <h2></h2>
-			</div>
+          <div class="panel">
+            <h2> - And what about new features?</h2>
+            <p>We are working hard to develop news features, like calendar, note books, agenda, shared tasks and much more.</p>
+            <p>Our team are waiting for suggestions, tips or any kind of FEEDBACK!</p>
+            <p>Feel free to talk to us, we are really waiting for <a href="#">contact</a>. :)</p>
+          </div>
 
-			<div class="panel">
-			  <h2> - And what about new features?</h2>
-			  <p>We are working hard to develop news features, like calendar, note books, agenda, shared tasks and much more.</p>
-			  <p>Our team are waiting for suggestions, tips or any kind of FEEDBACK!</p>
-			  <p>Feel free to talk to us, we are really waiting for <a href="#">contact</a>. :)</p>
-			</div>
+          <div class="panel">
+            <h2> - Ok, Ok... but it isn't an Office desk?</h2>
+            <p>Yeah! In the future we will have some feature interesting to compannies like, financy organization.</p>
+            <p>For now one, we are totaly focused on home users with personal purposes! ;)</p>
+          </div>
 
-			<div class="panel">
-			  <h2> - Ok, Ok... but it isn't an Office desk?</h2>
-			  <p>Yeah! In the future we will have some feature interesting to compannies like, financy organization.</p>
-			  <p>For now one, we are totaly focused on home users with personal purposes! ;)</p>
-			</div>
+          </div>
+          </div>
 
-			</div>
-			</div>
+          <p id="mygallery-paginate" style="width: 640px; text-align:center;">
 
-			<p id="mygallery-paginate" style="width: 640px; text-align:center;">
-
-                          <img src="<%= image_path "welcome/opencircle.png" %>"
-                               data-over="<%= image_path "welcome/graycircle.png" %>"
-                               data-select="<%= image_path "welcome/closedcircle.png" %>"
-                               data-moveby="1" />
-			</p>		
-
+            <img src="<%= image_path "welcome/opencircle.png" %>"
+                 data-over="<%= image_path "welcome/graycircle.png" %>"
+                 data-select="<%= image_path "welcome/closedcircle.png" %>"
+                 data-moveby="1" />
+          </p>
       </div>
+      
       <div id="right">
       </div>
     </div>
@@ -107,10 +113,7 @@
           $('#login').fadeIn(1000, function(){
               $('#login_login').focus();
           });
-          
-          novaConta = '<%= (render "usuarios/novaConta").gsub("\n", "<br />") %>';
-          esqueceuConta = '<%= (render "usuarios/esqueceuConta").gsub("\n", "") %>';
-          
+                   
 
       }catch(E){
         raiseException(E);
@@ -134,9 +137,11 @@
 
 
      function setNovaConta(){
-       setPirobox(novaConta, function(){
-                                  $('#usuario_nome').focus();
-                             });
+       setPirobox(novaConta,
+                    function(){
+                       $('#usuario_nome').focus();
+                    }
+                  );
      }
 
      function setEsqueceuConta(){

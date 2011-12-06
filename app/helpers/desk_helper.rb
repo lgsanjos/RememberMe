@@ -1,0 +1,2 @@
+module DeskHelper
+end

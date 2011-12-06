@@ -1,15 +1,11 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
-  # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
 
   protected
   def authenticate
-    redirect_to :controller => 'office', :action => 'welcome' unless Usuario.exists? session[:usr]
+    redirect_to :controller => 'welcome' if session[:usr].blank?
     return true
   end
 

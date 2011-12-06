@@ -83,8 +83,8 @@ function setDnR(){
 
     $('.DroppedItem').draggable({
            drag: function(event, ui){
-               if ((ui.offset.top <= 80) && (ui.offset.left <= 600)){
-                 $(self).offset.top(80);
+               if ((ui.offset.top <= 100) && (ui.offset.left <= 600)){
+                 $(self).offset.top(100);
                }
 
            },

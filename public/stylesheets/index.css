@@ -6,7 +6,7 @@
 }
 
 #header{
-  z-index:999;
+  z-index:998;
   position:absolute;
 
   background: url(../images/index/cabecalho.png) no-repeat;
@@ -35,19 +35,19 @@
 }
 
 #right_menu{
-  z-index:999;
+  z-index:998;
   background-image: url(../images/index/menu_right.png);
   position:absolute;
 
   float:none;
   right:-5px;
   padding:0px;
-  margin: 0px;
-  top:1%;
+  margin:0px;
+  top:30px;
   
   height:600px;
   width:150px;
-  text-align: center;
+  text-align:center;
   outline: 0px;
   
 

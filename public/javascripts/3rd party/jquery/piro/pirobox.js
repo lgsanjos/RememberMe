@@ -6,20 +6,20 @@
 * Licence: CC-BY-SA http://creativecommons.org/licenses/by-sa/2.5/it/
 *
 * Notas:
-* Esse plugin foi devidamente adaptado para a utilizacao no projeto officedesk
+* Esse plugin foi devidamente adaptado para a utilizacao closeno projeto officedesk
 **/
 
 (function($) {
 	$.fn.piroBox = function(opt) {
 		opt = jQuery.extend({
-		my_speed : null,
-		close_speed : 300,
-		bg_alpha : 0.5,
-		close_all : '.piro_close,.piro_overlay',
-		slideShow : null,
-		slideSpeed : null,
-                conteudoHtml : 'hello world',
-                onShowEvent: null
+			my_speed : null,
+			close_speed : 300,
+			bg_alpha : 0.5,
+			close_all : '.piro_close,.piro_overlay',
+			slideShow : null,
+			slideSpeed : null,
+	        conteudoHtml : 'hello world',
+	        onShowEvent: null
 		}, opt);
 
 		function start_pirobox(aConteudo) {
@@ -57,7 +57,7 @@
 			var piro_next = $(jQuery('<a href="#next" class="piro_next" title="next image"></a>'));				
 			$('body').append(bg_overlay).append(main_cont);
 			main_cont.append(corners);
-			$('.pirobox_up').append(piro_close);
+			//$('.pirobox_up').append(piro_close);
 			//$('.pirobox_down').append(piro_nav);
 			//$('.pirobox_down').append(piro_play);
 			//piro_play.hide();
@@ -165,41 +165,45 @@
 							$('.number').hide();
 							piro_play.remove();
 						}					
-							$(piro_gallery).filter('.item').removeClass('item');
-							item.addClass('item');
-							$('.c_c').removeClass('unique');
+
+						$(piro_gallery).filter('.item').removeClass('item');
+						item.addClass('item');
+						$('.c_c').removeClass('unique');
 
 
-                                                // Evento de callback (onShow)
-                                                if (opt.onShowEvent !== undefined){
-                                                    opt.onShowEvent.call();
-                                                 }
+                        // Evento de callback (onShow)
+                        if (opt.onShowEvent !== undefined){
+                            opt.onShowEvent.call();
+                         }
                                                   
 					});
 				});
+
 				var piro_open = function(my_url) {
 					piro_play.add(piro_stop).hide();
 					piro_close.add(caption).add(piro_next).add(piro_prev).css('visibility','hidden');
 
-                                        $('.c_c div').children().remove();
-                                        main_cont.show();
-                                        bg_overlay.fadeIn(0,function(){
+                    $('.c_c div').children().remove();
+                    main_cont.show();
+                    bg_overlay.fadeIn(0,function(){
 
-                                          // Adicionar aqui o conteudo
-                                          $(".c_c div").append('<div>' + aConteudo + '</div>');
+                      // Adicionar aqui o conteudo
+                      $(".c_c div").append('<div>' + aConteudo + '</div>');
 
-                                        });
+                    });
 					
 				}
 
 			}
 
-		start_pirobox(opt.conteudoHtml);
+            start_pirobox(opt.conteudoHtml);
+
 	}
 })(jQuery);
 
 
   function setPirobox(conteudo, onShow){
+
       $().piroBox({
                   my_speed: 300, //animation speed
                   bg_alpha: 0.5, //background opacity

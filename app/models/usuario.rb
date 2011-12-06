@@ -11,8 +11,17 @@ class Usuario < ActiveRecord::Base
 
     public
     def authenticate
+      
       temp =  Usuario.find(:first, :conditions => (['login=? AND senha=?', self.login, self.senha]))
-      not temp.blank?
+      unless temp.nil? or temp.blank?
+        self.email = temp.email
+        self.nivel = temp.nivel
+        self.nome = temp.nome
+        self.id = temp.id
+        return true
+      end
+      
+        return false
     end
    
 end

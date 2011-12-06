@@ -54,8 +54,8 @@ a:hover { color: #999; opacity: 0.7; }
   position:absolute;
   width:auto;
   line-height:150%;
-  left:0;
-  bottom:0px;
+  right:0;
+  top:0px;
   letter-spacing:1.5px;
   padding: 0px 20px;
   text-align:center;

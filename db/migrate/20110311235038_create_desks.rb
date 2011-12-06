@@ -4,8 +4,8 @@ class CreateDesks < ActiveRecord::Migration
       t.string :nome, :limit => 20
       t.string :imgicon, :limit => 40
       t.string :imgbackground, :limit => 40
-      t.string :private, :boolean
-      t.string :shared, :boolean
+      t.boolean :private
+      t.boolean :shared
       t.timestamps
     end
   end

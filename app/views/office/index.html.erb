@@ -33,27 +33,36 @@
       <img src="images/index/logo.png" alt="OfficeDesk" class="logo"/>
     </p>
     <% if is_usuario_administrador %>
-      <p class="item menu"><a href="usuarios/logout" id="signOut">Out</a></p>
-      <p class="item menu"><a href="office/adm" id="adm">Adm</a></p>
+      <p class="item menu"><a href="/usuarios/logout" id="signOut">Out</a></p>
+      <p class="item menu"><a href="/office/adm" id="adm">Adm</a></p>
     <% else %>
-      <p class="item menu"><a href="usuarios/logout" id="signOut">Sign out</a></p>
+      <p class="item menu"><a href="/usuarios/logout" id="signOut">Sign out</a></p>
     <% end %>
     <p class="item menu"><a href="#" class="pirobox">Trash</a></p>
   </div>
   
-  <div id="right_menu">
+  <!--div id="right_menu">
     <a id="note" class="menuItem" href="#"></a>
     <!--a id="cal" class="menuItem" href="#"></a>
     <a id="address" class="menuItem" href="#"></a>
     <a id="text" class="menuItem" href="#"></a>
-    <a id="trash" class="menuItem" href="#"></a-->
-  </div>
+    <a id="trash" class="menuItem" href="#"></a>
+  </div-->
 
   <div class="contextMenu" id="divContextMenu">
     <ul>
       <li id="novaNota">New note</li>
     </ul>
 
+  </div>
+
+
+  <div id="desks_menu">
+  <% if @desks %>
+    <% @desks.each do |desk| %>
+      <a id="<%=desk.nome%>" class="deskMenuItem" href="<%= session[:usr].login + "/" + desk.nome%>"></a>
+    <% end %>
+  <% end %>
   </div>
 
 </div>
@@ -101,8 +110,9 @@
 
    function showNotes(){
 
+      <% if @notes %>
       window.setTimeout(function(){
-         <% if @note.empty? %>
+         <% if @notes.empty? %>
                NewNote(undefined,
                       undefined,
                       'Welcome to OffDesk. \n \n Drag and Drop this note, create more notes from the right menu. Click on the x to trash this.',
@@ -112,11 +122,12 @@
                       undefined
                     );
          <% else %>
-           <% @note.each do |n| %>
+           <% @notes.each do |n| %>
              <%= "NewNote( #{n.posX}, #{n.posY}, \"#{Note.trata_conteudo n.conteudo}\", #{n.width}, #{n.height}, false, true, \"#{n.UUID}\", \"#{n.updated_at.strftime("%m/%d/%Y")}\" );"%>
            <% end %>
          <% end %>
       },100);
+      <% end %>
 
    }
 
@@ -131,7 +142,7 @@
                         }
                       }),
 
-              url: '<%= url_for( :controller => :note, :action => :remove )%>',
+              url: '<%= url_for( :controller => 'note', :action => 'remove' )%>',
 
               success: function(data){
                          if (data === 'Ok'){
