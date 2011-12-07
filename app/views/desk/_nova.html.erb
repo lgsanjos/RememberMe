@@ -1,0 +1,10 @@
+<div id="piroPanel">
+	<h1>Creating a brand new desk</h1>
+	<p>Organize your notes by desks</p>
+	<br />
+	<% form_tag :controller => 'desks', :action => 'create' do %>
+	    <p><label>Name:  </label><%= text_field("desk","nome", :size => 25, :maxlength => 20, :style => "width: 250px;") %></p>
+	    <br />
+		<%= submit_tag "Create" %> <a href="#" onclick="closePiro();">Back</a>
+	<% end %>
+</div>

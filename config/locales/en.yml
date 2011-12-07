@@ -3,3 +3,7 @@
 
 en:
   hello: "Hello world"
+  
+  new_account_sign_up: "Sign up"
+  new_account_join_us: "Join us make, post some notes, invite friends and make our team happy."
+  new_account_better_experience: "For better experience, our team recommends to set OfficeDesk as homepage by clicking <a href='#' id="setHomepage">here</a>."

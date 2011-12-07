@@ -34,6 +34,51 @@
   font-size:150%;
 }
 
+#desks_menu {
+  	position:absolute;
+	z-index:998;
+	bottom: 0px;
+	right: 0px;
+		
+	width: 600px;
+	height: 100px;
+	margin: 0px;
+	padding: 0px;
+	
+	background: #FFF;
+		
+}
+
+#desks_menu .deskMenuItem,
+#desks_menu .deskMenuItem:visited {
+	display: block;
+	float: left;
+	
+	width: 80px;
+	height: 80px;
+	margin: 10px;
+	margin-right: 5px;
+	
+	background: #FFF;
+	border:1px solid red;
+	
+}
+
+#desks_menu .deskMenuItem:hover {
+	color: black;
+	
+	border-bottom: 5px solid red;
+	border-right: 5px solid red;
+	
+}
+
+  /*
+   -----------------------------------------------------------------
+   ----- right menu
+   -----------------------------------------------------------------
+  */
+
+
 #right_menu{
   z-index:998;
   background-image: url(../images/index/menu_right.png);
@@ -50,7 +95,6 @@
   text-align:center;
   outline: 0px;
   
-
 }
 
 #right_menu .menuItem{

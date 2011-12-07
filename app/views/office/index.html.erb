@@ -20,6 +20,10 @@
   <%= javascript_include_tag "office/DroppedItems/ofdCustomItem.js" %>
   <%= javascript_include_tag "office/DroppedItems/ofdNote.js" %>
 
+  <script>
+    htmlContentTrash = '<%= (render "note/viewTrash").gsub("\n", "") %>';
+    htmlContentNewDesk = '<%= (render "desk/nova").gsub("\n", "") %>';
+  </script>
 <% end %>
 
 
@@ -31,7 +35,7 @@
     <% else %>
       <p class="item menu"><a href="/usuarios/logout" id="signOut">Sign out</a></p>
     <% end %>
-    <p class="item menu"><a href="#" class="pirobox">Trash</a></p>
+    <p class="item menu"><a href="#" id="openTrash" class="pirobox" onfocus="preparaPiroboxTrash();" onmouseover="preparaPiroboxTrash();">Trash</a></p>
   </div>
   
   <!--div id="right_menu">
@@ -56,6 +60,7 @@
       <a id="<%=desk.nome%>" class="deskMenuItem" href="<%= session[:usr].login + "/" + desk.nome%>"><%=desk.nome%></a>
     <% end %>
   <% end %>
+  <a id="newDesk" class="pirobox deskMenuItem" href="#" onfocus="preparaPiroboxNewDesk();" onmouseover="preparaPiroboxNewDesk();">new</a>
   </div>
 
 </div>
@@ -64,44 +69,7 @@
 
 <script type="text/javascript">
 
-     function preparaPirobox(){
-
-     function onShow(){
-             $.ajax({
-                      type: 'GET',
-                      url: 'note/view_trash',
-                      async: true,
-                      success: function(data){
-
-                        $('#trashListTable').html(data);
-                        drawTrashListTable();
-
-                      },
-                      error: function(XMLHttpRequest, textStatus, errorThrow){
-                            raiseException('Sorry, but occurred an error while opening the trash: ' + errorThrow);
-
-                      }
-                    });
-
-
-     }
-
-
-     try{
-       var viewTrash = '<%= (render "note/viewTrash").gsub("\n", "") %>';
-       setPirobox(viewTrash, onShow);
-     }catch(e){
-       raiseException(e);
-     }
-   }
-
-   function preparaSignOut(){
-     $("#signOut").click(function() {
-        saveChangedItensList();
-     });
-   }
-
-   function showNotes(){
+   function showNotes() {
 
       <% if @notes %>
       window.setTimeout(function(){
@@ -115,107 +83,13 @@
 
    }
 
-   function removeNote(id){
 
-     $.ajax({
-              type: 'POST',
-              async: true,
-              data: ({
-                 'note':{
-                          'id': id
-                        }
-                      }),
-
-              url: '<%= url_for( :controller => 'note', :action => 'remove' )%>',
-
-              success: function(data){
-                         if (data === 'Ok'){
-                            $('#tr_' + id).fadeOut("fast",function(){
-                              $('#trashListTable').dataTable().fnDestroy();
-                              $(this).remove();
-                              drawTrashListTable();
-                            });
-
-
-                         }
-              },
-
-              error: function(XMLHttpRequest, textStatus, errorThrow){
-                    raiseException('Oops, an error occurred while we were removing your note: ' + errorThrow);
-              }
-
-     });
-   }
-
-   function recycleNote(id){
-     $.ajax({
-              type: 'POST',
-              async: true,
-              data: ({
-                 'note':{
-                          'id': id
-                        }
-                      }),
-
-              url: '<%= url_for( :controller => :note, :action => :recycle )%>',
-
-              success: function(data){
-
-                         $('#tr_' + id).fadeOut("fast",function(){
-                            var func = '';
-                            func = 'try{';
-                            func += data;
-                            func += '}catch(e){';
-                            func += '  raiseException(e);';
-                            func += '}';
-                            eval(func);
-
-                            $('#trashListTable').dataTable().fnDestroy();
-                            $(this).remove();
-                            drawTrashListTable();
-
-                         });
-
-              },
-
-              error: function(XMLHttpRequest, textStatus, errorThrow){
-                    raiseException('Just happened an error while we were recycling your note: ' + errorThrow);
-              }
-
-     });
-   }
-
-   function drawTrashListTable(){
-        $('#trashListTable').dataTable({
-            "bPaginate": true,
-            "sPaginationType": "full_numbers",
-            "bLengthChange": false,
-            "bFilter": false,
-            "bSort": true,
-            "bInfo": false,
-            "bAutoWidth": false,
-            "iDisplayLength": 15,
-            "oLanguage": {
-                    "sLengthMenu": "Display _MENU_ records per page",
-                    "sZeroRecords": "Trash is empty",
-                    "sInfo": "Showing _START_ to _END_ of _TOTAL_notes",
-                    "sInfoEmpty": "showing 0 to 0 of 0 notes",
-                    "sInfoFiltered": "(filtered from _MAX_ total records)"
-            }
-        });
-   }
-
-</script>
-
-<script type="text/javascript">
-
-   $().ready(function(){
-
-     initialization();
-     SetupRightMenu();
-     preparaPirobox();
-     preparaSignOut();
-     showNotes();
+   $().ready(function() {
+	     
+		initialization();
+		SetupRightMenu();
+		preparaSignOut();
+		showNotes();
 
    });
 
