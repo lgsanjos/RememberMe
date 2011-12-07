@@ -2,12 +2,11 @@
 
   <%= stylesheet_link_tag 'droppedItems/note.css' %>
   <%= stylesheet_link_tag 'index.css' %>
-  <%= stylesheet_link_tag 'contextMenu/jquery.contextmenu.css' %>
+  <%= stylesheet_link_tag '3rd party/contextMenu/contextmenu.css' %>
   <%= stylesheet_link_tag '3rd party/datatables.css' %>
-  <%= stylesheet_link_tag 'piro/style/style', :media => 'screen', :title => 'black'%>
+  <%= stylesheet_link_tag '3rd party/pirobox/pirobox', :media => 'screen', :title => 'black'%>
   
-  <%= javascript_include_tag "3rd party/jquery/jquery-ui-1.8.6.custom.min.js"%>
-  
+  <%= javascript_include_tag "3rd party/jquery/jquery-ui-1.8.6.custom.min.js"%>  
 
   <%= javascript_include_tag "3rd party/Base.js" %>
   <%= javascript_include_tag "3rd party/hash.js" %>
@@ -15,11 +14,11 @@
   <%= javascript_include_tag '3rd party/jquery/piro/pirobox.js'%>
   <%= javascript_include_tag '3rd party/jquery/jquery.dataTables.min.js'%>
 
-  <%= javascript_include_tag "ofdApplication.js" %>
-  <%= javascript_include_tag "ofdSystem.js" %>
-  <%= javascript_include_tag "office/index.js" %>
-  <%= javascript_include_tag "DroppedItems/ofdCustomItem.js" %>
-  <%= javascript_include_tag "DroppedItems/ofdNote.js" %>
+  <%= javascript_include_tag "office/ofdApplication.js" %>
+  <%= javascript_include_tag "office/ofdSystem.js" %>
+  <%= javascript_include_tag "office/regras_interface/index.js" %>
+  <%= javascript_include_tag "office/DroppedItems/ofdCustomItem.js" %>
+  <%= javascript_include_tag "office/DroppedItems/ofdNote.js" %>
 
 <% end %>
 
