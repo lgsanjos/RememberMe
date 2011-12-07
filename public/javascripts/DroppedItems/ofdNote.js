@@ -40,7 +40,7 @@ var Note = ofdCustomDroppedItem.extend({
         //Send Ajax
         $.ajax({
                type: 'POST',
-               url: '/note/save',
+               url: '/notes/save',
                async: false,
                data: ({
                  'note':{

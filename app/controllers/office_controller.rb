@@ -2,10 +2,17 @@ class OfficeController < ApplicationController
   
   before_filter :authenticate, :except => [:welcome]
   
+  def redireciona_usuario_para_sua_area
+    unless params[:login].casecmp(session[:usr].login) == 0
+      redirect_to :controller => session[:usr].login
+    end
+  end
+   
   def index
-
-      self.seleciona_desks
-
+      
+      redireciona_usuario_para_sua_area
+      seleciona_desks
+     
       @notes = Note.find(:all, :conditions => {'trashed' => false, 'desk_id' => session[:desk].id} )
       @apptitle = "#{session[:usr].login}@#{session[:desk].nome} - Office Desk"
   end
@@ -30,21 +37,31 @@ class OfficeController < ApplicationController
   def seleciona_desks 
     @desks = Desk.find(:all, :conditions => {'desks.usuario_id' => session[:usr].id}, :order => :ordem)
 
-    # TODO: checar se ha desk para o usuario
-    if @desks.nil?
+    if @desks.blank?
+      nova_desk = Desk.new
+      nova_desk.nome = 'home'
+      nova_desk.private = true 
+      nova_desk.shared = false
+      nova_desk.usuario = session[:usr]
+      nova_desk.ordem = 0
+      nova_desk.save
+            
+      @desks = [nova_desk]
     end
 
     if params[:desk].blank?
-      session[:desk] = @desks.first
+      session[:desk] = @desks.min_by { | desk |
+        desk.ordem
+      }
     else
-      if @desks.include? params[:desk]
-        session[:desk] = params[:desk]
+      desk_indicada = @desks.detect { | desk | desk.nome.casecmp(params[:desk]) == 0 }
+      unless desk_indicada.blank?
+        session[:desk] = desk_indicada
       else
-        session[:desk] = @desks.first
-        logger.warn "nao existe a mesa " + params[:desk] + " para o usuario " + params[:login]
+        redirect_to :controller => session[:usr].login, :action => (@desks.min_by { | desk | desk.ordem }).nome
+        
       end
-    end
-    
+    end    
   end
 
 end

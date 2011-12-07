@@ -2,15 +2,7 @@
 
 usuarioTeste:
       nome: usuario de teste
-      login: teste
+      login: usrteste
       email: teste@gmail.com
-      senha: 123teste
+      senha: teste123
       nivel: 0
-      
-usuarioAdm:
-      nome: usuario administrador
-      login: usradmtest
-      email: testeadm@gmail.com
-      senha: 123senha
-      nivel: 0      
-  

@@ -6,11 +6,8 @@
   <%= stylesheet_link_tag '3rd party/datatables.css' %>
   <%= stylesheet_link_tag 'piro/style/style', :media => 'screen', :title => 'black'%>
   
-  
-  <%#= javascript_include_tag "3rd party/jquery/ui/", :all, :recursive => true %>
-  <% #drag %>
   <%= javascript_include_tag "3rd party/jquery/jquery-ui-1.8.6.custom.min.js"%>
-  <%#= javascript_include_tag "3rd party/jquery/jqDnR/jqDnR.js" %>
+  
 
   <%= javascript_include_tag "3rd party/Base.js" %>
   <%= javascript_include_tag "3rd party/hash.js" %>
@@ -29,9 +26,6 @@
 
 <div id="odTableTop">
   <div id="header">
-    <p class="item">
-      <img src="images/index/logo.png" alt="OfficeDesk" class="logo"/>
-    </p>
     <% if is_usuario_administrador %>
       <p class="item menu"><a href="/usuarios/logout" id="signOut">Out</a></p>
       <p class="item menu"><a href="/office/adm" id="adm">Adm</a></p>
@@ -60,7 +54,7 @@
   <div id="desks_menu">
   <% if @desks %>
     <% @desks.each do |desk| %>
-      <a id="<%=desk.nome%>" class="deskMenuItem" href="<%= session[:usr].login + "/" + desk.nome%>"></a>
+      <a id="<%=desk.nome%>" class="deskMenuItem" href="<%= session[:usr].login + "/" + desk.nome%>"><%=desk.nome%></a>
     <% end %>
   <% end %>
   </div>
@@ -112,21 +106,12 @@
 
       <% if @notes %>
       window.setTimeout(function(){
-         <% if @notes.empty? %>
-               NewNote(undefined,
-                      undefined,
-                      'Welcome to OffDesk. \n \n Drag and Drop this note, create more notes from the right menu. Click on the x to trash this.',
-                      undefined,
-                      undefined,
-                      undefined,
-                      undefined
-                    );
-         <% else %>
-           <% @notes.each do |n| %>
-             <%= "NewNote( #{n.posX}, #{n.posY}, \"#{Note.trata_conteudo n.conteudo}\", #{n.width}, #{n.height}, false, true, \"#{n.UUID}\", \"#{n.updated_at.strftime("%m/%d/%Y")}\" );"%>
-           <% end %>
+         <% unless @notes.empty?
+              @notes.each do |n| %>
+                <%= "NewNote( #{n.posX}, #{n.posY}, \"#{Note.trata_conteudo n.conteudo}\", #{n.width}, #{n.height}, false, true, \"#{n.UUID}\", \"#{n.updated_at.strftime("%m/%d/%Y")}\" );"%>
+              <% end %>
          <% end %>
-      },100);
+      },120);
       <% end %>
 
    }

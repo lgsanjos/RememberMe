@@ -13,5 +13,6 @@ class ActiveSupport::TestCase
   self.use_instantiated_fixtures  = false
 
   fixtures :all 
- 
+  fixtures :usuarios
+  
 end

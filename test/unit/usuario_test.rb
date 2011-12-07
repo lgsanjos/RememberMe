@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'test/unit'
+require 'test_helper'
 require 'watir-webdriver'
 
 class UsuarioTest < ActiveSupport::TestCase
@@ -15,10 +16,9 @@ class UsuarioTest < ActiveSupport::TestCase
   end
 
   def test_login_basico
-     fixture :usuarios
-    
-     @browser.text_field(:id => "login_login").set "teste"
-     @browser.text_field(:id => "login_senha").set "123teste"
+       
+     @browser.text_field(:id => "login_login").set "usrteste"
+     @browser.text_field(:id => "login_senha").set "teste123"
      @browser.button(:name => 'commit').click
      @browser.div(:id => "odTableTop").wait_until_present
 
@@ -27,10 +27,9 @@ class UsuarioTest < ActiveSupport::TestCase
   end
 
   def test_login_e_logout
-    fixture :usuarios
      
-    @browser.text_field(:id => "login_login").set "teste"
-    @browser.text_field(:id => "login_senha").set "123teste"
+    @browser.text_field(:id => "login_login").set "usrteste"
+    @browser.text_field(:id => "login_senha").set "teste123"
     @browser.button(:name => 'commit').click
     @browser.div(:id => "odTableTop").wait_until_present
 
@@ -42,26 +41,21 @@ class UsuarioTest < ActiveSupport::TestCase
 
   def test_cria_novo_usuario
     
-    @browser.goto 'http://www.offdesk.com'
-    @browser.div(:id => "login").wait_until_present
-    
     @browser.a(:id => 'lkNovaConta').click
     
-    @browser.text_field(:id => "usuario_nome", :index => 1).wait_until_present
-
-    @browser.text_field(:id => "usuario_nome", :index => 1).set "test" 
-    @browser.text_field(:id => "usuario_login").set("teste")
-    @browser.text_field(:id => "usuario_email").set("teste@gmail.com")
-    @browser.text_field(:id => "usuario_login").set("testelogin")
-    @browser.text_field(:id => "usuario_senha").set("teste123")
-    @browser.text_field(:id => "_resenha").set("teste123")
+    @browser.text_field(:id => "usuario_nome", :index => 1).set "teste" 
+    @browser.text_field(:id => "usuario_login").set "teste"
+    @browser.text_field(:id => "usuario_email").set "teste@gmail.com"
+    @browser.text_field(:id => "usuario_login").set "testelogin"
+    @browser.text_field(:id => "usuario_senha").set "teste123"
+    @browser.text_field(:id => "_resenha").set "teste123"
     
     @browser.button(:name => 'commit').click
 
     @browser.div(:id => "odTableTop").wait_until_present
 
     assert @browser.title == "SAnjos@desk - Office Desk"
-    assert @browser.url == SERVER_URL + ":" + SERVER_PORT + "/sanjos"
+    assert @browser.url == SERVER_URL + ":" + SERVER_PORT + "/teste"
   end
   
 end

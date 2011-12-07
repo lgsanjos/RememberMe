@@ -31,15 +31,15 @@ ActionController::Routing::Routes.draw do |map|
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   map.root :controller => :office, :action => :welcome
-
-  map.connect 'login', :controller => :usuarios, :action => :login
-  map.connect 'welcome', :controller => :office, :action => :welcome
-  map.connect 'office/index', :controller => :office, :action => :index
+ 
+  map.connect '/notes/save', :controller => :note, :action => :save
+  map.connect '/usuarios/logout', :controller => :usuarios, :action => :logout
   
+  map.connect '/login', :controller => :usuarios, :action => :login
+  map.connect '/welcome', :controller => :office, :action => :welcome
+    
   map.resources :office
   map.resources :usuarios
-
-  map.connect '/esqueceu_conta', :controller => 'usuarios', :action => 'esqueceu_conta'
 
   map.username_link '/:login', :controller => 'office', :action => 'index'
   map.username_link '/:login/:desk', :controller => 'office', :action => 'index'

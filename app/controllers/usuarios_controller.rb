@@ -11,7 +11,6 @@ class UsuariosController < ApplicationController
 
 
   def login
-    #find(:first, :conditions => (['login=? AND senha=?', params[:login]["login"], params[:login]["senha"]]))
     usr = Usuario.new(params[:login])
     
     if (usr.authenticate)
@@ -65,7 +64,7 @@ class UsuariosController < ApplicationController
       
       if usr.save
         session[:usr] = usr
-        redirect_to :controller => 'office', :action => 'index'
+        redirect_to :controller => usr.login
       else
         redirect_to :controller => "office", :action => "welcome"
       end

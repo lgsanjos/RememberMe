@@ -40,19 +40,20 @@
   width:100%;
   height:100%;
 
-  margin:0px;
-  padding: 0x;
+  margin: 0px;
+  padding: 0px;
 
 }
 
 
 .note textarea,
 .note textarea:focus{
-   width:98%;
-   height:98%;
+   width:200px;
+   height:150px;
    border: 0px;
-   padding: 3px;
-   margin: 0px;
+   
+   padding: 0px;   
+   margin: 5px;
 
    resize:none;
    outline: 0px;
@@ -60,7 +61,7 @@
    background: transparent;
    
    overflow: hidden;
-   display:block;
+   display: block;
 
    font-size: 100%;
    font-family: Tahoma, sans-serif, arial;

@@ -56,21 +56,21 @@
 
           <div class="panel">
             <h2>I wanna a quick test!</h2>
-            <p>If you don't wanna create a FREE account to test it, NO PROBLEM! Click here and get the shared test account</p>
-            <h2></h2>
+            <p>If you don't wanna create a FREE account to test it, NO PROBLEM!
+            	<a id="log_as_free_account" href="#">Click here</a> to log with a test shared account</p>
           </div>
 
           <div class="panel">
             <h2> - And what about new features?</h2>
             <p>We are working hard to develop news features, like calendar, note books, agenda, shared tasks and much more.</p>
-            <p>Our team are waiting for suggestions, tips or any kind of FEEDBACK!</p>
+            <p>Our team is waiting for suggestions, tips or any kind of FEEDBACK!</p>
             <p>Feel free to talk to us, we are really waiting for <a href="#">contact</a>. :)</p>
           </div>
 
           <div class="panel">
-            <h2> - Ok, Ok... but it isn't an Office desk?</h2>
-            <p>Yeah! In the future we will have some feature interesting to compannies like, financy organization.</p>
-            <p>For now one, we are totaly focused on home users with personal purposes! ;)</p>
+            <h2> - Ok, Ok... but isn't it an Office desk, for business?</h2>
+            <p>Yeah, it is! But not now. We are developing some feature interesting to compannies like financy.</p>
+            <p>For now one we are totaly focused on home users, for personal purposes! ;)</p>
           </div>
 
           </div>
@@ -98,18 +98,17 @@
       </div>
     </div>
 </div>
-
   <script>
     novaConta = '<%= (render "usuarios/nova_conta").gsub("\n", "<br />") %>';
     esqueceuConta = '<%= (render "usuarios/esqueceu_conta").gsub("\n", "") %>';
-  </script>
+  </script>  
   
   <script>
     $().ready(function (){
       try{
         
 
-          $('#login').fadeIn(1000, function(){
+          $('#login').fadeIn(1500, function(){
               $('#login_login').focus();
           });
                    
@@ -135,7 +134,7 @@
    
 
 
-     function setNovaConta(){
+     function setNovaConta() {
        setPirobox(novaConta,
                     function(){
                        $('#usuario_nome').focus();
@@ -143,7 +142,7 @@
                   );
      }
 
-     function setEsqueceuConta(){
+     function setEsqueceuConta() {
         setPirobox(esqueceuConta, function(){
                                     $('#esqueceu_login').focus();
                                   });
