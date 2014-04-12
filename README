@@ -1,4 +1,5 @@
-== RemindeMe
+RemindeMe
+====
 
   This is a post-it based software, to keep your daily notes.
   It's based on ruby 2.3.6 and lots of jquery and javascript development.
